@@ -1,0 +1,109 @@
+@import "mixins";
+/*=========================================
+General Styles
+=========================================*/
+* {
+    font-family: 'Gill Sans', sans-serif;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+/*=========================================
+Color Definitions
+=========================================*/
+:root {
+    --cta: rgb(223 146 87);
+    --text: rgb(50 50 56);
+    --white: rgb(255 255 255);
+    --background-light-gray: rgb(243, 243, 245);
+    --text-color-dark: rgb(13, 13, 37);
+    --accent: rgb(78 193 254);
+}
+
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+/*=========================================
+Button Styles
+=========================================*/
+button {
+    transition: .3s;
+    border-radius: 30px;
+    min-width: 100px;
+    min-height: 40px;
+    background: var(--background-light-gray);
+    box-shadow: 9px 9px 12px rgb(153 153 153);
+    @include Display-align-justify ("inline-flex", "center", "center");
+    @include font-weight("medium");
+    color: var(--text-color-dark);
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+
+    &:hover {
+        transform: scale(.97);
+        background: var(--white);
+        box-shadow: inset 9px 9px 12px #cccccc, inset -9px -9px 12px var(--white);
+        color: var(--cta);
+    }
+}
+
+.slide-in {
+    transform: translateX(0);
+    transition: .3s;
+    z-index: 2;
+}
+.slide-out {
+    transform: translateX(-100%);
+    transition: .3s;
+    z-index: 2;
+}
+.slide-back {
+    animation: return .5s linear forwards;
+    transition: .3s;
+    z-index: 1;
+}
+@keyframes return {
+    0% {  transform: translateX(-100%); }
+    25% {  transform: translateY(100%);  }
+    50% {  transform: translateX(100%);  }
+    100% {  transform: translateY(0);  }
+}
+
+.hidden {
+    transition: all 1s;
+    filter: blur(5px);
+    opacity: 0;
+}
+
+.to_left {
+    transform: translateX(-100%);
+}
+
+.to_right {
+    transform: translateX(100%);
+}
+
+.appear {
+    transform: translateX(0);
+    filter: blur(0);
+    opacity: 1;
+}
+
+//Scroll animation delay
+.pop:nth-child(2) {
+    transition-delay: 300ms;
+}
+.pop:nth-child(3) {
+    transition-delay: 600ms;
+}
+.pop:nth-child(4) {
+    transition-delay: 900ms;
+}

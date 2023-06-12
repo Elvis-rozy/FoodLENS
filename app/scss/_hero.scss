@@ -1,0 +1,59 @@
+.hero {
+    position: relative;
+    @include Display-justify ("flex", "center");
+    @include width-height ("100vw", "100vh");
+
+    .A {
+        position: relative;
+    }
+
+    .A::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        filter: brightness(.7);
+        background-image: url("/Images/backgrounds/hero-bg.jpg");
+        @include background-size-position-repeat ("cover", "center", "no-repeat");
+    }
+
+    .B, .C, .D {
+        transform: translateX(100%);
+        position: absolute;
+    }
+
+    .A, .B, .C, .D {
+        @include Display-align-justify ("flex", "center", "center");
+        @include width-height ("100%", "87vh");
+        margin-top: 12.7vh;
+        flex-direction: column;
+    }
+
+    .screen {
+        h1 {
+            position: relative;
+            color: var(--white);
+            @include headingFont-size ("large");
+            padding-bottom: 20px;
+            z-index: 5;
+        }
+
+        p {
+            @include headingFont-size ("small");
+            @include font-weight("medium");
+            padding-bottom: 40px;
+            color: var(--text-color-dark);
+            z-index: 2;
+        }
+    }
+
+    .bttn {
+        padding: 15px 40px;
+        position: absolute;
+        top: 70%;
+        left: 45vw;
+        z-index: 3;
+    }
+}
