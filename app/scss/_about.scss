@@ -1,0 +1,114 @@
+/*=========================================
+About Setup
+=========================================*/
+.main{
+
+    .topH2 {
+        position: relative;
+        @include Display-align-justify("flex", "center", "center");
+        height: 400px;
+        @include font-weight(medium);
+        color: var(--cta);
+        font-style: italic;
+        font-size: 55px;
+
+        h2 {
+            z-index: 2;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            filter: brightness(.7);
+            background-image: url('/images/backgrounds/about-bg.jpg');
+            @include background-size-position-repeat ("cover", "center", "no-repeat");
+        }
+    }
+
+    .about {
+        background-image: url('/images/backgrounds/header-bg.png');
+        @include background-size-position-repeat ("contain", "center", "no-repeat");
+        @include Display-align("flex", "center");
+        overflow-x: hidden;
+        padding: 40px 40px 80px;
+
+        h2 {
+            @include font-weight(medium);
+            transform: rotate(-90deg);
+            color: var(--cta);
+            font-style: italic;
+            font-size: 50px;
+            height: 60px;
+        }
+
+        .first-box {
+            @include Display-align("flex", "end");
+            flex-direction: column;
+            margin-right: 40px;
+            gap: 40px;
+
+            p {
+                padding-right: 40px;
+            }
+        }
+
+        .second-box {
+            @include Display-align("flex", "start");
+            flex-direction: column;
+            margin-left: 40px;
+            gap: 40px;
+
+            p {
+                padding-left: 40px;
+            }
+        }
+
+        .first-box img,
+        .second-box img {
+            @include width-height("300px", "350px");
+        }
+    }
+}
+
+
+.value-section {
+    background-image: url('/images/backgrounds/about-bg1.png');
+    @include background-size-position-repeat ("contain", "center", "no-repeat");
+    overflow-x: hidden;
+    text-align: start;
+    padding: 0 60px;
+
+    h3 {
+        @include font-weight(medium);
+        color: var(--text-blac);
+        font-style: italic;
+        font-size: 40px;
+    }
+
+    .values {
+        grid-template-columns: repeat(3, 1fr);
+        text-align: start;
+        display: grid;
+        gap: 20px;
+
+        .first-value,
+        .second-value {
+            padding: 40px 0;
+        }
+
+        .first-value p,
+        .second-value p {
+            padding-top: 20px;
+        }
+
+        .third-box {
+            background: url('/images/About/Easy_pay.jpg');
+            @include background-size-position-repeat("cover", "center", "no-repeat");
+            border-radius: 50%;
+        }
+    }
+}

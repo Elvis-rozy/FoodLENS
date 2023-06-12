@@ -1,0 +1,81 @@
+.trust {
+    background: url("/Images/backgrounds/features-bg.png");
+    @include background-size-position-repeat ("contain", "center", "repeat");
+    @include Display-align-justify ("flex", "center", "center");
+    @include width-height ("100%", "100%");
+    flex-direction: column;
+    padding: 100px 40px 40px;
+    gap: 10px;
+
+    h3 {
+        @include headingFont-size("medium");
+        @include font-weight("small");
+    }
+
+    .brands img {
+        @include width-height ("140px", "140px");
+    }
+
+    .tools {
+
+        h3 {
+            padding-bottom: 30px;
+        }
+
+        .cards {
+            padding-bottom: 30px;
+            position: relative;
+            display: flex;
+            gap: 20px;
+
+            .card {
+                border: 1px solid rgb(225, 225, 225);
+                @include Display-align("flex", "center");
+                background: rgb(245, 245, 245);
+                flex-direction: column;
+                border-radius: 20px;
+                position: relative;
+                padding: 20px;
+                transition: .3s;
+                width: 250px;
+                gap: 10px;
+
+                &:hover {
+                    box-shadow: 1px 4px 6px rgb(153, 153, 153);
+                    transform: scale(1.1);
+                }
+
+                img {
+                    @include width-height ("80px", "80px");
+                }
+
+                h5 {
+                    @include headingFont-size("small");
+                    @include font-weight("small");
+                }
+
+                p {
+                    @include textFont-size("small");
+                }
+
+                a {
+                    color: var(--accent);
+                    font-size: 12px;
+                    transition: .3s;
+
+                    &:hover {
+                        color: var(--cta);
+                    }
+                }
+            }
+
+            .next {
+                @include textFont-size("medium");
+                @include font-weight("small");
+                position: relative;
+                bottom: 40%;
+                height: 40px;
+            }
+        }
+    }
+}
