@@ -1,0 +1,26 @@
+{
+  "name": "foodlens",
+  "version": "1.0.0",
+  "description": "![healthy-breakfast-buddha-bowl-with-rice-mango-avocado-salmon-fresh-salad-with-tomatoes-avocado-arugula-seeds-salmon-healthy-food-concept-top-view-flat-lay_2829-19963](https://github.com/Elvis-rozy/FoodLENS/assets/111084342/1bf509fe-ff08-46ac-8ed3-cdfb16a3146c)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Elvis-rozy/FoodLENS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Elvis-rozy/FoodLENS/issues"
+  },
+  "homepage": "https://github.com/Elvis-rozy/FoodLENS#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
