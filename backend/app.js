@@ -9,8 +9,6 @@ const authRoute = require("./routes/authentication");
 const foodRoute = require("./routes/food-routes");
 const authenticateUser = require("./middleware/authentication");
 const connectdb = require("./db/connectDB");
-const Food = require("./model/Food");
-const foodjason = require("./foodJson");
 
 app.use(express.json());
 

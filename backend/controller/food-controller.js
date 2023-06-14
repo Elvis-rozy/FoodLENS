@@ -1,7 +1,4 @@
-const Food = require("../model/Food");
-const Recipe = require("../model/Recipe");
-const Ingredient = require("../model/Ingredient");
-const NutritionFact = require("../model/NutritionFact");
+
 const Food = require("../model/Food");
 const { StatusCodes } = require("http-status-codes");
 const User = require("../model/User");
