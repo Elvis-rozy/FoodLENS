@@ -9,9 +9,10 @@ const authRoute = require("./routes/authentication");
 const foodRoute = require("./routes/food-routes");
 const authenticateUser = require("./middleware/authentication");
 const connectdb = require("./db/connectDB");
+const cors=require('cors')
 
 app.use(express.json());
-
+app.use(cors())
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/foods", authenticateUser, foodRoute);
 
