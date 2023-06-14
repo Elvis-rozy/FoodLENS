@@ -1,3 +1,6 @@
+/*=====================================
+Slide-in Animation setup
+=====================================*/
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         console.log(entry);
@@ -12,20 +15,58 @@ const observer = new IntersectionObserver((entries) => {
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((elem) => observer.observe(elem));
 
+/*=====================================
+Reviews image setup
+=====================================*/
+let myImage = document.querySelector('.img');
+let Heading = document.querySelector(".head");
+let info = document.querySelector(".head-info");
+let details = document.querySelector(".info");
 
-/* const first = document.querySelector(".A");
-const second = document.querySelector(".B");
-const third = document.querySelector(".C");
-const fourth = document.querySelector(".D");
-
-const list = [first, second, third, fourth];
-
-setInterval (function slideshow() {
-    while (true) {
-        for (let i = 0; i < list.length; i++){
-            list[i-1].classList.add('slide-out');
-            list[i].classList.add('slide-in');
-
-        }
+setInterval(() => {
+    const Src = myImage.getAttribute("src");
+    if (Src == "Images/profiles/prof-1.jpg") {
+        myImage.setAttribute("src", "Images/profiles/prof-2.jpg");
+        Heading.textContent = ("James Billway")
+        info.textContent = ("Norem ipsum dolor sit amet consecteturn");
+        details.textContent = ("elit. Commodi, consequatur error illo laudantiu corrupti expedita adipisci repellendus corporis, accusantium neque ipsum quidem similique aliquid odit necessitatibus esse dolorom");
+    }else if (Src == "Images/profiles/prof-2.jpg") {
+        myImage.setAttribute("src", "Images/profiles/prof-3.jpg");
+        Heading.textContent = ("Emily Anthlers")
+        info.textContent = ("Norem ipsum dolor sit amet consecteturn");
+        details.textContent = ("Commodi, consequatur error illo laudantiu corrupti expedita adipisci repellendus corporis, accusantium neque ipsum quidem similique aliquid odit necessitatibus esse dolorom");
+    } else {
+        myImage.setAttribute("src", "Images/profiles/prof-1.jpg");
+        Heading.textContent = ("Martha Lindsay");
+        info.textContent = ("From fast-food addict to mindful eater.");
+        details.textContent = ("I naturally fell into the concept of mindful eating, It takes 15-20 minutes for the food to hit your stomach, so I started eating slower.");
     }
-}, 3000); */
+}, 10000);
+/*=====================================
+Mobile menu setup
+=====================================*/
+const Bttn = document.querySelector("#menu");
+const navBar = document.querySelector(".mobile-menu");
+const linK = document.querySelector(".lnk");
+
+/*============================================
+Menu Icon Open and Close Function
+============================================*/
+Bttn.addEventListener("click", () => {
+    //close menu
+    if (Bttn.classList.contains('menu-open')) {
+        console.log('Menu Closed')
+        Bttn.classList.remove('menu-open')
+        navBar.classList.remove('nav-open')
+    }//Open menu
+    else {
+        console.log('Menu Opened')
+        Bttn.classList.add('menu-open')
+        navBar.classList.add('nav-open')
+    }
+})
+//Menu Links Closing Function
+linK.addEventListener('click', () => {
+    Bttn.classList.remove('menu-open')
+    navBar.classList.remove('nav-open')
+})

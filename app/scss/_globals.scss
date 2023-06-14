@@ -1,7 +1,7 @@
-@import "mixins";
 /*=========================================
 General Styles
 =========================================*/
+@import "mixins";
 * {
     font-family: 'Gill Sans', sans-serif;
     scroll-behavior: smooth;
@@ -26,10 +26,10 @@ Color Definitions
 }
 
 body {
+    background: var(--white);
     position: relative;
     overflow-x: hidden;
 }
-
 /*=========================================
 Button Styles
 =========================================*/
@@ -39,7 +39,7 @@ button {
     min-width: 100px;
     min-height: 40px;
     background: var(--background-light-gray);
-    box-shadow: 9px 9px 12px rgb(153 153 153);
+    box-shadow: 4px 8px 8px rgb(153 153 153);
     @include Display-align-justify ("inline-flex", "center", "center");
     @include font-weight("medium");
     color: var(--text-color-dark);
@@ -50,60 +50,95 @@ button {
     &:hover {
         transform: scale(.97);
         background: var(--white);
-        box-shadow: inset 9px 9px 12px #cccccc, inset -9px -9px 12px var(--white);
+        box-shadow: inset 9px 9px 12px rgb(204, 204, 204), inset -9px -9px 12px var(--white);
         color: var(--cta);
     }
 }
+/*=========================================
+Mobile menu Styles
+=========================================*/
+.menu-icon {
+    cursor: pointer;
 
-.slide-in {
-    transform: translateX(0);
-    transition: .3s;
-    z-index: 2;
-}
-.slide-out {
-    transform: translateX(-100%);
-    transition: .3s;
-    z-index: 2;
-}
-.slide-back {
-    animation: return .5s linear forwards;
-    transition: .3s;
-    z-index: 1;
-}
-@keyframes return {
-    0% {  transform: translateX(-100%); }
-    25% {  transform: translateY(100%);  }
-    50% {  transform: translateX(100%);  }
-    100% {  transform: translateY(0);  }
-}
+    span {
+        @include width-height ("26px", "2px");
+        background: var(--text-color-dark);
+        transition: transform .4s;
+        display: block;
 
-.hidden {
-    transition: all 1s;
-    filter: blur(5px);
-    opacity: 0;
+        &:not(:last-child) {
+            margin-bottom: 5px;
+        }
+    }
 }
+/*=========================================
+Menu Open Action
+=========================================*/
+.menu-open {
 
-.to_left {
-    transform: translateX(-100%);
-}
+    span:first-child {
+        transform: translateY(6px) rotate(45deg);
+        background-color: var(--cta);
+        transform-origin: 45%;
+    }
 
-.to_right {
-    transform: translateX(100%);
-}
+    span:nth-child(2) {
+        opacity: 0;
+    }
 
-.appear {
-    transform: translateX(0);
-    filter: blur(0);
-    opacity: 1;
+    span:last-child {
+        transform: translateY(-6px) rotate(-45deg);
+        background-color: var(--cta);
+        transform-origin: 45%;
+    }
 }
+/*=========================================
+Menu Links Action
+=========================================*/
+.nav-open {
 
-//Scroll animation delay
-.pop:nth-child(2) {
-    transition-delay: 300ms;
+    &.mobile-menu {
+        transform: translateX(0);
+    }
 }
-.pop:nth-child(3) {
-    transition-delay: 600ms;
-}
-.pop:nth-child(4) {
-    transition-delay: 900ms;
+/*=========================================
+Mobile menu Styles
+=========================================*/
+.mobile-menu {
+    @include width-height ("50%", "100%");
+    background: rgba(0, 0, 0, 0.39);
+    transform: translateX(500px);
+    border-radius: 5px 0 0 5px;
+    text-align: center;
+    font-size: 22px;
+    position: fixed;
+    transition: 1s;
+    z-index: 20;
+    right: 0;
+    top: 0;
+
+    ul {
+        @include Display-justify ("flex", "center");
+        @include width-height ("100%", "100%");
+        flex-direction: column;
+
+        li{
+            padding: 20px 0;
+            transition: .3s;
+
+            a {
+                color: var(--white);
+                transition: .3s;
+            }
+
+            &:hover {
+                background: rgb(0 0 0 / 36%);
+                border-radius: 0 20px 20px 0;
+
+                a{
+                    color: var(--cta);
+                }
+            }
+        }
+    }
 }

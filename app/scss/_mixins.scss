@@ -56,7 +56,7 @@ Heading font-size setup
 @mixin headingFont-size ($size) {
 
     @if $size == large {
-        font-size: 42px;
+        font-size: 52px;
     }
     @else if $size == medium {
         font-size: 24px;

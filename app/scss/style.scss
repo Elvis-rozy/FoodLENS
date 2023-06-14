@@ -3,15 +3,24 @@ General Styles
 =========================================*/
 @import "globals";
 @import "mixins";
+@import "animation";
 
 /*=========================================
 Global Styles
 =========================================*/
 @import "header";
 @import "hero";
+@import "footer";
 
 /*=========================================
 Landing page Styles
 =========================================*/
 @import "brands";
 @import "about";
+@import "reviews";
+@import "blog";
+/*=========================================
+Login page Styles
+=========================================*/
+@import "login";
+@import "signup";

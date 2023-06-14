@@ -12,7 +12,8 @@ header {
         padding: 1.25rem 2.5rem;
 
         .header_logo {
-            @include width-height ("7.815rem", "1.425rem");
+            @include width-height ("110px", "100px");
+            border-radius: 50%;
         }
 
         ul {

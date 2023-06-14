@@ -1,76 +1,46 @@
-/*
-=========================================
-Sales and Reviews Setup
-=========================================
-*/
-.sales {
-    @include Display-align-justify("flex", "center", "center");
+/*=========================================
+Reviews Setup
+=========================================*/
+.review-cards {
+    @include width-height ("100%", "auto");
+    @include Display-align ("flex", "center");
     flex-direction: column;
+    padding: 100px 0 50px;
     position: relative;
-    text-align: center;
-    padding: 65px;
 
     h3 {
-        @include font-weight (medium);
-        padding: 35px 0 25px;
-        font-size: 25px;
+        @include headingFont-size(medium);
+        @include font-weight(small);
+        padding-bottom: 25px;
     }
 
-    p {
-        padding-bottom: 35px;
-    }
+    .review-card {
+        box-shadow: 1px 1px 6px rgb(153, 153, 153);
+        @include Display-align ("flex", "center");
+        flex-direction: column;
+        border-radius: 20px;
+        overflow: hidden;
+        background: rgb(245, 245, 245);
+        width: 500px;
 
-    .image-container {
-        background-image: url('/images/2430757.jpg');
-        @include background-size-position-repeat("cover", "center", "no-repeat");
-        @include Display-align-justify("flex", "center", "center");
-        position: relative;
-        height: 300px;
-
-        h2 {
-            color: var(--background-white);
-            font-size: 60px;
+        img {
+            @include width-height ("100%", "300px");
         }
 
-        #percent-off {
-            color: var(--bttn-text);
-            position: absolute;
-            top: 48%;
+        h6 {
+            @include headingFont-size(small);
+            @include font-weight(small);
+            padding: 20px 0 10px;
         }
-    }
 
-    .customers {
-        display: flex;
-        gap: 20px;
+        .head-info {
+            font-size: 10.3px;
+        }
 
-        .customer {
-            box-shadow: 1px 5px 9px rgb(157 154 154 / 28%);
-            border: 1px solid var(--background-milk);
-            @include Display-align("flex", "center");
-            flex-direction: column;
-            border-radius: 15px;
-            padding: 20px;
-
-            img {
-                @include width-height("100px", "auto");
-                border-radius: 50%;
-            }
-
-            h4 {
-                @include font-weight (medium);
-                color: var(--text-blac);
-                padding: 15px 0;
-                font-size: 20px;
-            }
-
-            .stars #imag {
-                @include width-height("15px", "15px");
-            }
-
-            p {
-                color: var(--link-color);
-                padding-top: 20px;
-            }
+        .info {
+            @include textFont-size(small);
+            @include font-weight(small);
+            padding: 15px 20px 30px;
         }
     }
 }

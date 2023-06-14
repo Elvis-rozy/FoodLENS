@@ -74,9 +74,8 @@ About Setup
     }
 }
 
-
-.value-section {
-    background-image: url('/images/backgrounds/about-bg1.png');
+.new-section {
+    background-image: url('/images/backgrounds/header-bg.png');
     @include background-size-position-repeat ("contain", "center", "no-repeat");
     overflow-x: hidden;
     text-align: start;
@@ -84,31 +83,50 @@ About Setup
 
     h3 {
         @include font-weight(medium);
+        padding-bottom: 30px;
         color: var(--text-blac);
         font-style: italic;
         font-size: 40px;
     }
 
-    .values {
-        grid-template-columns: repeat(3, 1fr);
+    .about-cards {
+        padding-bottom: 30px;
+        position: relative;
         text-align: start;
-        display: grid;
-        gap: 20px;
+        display: flex;
+        gap: 25px;
 
-        .first-value,
-        .second-value {
-            padding: 40px 0;
-        }
+        .about-card {
+            border: 1px solid rgb(225, 225, 225);
+            @include Display-align("flex", "center");
+            background: rgb(245, 245, 245);
+            flex-direction: column;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: .3s;
+            width: 100%;
+            gap: 10px;
 
-        .first-value p,
-        .second-value p {
-            padding-top: 20px;
-        }
+            &:hover {
+                box-shadow: 1px 4px 6px rgb(153, 153, 153);
+                transform: scale(1.1);
+            }
+            img {
+                @include width-height ("100%", "220px");
+            }
+            h5 {
+                @include headingFont-size("small");
+                @include font-weight("small");
+            }
+            p {
+                @include textFont-size("small");
+                padding: 10px 15px 30px;
+            }
 
-        .third-box {
-            background: url('/images/About/Easy_pay.jpg');
-            @include background-size-position-repeat("cover", "center", "no-repeat");
-            border-radius: 50%;
+            .btn {
+                padding-bottom: 20px;
+            }
         }
     }
 }

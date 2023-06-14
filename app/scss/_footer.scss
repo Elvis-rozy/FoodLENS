@@ -1,50 +1,58 @@
-/*
-==========================================
+/*==========================================
 Footer Setup
-==========================================
-*/
+==========================================*/
 footer  {
-    background-color: var(--text-blac);
+    background-color: var(--background-light-gray);
     position: relative;
-    z-index: 4;
 
     .first-sect {
         @include Display-justify("flex", "space-evenly");
-        border-bottom: 2px solid var(--link-color);
+        border-bottom: .1px solid rgb(219 219 219);
         padding: 50px 0;
 
-        .footer li:nth-child(1) {
-            @include font-size (medium);
-            filter: brightness(2);
+        .footer_logo {
+            @include width-height ("110px", "100px");
+            border-radius: 50%;
         }
-    }
 
-    .footer li a {
-        color: var(--link-color);
-        line-height: 30px;
-        transition: .4s;
+        .footer li:nth-child(1) {
+            @include textFont-size (medium);
+        }
 
-        &:hover {
-            color: var(--cta-color);
+        .footer li a {
+            color: var(--text);
+            line-height: 30px;
+            transition: .4s;
+
+            &:hover {
+                color: var(--cta);
+            }
         }
     }
 
     .copy_right {
         @include Display-align-justify("flex", "center", "space-between");
-        padding: 30px 80px 40px;
-        color: var(--link-color);
+        padding: 30px 40px;
+        color: var(--accent);
 
         .links a:not(:last-child) {
             padding: 0 15px 0 0;
         }
 
-        .links img {
-            @include width-height("20px", "20px");
-            transition: .2s;
+        .links {
 
-            &:hover {
-                transform: scale(.90);
-                opacity: .6;
+            #socials {
+                min-width: 40px;
+            }
+
+            img {
+                @include width-height("20px", "20px");
+                transition: .2s;
+
+                &:hover {
+                    transform: scale(.90);
+                    opacity: .6;
+                }
             }
         }
     }

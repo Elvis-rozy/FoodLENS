@@ -1,0 +1,7 @@
+#blog {
+    background: url("/Images/backgrounds/blog-bg.png");
+    @include background-size-position-repeat ("cover", "center", "repeat");
+    @include width-height("100%", "auto");
+    @include Display-align("flex", "center");
+    padding: 100px 0 50px;
+}

@@ -1,10 +1,13 @@
+/*=========================================
+Brands Setup
+=========================================*/
 .trust {
     background: url("/Images/backgrounds/features-bg.png");
     @include background-size-position-repeat ("contain", "center", "repeat");
     @include Display-align-justify ("flex", "center", "center");
     @include width-height ("100%", "100%");
     flex-direction: column;
-    padding: 100px 40px 40px;
+    padding: 15vh 40px 40px;
     gap: 10px;
 
     h3 {
@@ -12,8 +15,15 @@
         @include font-weight("small");
     }
 
-    .brands img {
-        @include width-height ("140px", "140px");
+    .brands {
+
+        animation: carousel 30s linear forwards infinite;
+        display: flex;
+        gap: 40px;
+
+        img {
+            @include width-height ("140px", "140px");
+        }
     }
 
     .tools {
