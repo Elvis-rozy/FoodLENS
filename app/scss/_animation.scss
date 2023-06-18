@@ -2,9 +2,11 @@
 Brands Carousel Animation
 =====================================*/
 @keyframes carousel {
-    from { transform: translateX(100vw); }
-    to { transform: translateX(-100vw); }
-}
+    from { left: 0; }
+    to { left: -100%; }
+/*     from { transform: translateX(50%); }
+    to { transform: translateX(-10%); }
+ */}
 /*=========================================
 Hero Image Slideshow Animation
 =========================================*/
@@ -20,10 +22,22 @@ Hero Image Slideshow Animation
     100% { background-image: url("/Images/backgrounds/hero-bg.jpg");}
 }
 
+@keyframes slideshow2 {
+    0% { background-image: url("/Images/backgrounds/bgA.jpg");}
+    5% { background-image: url("/Images/backgrounds/bgB.jpg");}
+    20% { background-image: url("/Images/backgrounds/bgB.jpg");}
+    25% { background-image: url("/Images/backgrounds/bgC.jpg");}
+    40% { background-image: url("/Images/backgrounds/bgC.jpg");}
+    45% { background-image: url("/Images/backgrounds/bgD.jpg");}
+    60% { background-image: url("/Images/backgrounds/bgD.jpg");}
+    65% { background-image: url("/Images/backgrounds/bgE.jpg");}
+    80% { background-image: url("/Images/backgrounds/bgE.jpg");}
+    85% { background-image: url("/Images/backgrounds/bgA.jpg");}
+    100% { background-image: url("/Images/backgrounds/bgA.jpg");}
+}
+
 @keyframes animateScreen {
-    100% {
-        filter: hue-rotate(360deg);
-    }
+    100% { filter: hue-rotate(360deg); }
 }
 /*=========================================
 Slide-in Animation Styles
@@ -46,4 +60,12 @@ Slide-in Animation Styles
     transform: translateX(0);
     filter: blur(0);
     opacity: 1;
+}
+
+
+
+.favs.active {
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+    transform: scale(1.02);
 }

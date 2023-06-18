@@ -70,3 +70,56 @@ linK.addEventListener('click', () => {
     Bttn.classList.remove('menu-open')
     navBar.classList.remove('nav-open')
 })
+
+
+async function fetchUserData() {
+    try {
+        const response = await fetch ('.....', {
+            method: 'POST',
+            //what other headers or body parameters should we add here
+        });
+        if (!response.ok) {
+            throw new Error('Request failed with status : ' + response.status);
+        }
+        const userData = await response.json();
+        //Processing the userData as a JSON object
+        console.log(userData);
+
+        return userData;
+        //returning the userData JSON object
+    } catch (error) {
+        console.error('Error fetching user data : ', error);
+        //return an empty object
+        return {};
+    }
+}
+
+
+document.getElementById("signup-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Collect form data
+    var formData = new FormData(this);
+
+    // Make a POST request using fetch API
+    fetch("http://example.com/submit", {
+        method: "POST",
+        body: formData
+    })
+    .then(function(response) {
+        if (response.ok) {
+            // Successful response handling
+            console.log("Form data successfully submitted!");
+            // You can perform further actions here, like showing a success message
+        } else {
+            // Error response handling
+            console.log("Error submitting form data.");
+            // You can display an error message or handle the error in a desired way
+        }
+    })
+    .catch(function(error) {
+        // Network or fetch API error handling
+        console.log("An error occurred:", error);
+        // You can display an error message or handle the error in a desired way
+    });
+});

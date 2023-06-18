@@ -16,12 +16,12 @@ footer  {
         }
 
         .footer li:nth-child(1) {
-            @include textFont-size (medium);
+            font-size: 20px;
         }
 
         .footer li a {
-            color: var(--text);
             line-height: 30px;
+            color: var(--text);
             transition: .4s;
 
             &:hover {

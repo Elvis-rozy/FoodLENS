@@ -4,23 +4,23 @@ Reviews Setup
 .review-cards {
     @include width-height ("100%", "auto");
     @include Display-align ("flex", "center");
-    flex-direction: column;
     padding: 100px 0 50px;
+    flex-direction: column;
     position: relative;
 
     h3 {
-        @include headingFont-size(medium);
-        @include font-weight(small);
         padding-bottom: 25px;
+        font-weight: 700;
+        font-size: 24px;
     }
 
     .review-card {
         box-shadow: 1px 1px 6px rgb(153, 153, 153);
         @include Display-align ("flex", "center");
+        background: rgb(245, 245, 245);
         flex-direction: column;
         border-radius: 20px;
         overflow: hidden;
-        background: rgb(245, 245, 245);
         width: 500px;
 
         img {
@@ -28,9 +28,9 @@ Reviews Setup
         }
 
         h6 {
-            @include headingFont-size(small);
-            @include font-weight(small);
             padding: 20px 0 10px;
+            font-weight: 500;
+            font-size: 18px;
         }
 
         .head-info {
@@ -38,9 +38,9 @@ Reviews Setup
         }
 
         .info {
-            @include textFont-size(small);
-            @include font-weight(small);
             padding: 15px 20px 30px;
+            font-weight: 500;
+            font-size: 13px;
         }
     }
 }

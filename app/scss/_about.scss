@@ -4,13 +4,13 @@ About Setup
 .main{
 
     .topH2 {
-        position: relative;
         @include Display-align-justify("flex", "center", "center");
-        height: 400px;
-        @include font-weight(medium);
-        color: var(--cta);
+        font-weight: 700;
+        position: relative;
         font-style: italic;
+        color: var(--cta);
         font-size: 55px;
+        height: 400px;
 
         h2 {
             z-index: 2;
@@ -20,9 +20,9 @@ About Setup
             content: '';
             position: absolute;
             top: 0;
+            left: 0;
             right: 0;
             bottom: 0;
-            left: 0;
             filter: brightness(.7);
             background-image: url('/images/backgrounds/about-bg.jpg');
             @include background-size-position-repeat ("cover", "center", "no-repeat");
@@ -33,14 +33,14 @@ About Setup
         background-image: url('/images/backgrounds/header-bg.png');
         @include background-size-position-repeat ("contain", "center", "no-repeat");
         @include Display-align("flex", "center");
-        overflow-x: hidden;
         padding: 40px 40px 80px;
+        overflow-x: hidden;
 
         h2 {
-            @include font-weight(medium);
             transform: rotate(-90deg);
-            color: var(--cta);
+            font-weight: 700;
             font-style: italic;
+            color: var(--cta);
             font-size: 50px;
             height: 60px;
         }
@@ -78,15 +78,14 @@ About Setup
     background-image: url('/images/backgrounds/header-bg.png');
     @include background-size-position-repeat ("contain", "center", "no-repeat");
     overflow-x: hidden;
-    text-align: start;
     padding: 0 60px;
+    text-align: start;
 
     h3 {
-        @include font-weight(medium);
         padding-bottom: 30px;
         color: var(--text-blac);
-        font-style: italic;
-        font-size: 40px;
+        font-weight: 700;
+        font-size: 24px;
     }
 
     .about-cards {
@@ -102,8 +101,8 @@ About Setup
             background: rgb(245, 245, 245);
             flex-direction: column;
             border-radius: 20px;
-            position: relative;
             overflow: hidden;
+            position: relative;
             transition: .3s;
             width: 100%;
             gap: 10px;
@@ -112,16 +111,19 @@ About Setup
                 box-shadow: 1px 4px 6px rgb(153, 153, 153);
                 transform: scale(1.1);
             }
+
             img {
                 @include width-height ("100%", "220px");
             }
+
             h5 {
-                @include headingFont-size("small");
-                @include font-weight("small");
+                font-weight: 500;
+                font-size: 18px;
             }
+
             p {
-                @include textFont-size("small");
                 padding: 10px 15px 30px;
+                font-size: 13px;
             }
 
             .btn {

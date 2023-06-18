@@ -2,16 +2,15 @@
 Hero Setup
 =========================================*/
 .hero {
-    position: relative;
+    @include width-height ("100vw", "100vh");
     @include Display-justify ("flex", "center");
     flex-direction: column;
     align-items: center;
-    @include width-height ("100vw", "100vh");
+    position: relative;
 
     .screen {
         @include Display-align-justify ("flex", "center", "center");
-        @include width-height ("100%", "87.3vh");
-        margin-top: 12.7vh;
+        @include width-height ("100%", "100vh");
         flex-direction: column;
         position: relative;
 
@@ -19,27 +18,26 @@ Hero Setup
             content: '';
             position: absolute;
             top: 0;
+            left: 0;
             right: 0;
             bottom: 0;
-            left: 0;
             filter: brightness(.7);
             animation: slideshow 30s ease-in forwards infinite;
             @include background-size-position-repeat ("cover", "center", "no-repeat");
         }
 
         h1 {
-            position: relative;
-            color: var(--white);
-            @include headingFont-size ("large");
             padding-bottom: 20px;
+            color: var(--white);
+            position: relative;
+            font-size: 52px;
             z-index: 5;
         }
 
         p {
-            @include headingFont-size ("small");
-            @include font-weight("medium");
+            color: rgb(227 227 227);
             padding-bottom: 40px;
-            color: rgb(81 81 82);
+            font-size: 18px;
             z-index: 2;
         }
 

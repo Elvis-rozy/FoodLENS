@@ -25,9 +25,9 @@
     }
 
     h1 {
-        @include headingFont-size("large");
-        font-weight: 300;
         color: var(--white);
+        font-weight: 300;
+        font-size: 52px;
     }
 
     .spec1 {
@@ -87,8 +87,22 @@
     }
 
     .login-btn {
-        padding: 15px 50px;
+        background: var(--background-light-gray);
+        box-shadow: 4px 8px 8px rgb(8 8 8);
+        border-radius: 30px;
+        font-weight: 600;
+        padding: 13px 0;
+        font-size: 18px;
+        cursor: pointer;
+        transition: .3s;
         width: 100%;
+
+        &:hover {
+            box-shadow: inset 9px 9px 12px rgb(204, 204, 204), inset -9px -9px 12px var(--white);
+            background: var(--white);
+            transform: scale(.97);
+            color: var(--cta);
+        }
     }
 
     .register-link {

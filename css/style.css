@@ -23,15 +23,6 @@ Desktop hide setup
 }
 
 /*=====================================
-text font-size setup
-=====================================*/
-/*=====================================
-text font-weight setup
-=====================================*/
-/*=====================================
-Heading font-size setup
-=====================================*/
-/*=====================================
 Flex setup
 =====================================*/
 /*=====================================
@@ -66,33 +57,33 @@ Color Definitions
 
 body {
   background: var(--white);
-  position: relative;
   overflow-x: hidden;
+  position: relative;
 }
 
 /*=========================================
 Button Styles
 =========================================*/
-button {
-  transition: 0.3s;
-  border-radius: 30px;
-  min-width: 100px;
-  min-height: 40px;
+button, .dash-hero .right .profile-submit, header .profile {
   background: var(--background-light-gray);
-  box-shadow: 4px 8px 8px rgb(153, 153, 153);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
+  box-shadow: 2px 3px 8px rgb(100, 99, 99);
   color: var(--text-color-dark);
-  cursor: pointer;
+  border-radius: 30px;
+  min-width: 100px;
+  min-height: 40px;
+  font-weight: 700;
   position: relative;
+  cursor: pointer;
+  transition: 0.3s;
   z-index: 2;
 }
-button:hover {
-  transform: scale(0.97);
+button:hover, .dash-hero .right .profile-submit:hover, header .profile:hover {
   background: var(--white);
   box-shadow: inset 9px 9px 12px rgb(204, 204, 204), inset -9px -9px 12px var(--white);
+  transform: scale(0.97);
   color: var(--cta);
 }
 
@@ -196,15 +187,6 @@ Desktop hide setup
 }
 
 /*=====================================
-text font-size setup
-=====================================*/
-/*=====================================
-text font-weight setup
-=====================================*/
-/*=====================================
-Heading font-size setup
-=====================================*/
-/*=====================================
 Flex setup
 =====================================*/
 /*=====================================
@@ -218,11 +200,14 @@ Brands Carousel Animation
 =====================================*/
 @keyframes carousel {
   from {
-    transform: translateX(100vw);
+    left: 0;
   }
   to {
-    transform: translateX(-100vw);
+    left: -100%;
   }
+  /*     from { transform: translateX(50%); }
+      to { transform: translateX(-10%); }
+   */
 }
 /*=========================================
 Hero Image Slideshow Animation
@@ -256,6 +241,41 @@ Hero Image Slideshow Animation
     background-image: url("/Images/backgrounds/hero-bg.jpg");
   }
 }
+@keyframes slideshow2 {
+  0% {
+    background-image: url("/Images/backgrounds/bgA.jpg");
+  }
+  5% {
+    background-image: url("/Images/backgrounds/bgB.jpg");
+  }
+  20% {
+    background-image: url("/Images/backgrounds/bgB.jpg");
+  }
+  25% {
+    background-image: url("/Images/backgrounds/bgC.jpg");
+  }
+  40% {
+    background-image: url("/Images/backgrounds/bgC.jpg");
+  }
+  45% {
+    background-image: url("/Images/backgrounds/bgD.jpg");
+  }
+  60% {
+    background-image: url("/Images/backgrounds/bgD.jpg");
+  }
+  65% {
+    background-image: url("/Images/backgrounds/bgE.jpg");
+  }
+  80% {
+    background-image: url("/Images/backgrounds/bgE.jpg");
+  }
+  85% {
+    background-image: url("/Images/backgrounds/bgA.jpg");
+  }
+  100% {
+    background-image: url("/Images/backgrounds/bgA.jpg");
+  }
+}
 @keyframes animateScreen {
   100% {
     filter: hue-rotate(360deg);
@@ -284,17 +304,23 @@ Slide-in Animation Styles
   opacity: 1;
 }
 
+.favs.active {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+  transform: scale(1.02);
+}
+
 /*=========================================
 Global Styles
 =========================================*/
 header {
-  width: 100vw;
-  height: auto;
   background: url("/Images/backgrounds/header-bg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   box-shadow: 1px 1px 6px rgb(153, 153, 153);
+  width: 100vw;
+  height: auto;
   position: fixed;
   z-index: 5;
 }
@@ -317,10 +343,30 @@ header nav ul {
 header nav ul li:not(:last-child) {
   margin-right: 30px;
 }
+header nav ul li {
+  position: relative;
+}
 header nav ul li a {
+  display: flex;
+  justify-content: center;
+  color: rgb(203, 203, 203);
   font-size: 15px;
   transition: 0.3s;
-  color: var(--text);
+}
+header nav ul li a::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: var(--cta);
+  transition: opacity 0.3s;
+  border-radius: 50%;
+  position: absolute;
+  display: block;
+  bottom: -80%;
+  opacity: 0;
+}
+header nav ul li a:hover::before {
+  opacity: 1;
 }
 header nav ul li a:hover {
   color: var(--cta);
@@ -334,21 +380,20 @@ header nav .btns {
 Hero Setup
 =========================================*/
 .hero {
-  position: relative;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
+  position: relative;
 }
 .hero .screen {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 87.3vh;
-  margin-top: 12.7vh;
+  height: 100vh;
   flex-direction: column;
   position: relative;
 }
@@ -356,9 +401,9 @@ Hero Setup
   content: "";
   position: absolute;
   top: 0;
+  left: 0;
   right: 0;
   bottom: 0;
-  left: 0;
   filter: brightness(0.7);
   animation: slideshow 30s ease-in forwards infinite;
   background-size: cover;
@@ -366,17 +411,16 @@ Hero Setup
   background-repeat: no-repeat;
 }
 .hero .screen h1 {
-  position: relative;
-  color: var(--white);
-  font-size: 52px;
   padding-bottom: 20px;
+  color: var(--white);
+  position: relative;
+  font-size: 52px;
   z-index: 5;
 }
 .hero .screen p {
-  font-size: 18px;
-  font-weight: 700;
+  color: rgb(227, 227, 227);
   padding-bottom: 40px;
-  color: rgb(81, 81, 82);
+  font-size: 18px;
   z-index: 2;
 }
 .hero .screen .bttn {
@@ -405,8 +449,8 @@ footer .first-sect .footer li:nth-child(1) {
   font-size: 20px;
 }
 footer .first-sect .footer li a {
-  color: var(--text);
   line-height: 30px;
+  color: var(--text);
   transition: 0.4s;
 }
 footer .first-sect .footer li a:hover {
@@ -450,23 +494,42 @@ Brands Setup
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  padding: 15vh 0 20px;
   flex-direction: column;
-  padding: 15vh 40px 40px;
+  overflow: hidden;
   gap: 10px;
 }
 .trust h3 {
+  font-weight: 700;
   font-size: 24px;
-  font-weight: 500;
+}
+.trust .group {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 .trust .brands {
-  animation: carousel 30s linear forwards infinite;
+  animation: carousel 20s linear infinite;
+  position: absolute;
+  transition: 0.3s;
+  width: 200%;
   display: flex;
-  gap: 40px;
+}
+.trust .brands:hover {
+  animation-play-state: paused;
+}
+.trust .brands .set1, .trust .brands .set2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 50%;
 }
 .trust .brands img {
-  width: 140px;
-  height: 140px;
+  width: 120px;
+  height: 100px;
 }
 .trust .tools h3 {
   padding-bottom: 30px;
@@ -499,8 +562,8 @@ Brands Setup
   height: 80px;
 }
 .trust .tools .cards .card h5 {
-  font-size: 18px;
   font-weight: 500;
+  font-size: 18px;
 }
 .trust .tools .cards .card p {
   font-size: 13px;
@@ -513,27 +576,20 @@ Brands Setup
 .trust .tools .cards .card a:hover {
   color: var(--cta);
 }
-.trust .tools .cards .next {
-  font-size: 20px;
-  font-weight: 500;
-  position: relative;
-  bottom: 40%;
-  height: 40px;
-}
 
 /*=========================================
 About Setup
 =========================================*/
 .main .topH2 {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 400px;
   font-weight: 700;
-  color: var(--cta);
+  position: relative;
   font-style: italic;
+  color: var(--cta);
   font-size: 55px;
+  height: 400px;
 }
 .main .topH2 h2 {
   z-index: 2;
@@ -542,9 +598,9 @@ About Setup
   content: "";
   position: absolute;
   top: 0;
+  left: 0;
   right: 0;
   bottom: 0;
-  left: 0;
   filter: brightness(0.7);
   background-image: url("/images/backgrounds/about-bg.jpg");
   background-size: cover;
@@ -558,14 +614,14 @@ About Setup
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
-  overflow-x: hidden;
   padding: 40px 40px 80px;
+  overflow-x: hidden;
 }
 .main .about h2 {
-  font-weight: 700;
   transform: rotate(-90deg);
-  color: var(--cta);
+  font-weight: 700;
   font-style: italic;
+  color: var(--cta);
   font-size: 50px;
   height: 60px;
 }
@@ -601,15 +657,14 @@ About Setup
   background-position: center;
   background-repeat: no-repeat;
   overflow-x: hidden;
-  text-align: start;
   padding: 0 60px;
+  text-align: start;
 }
 .new-section h3 {
-  font-weight: 700;
   padding-bottom: 30px;
   color: var(--text-blac);
-  font-style: italic;
-  font-size: 40px;
+  font-weight: 700;
+  font-size: 24px;
 }
 .new-section .about-cards {
   padding-bottom: 30px;
@@ -625,8 +680,8 @@ About Setup
   background: rgb(245, 245, 245);
   flex-direction: column;
   border-radius: 20px;
-  position: relative;
   overflow: hidden;
+  position: relative;
   transition: 0.3s;
   width: 100%;
   gap: 10px;
@@ -640,12 +695,12 @@ About Setup
   height: 220px;
 }
 .new-section .about-cards .about-card h5 {
-  font-size: 18px;
   font-weight: 500;
+  font-size: 18px;
 }
 .new-section .about-cards .about-card p {
-  font-size: 13px;
   padding: 10px 15px 30px;
+  font-size: 13px;
 }
 .new-section .about-cards .about-card .btn {
   padding-bottom: 20px;
@@ -659,23 +714,23 @@ Reviews Setup
   height: auto;
   display: flex;
   align-items: center;
-  flex-direction: column;
   padding: 100px 0 50px;
+  flex-direction: column;
   position: relative;
 }
 .review-cards h3 {
-  font-size: 24px;
-  font-weight: 500;
   padding-bottom: 25px;
+  font-weight: 700;
+  font-size: 24px;
 }
 .review-cards .review-card {
   box-shadow: 1px 1px 6px rgb(153, 153, 153);
   display: flex;
   align-items: center;
+  background: rgb(245, 245, 245);
   flex-direction: column;
   border-radius: 20px;
   overflow: hidden;
-  background: rgb(245, 245, 245);
   width: 500px;
 }
 .review-cards .review-card img {
@@ -683,17 +738,17 @@ Reviews Setup
   height: 300px;
 }
 .review-cards .review-card h6 {
-  font-size: 18px;
-  font-weight: 500;
   padding: 20px 0 10px;
+  font-weight: 500;
+  font-size: 18px;
 }
 .review-cards .review-card .head-info {
   font-size: 10.3px;
 }
 .review-cards .review-card .info {
-  font-size: 13px;
-  font-weight: 500;
   padding: 15px 20px 30px;
+  font-weight: 500;
+  font-size: 13px;
 }
 
 #blog {
@@ -740,9 +795,9 @@ Login page Styles
   padding-bottom: 60px;
 }
 .form h1 {
-  font-size: 52px;
-  font-weight: 300;
   color: var(--white);
+  font-weight: 300;
+  font-size: 52px;
 }
 .form .spec1 {
   margin-bottom: 45px;
@@ -794,8 +849,21 @@ Login page Styles
   color: var(--cta);
 }
 .form .login-btn {
-  padding: 15px 50px;
+  background: var(--background-light-gray);
+  box-shadow: 4px 8px 8px rgb(8, 8, 8);
+  border-radius: 30px;
+  font-weight: 600;
+  padding: 13px 0;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
   width: 100%;
+}
+.form .login-btn:hover {
+  box-shadow: inset 9px 9px 12px rgb(204, 204, 204), inset -9px -9px 12px var(--white);
+  background: var(--white);
+  transform: scale(0.97);
+  color: var(--cta);
 }
 .form .register-link {
   margin: 25px 0 10px;
@@ -817,4 +885,371 @@ Login page Styles
 }
 .form .spec2 {
   margin-bottom: 35px;
+}
+
+/*=========================================
+Home page Styles
+=========================================*/
+header .profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-light-gray);
+  border-radius: 50%;
+  min-height: 40px;
+  min-width: 40px;
+}
+header .profile img {
+  width: 26px;
+  height: 26px;
+}
+
+#home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+#home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  filter: brightness(0.7);
+  animation: slideshow2 30s ease-in forwards infinite;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#home .search-form {
+  position: relative;
+}
+#home .search-form input {
+  box-shadow: 3px 8px 8px rgb(0, 0, 0);
+  background-color: rgba(0, 0, 84, 0.43);
+  width: 550px;
+  height: 50px;
+  padding: 4px 20px 0 60px;
+  border-radius: 30px;
+  text-align: start;
+  color: var(--cta);
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+  outline: none;
+}
+#home .search-form input::placeholder {
+  color: rgb(158, 158, 158);
+}
+#home .search-form input:hover {
+  background: rgba(93, 93, 126, 0.61);
+}
+#home .search-form img {
+  width: 40px;
+  height: 45px;
+  transform: translateY(-50%);
+  filter: brightness(1.4);
+  position: absolute;
+  left: 15px;
+  top: 50%;
+}
+
+#categories {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  position: relative;
+}
+#categories h3 {
+  margin: 40px 0 20px;
+  font-weight: 700;
+  color: var(--text);
+  font-size: 22px;
+}
+#categories .boxes {
+  grid-template-columns: repeat(3, 1fr);
+  display: grid;
+  gap: 20px;
+}
+#categories .boxes span {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 200px;
+  position: relative;
+  cursor: pointer;
+}
+#categories .boxes span h6 {
+  position: relative;
+  color: var(--cta);
+  font-size: 22px;
+}
+#categories .boxes span::before {
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  filter: brightness(0.6);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#categories .boxes span:first-child::before {
+  background-image: url("/Images/backgrounds/cat-all.jpg");
+}
+#categories .boxes span:nth-child(2)::before {
+  background-image: url("/Images/backgrounds/cat-starch.jpg");
+}
+#categories .boxes span:nth-child(3)::before {
+  background-image: url("/Images/backgrounds/cat-meat.jpg");
+}
+#categories .boxes span:nth-child(4)::before {
+  background-image: url("/Images/backgrounds/cat-pastries.jpg");
+}
+#categories .boxes span:last-child::before {
+  background-image: url("/Images/backgrounds/cat-fruits.jpg");
+}
+
+#favorites {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+#favorites h3 {
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: var(--text);
+  font-size: 22px;
+}
+#favorites .favs {
+  position: relative;
+  display: flex;
+  gap: 20px;
+}
+#favorites .favs .fav {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  background-color: rgba(50, 50, 56, 0.25);
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 450px;
+}
+#favorites .favs .fav #fav1 {
+  width: 100%;
+  height: 250px;
+  transition: 0.3s;
+}
+#favorites .favs .fav #fav1:hover {
+  transform: scale(1.05);
+}
+#favorites .favs .fav h4 {
+  margin: 20px 0 0 10px;
+}
+#favorites .favs .fav .ratings {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0 20px 10px;
+  gap: 3px;
+}
+#favorites .favs .fav .ratings img {
+  width: 10px;
+  height: 10px;
+}
+#favorites .favs .fav .ratings p {
+  margin-left: 30px;
+  font-size: 12.5px;
+  color: var(--text);
+}
+
+/*=========================================
+Profile page Styles
+=========================================*/
+#head {
+  width: 200px;
+  border-radius: 0 40px 40px 0;
+}
+
+.dash-hero {
+  background: linear-gradient(to right, rgb(240, 240, 240), rgb(143, 141, 141), rgb(215, 213, 213));
+  width: 100%;
+  height: 100vh;
+  grid-template-columns: 0.6fr 1.2fr 1.1fr;
+  color: var(--text);
+  padding: 30px;
+  display: grid;
+  gap: 30px;
+}
+.dash-hero .left, .dash-hero .right, .dash-hero .middle {
+  flex-direction: column;
+}
+.dash-hero .left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dash-hero .left h2 {
+  background: rgba(128, 128, 128, 0.07);
+  color: rgb(223, 146, 87);
+  margin-bottom: 30px;
+  border-radius: 10px;
+  font-weight: 300;
+  font-size: 40px;
+  padding: 10px;
+}
+.dash-hero .left .bars {
+  flex-direction: column;
+  display: flex;
+  width: 60%;
+  gap: 30px;
+}
+.dash-hero .left .bars button, .dash-hero .left .bars .right .profile-submit, .dash-hero .right .left .bars .profile-submit, .dash-hero .left .bars header .profile, header .dash-hero .left .bars .profile {
+  min-width: 100%;
+}
+.dash-hero .left .bars button.Active, .dash-hero .left .bars .right .Active.profile-submit, .dash-hero .right .left .bars .Active.profile-submit, .dash-hero .left .bars header .Active.profile, header .dash-hero .left .bars .Active.profile {
+  background: rgba(0, 0, 84, 0.43);
+  transform: scale(1.2);
+  color: var(--white);
+}
+.dash-hero .left .bars button.Active:hover, .dash-hero .left .bars .right .Active.profile-submit:hover, .dash-hero .right .left .bars .Active.profile-submit:hover, .dash-hero .left .bars header .Active.profile:hover, header .dash-hero .left .bars .Active.profile:hover {
+  box-shadow: 2px 3px 8px rgb(100, 99, 99);
+  background: rgba(0, 0, 84, 0.43);
+  transform: scale(1.2);
+  color: var(--white);
+}
+.dash-hero .middle {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.dash-hero .middle img {
+  box-shadow: -20px 20px 8px rgb(118, 117, 117);
+  width: 100%;
+  height: 80vh;
+  border-radius: 50% 30% 0 50%;
+}
+.dash-hero .right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dash-hero .right .profile-details {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 60px;
+  position: relative;
+  width: 100%;
+}
+.dash-hero .right .profile-details h3 {
+  font-size: 24px;
+}
+.dash-hero .right .profile-details h5 {
+  margin: 10px 0 6px;
+  font-size: 18px;
+}
+.dash-hero .right .profile-details .mail {
+  color: rgba(0, 0, 84, 0.43);
+  font-size: 13px;
+}
+.dash-hero .right .profile-details p {
+  text-align: start;
+}
+.dash-hero .right .profile-details table {
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+.dash-hero .right .profile-details table th {
+  border: 1px solid #dbdbdb;
+  padding: 8px 20px;
+}
+.dash-hero .right .profile-details table td {
+  border-bottom: 1px solid #dbdbdb;
+  padding: 5px 15px;
+  text-align: start;
+}
+.dash-hero .right .profile-details table #percen {
+  text-align: center;
+}
+.dash-hero .right .profile-edit {
+  background: linear-gradient(45deg, rgb(75, 75, 126), rgb(247, 172, 114));
+  flex-direction: column;
+  border-radius: 0 20px;
+  position: absolute;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  display: none;
+}
+.dash-hero .right .profile-edit .personal-info, .dash-hero .right .profile-edit .diet-comp, .dash-hero .right .profile-edit .tolerance, .dash-hero .right .profile-edit .meal-info {
+  flex-direction: column;
+  display: flex;
+}
+.dash-hero .right .profile-edit .personal-info, .dash-hero .right .profile-edit .tolerance {
+  gap: 20px;
+}
+.dash-hero .right .profile-edit .diet-comp {
+  gap: 10px;
+}
+.dash-hero .right .profile-edit .meal-info {
+  gap: 40px;
+}
+.dash-hero .right .profile-edit .input-box {
+  position: relative;
+  width: 300px;
+}
+.dash-hero .right .profile-edit .input-box label {
+  transform: translateY(-50%);
+  color: rgb(211, 211, 211);
+  pointer-events: none;
+  position: absolute;
+  font-size: 12px;
+  transition: 0.3s;
+  left: 10px;
+  top: -8px;
+}
+.dash-hero .right .profile-edit .input-box input {
+  width: 100%;
+  height: 30px;
+  border: 1px solid rgb(223, 218, 218);
+  color: rgb(211, 211, 211);
+  background: transparent;
+  padding: 0 20px 0 20px;
+  border-radius: 5px;
+  text-align: start;
+  font-size: 15px;
+  outline: none;
+}
+.dash-hero .right .profile-edit .input-box input::placeholder {
+  color: rgb(202, 201, 201);
+  font-size: 12px;
+}
+.dash-hero .right .profile-edit .input-box #percents-label {
+  transform: translateY(-50%);
+  top: 50%;
+}
+.dash-hero .right .profile-edit .input-box .percents {
+  text-align: center;
+  width: 30px;
+  padding: 0;
 }

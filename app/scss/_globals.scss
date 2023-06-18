@@ -27,30 +27,30 @@ Color Definitions
 
 body {
     background: var(--white);
-    position: relative;
     overflow-x: hidden;
+    position: relative;
 }
 /*=========================================
 Button Styles
 =========================================*/
 button {
-    transition: .3s;
+    background: var(--background-light-gray);
+    @include Display-align-justify ("inline-flex", "center", "center");
+    box-shadow: 2px 3px 8px rgb(100 99 99);
+    color: var(--text-color-dark);
     border-radius: 30px;
     min-width: 100px;
     min-height: 40px;
-    background: var(--background-light-gray);
-    box-shadow: 4px 8px 8px rgb(153 153 153);
-    @include Display-align-justify ("inline-flex", "center", "center");
-    @include font-weight("medium");
-    color: var(--text-color-dark);
-    cursor: pointer;
+    font-weight: 700;
     position: relative;
+    cursor: pointer;
+    transition: .3s;
     z-index: 2;
 
     &:hover {
-        transform: scale(.97);
         background: var(--white);
         box-shadow: inset 9px 9px 12px rgb(204, 204, 204), inset -9px -9px 12px var(--white);
+        transform: scale(.97);
         color: var(--cta);
     }
 }

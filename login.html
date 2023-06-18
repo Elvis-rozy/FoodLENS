@@ -22,14 +22,14 @@
     ==================== Form Section  ====================
         -->
     <section class="form">
-        <form action="">
+        <form id="login-form">
             <h1 class="h1A">Login</h1>
             <div class="input-box spec1">
-                <input class="input" type="text" name="email" required>
-                <label for="email">Email</label>
+                <input class="input" type="email" id="email" name="email" required>
+                <label for="email">Username or Email</label>
             </div>
             <div class="input-box spec1">
-                <input class="input" type="text" name="password" required>
+                <input class="input" type="password" id="password" name="password" required>
                 <label for="password">Password</label>
             </div>
             <div class="remember-forgot">
@@ -39,7 +39,7 @@
             <!--
             ==================== Submit Button  ====================
             -->
-            <a href="#"><button type="submit" class="login-btn">Log In</button></a>
+            <input type="submit" class="login-btn" value="Login">
             <div class="register-link">
                 <p>Don't have an account? <a href="signup.html">Register</a></p>
             </div>

@@ -15,60 +15,6 @@ Desktop hide setup
     }
 }
 /*=====================================
-text font-size setup
-=====================================*/
-@mixin textFont-size ($size) {
-
-    @if $size == large {
-        font-size: 22px;
-    }
-    @else if $size == medium {
-        font-size: 20px;
-    }
-    @else if $size == small {
-        font-size: 13px;
-    }
-    @else {
-        font-size: 10px; //Extra Small
-    }
-}
-/*=====================================
-text font-weight setup
-=====================================*/
-@mixin font-weight ($size) {
-
-    @if $size == large {
-        font-weight: 900;
-    }
-    @else if $size == medium {
-        font-weight: 700;
-    }
-    @else if $size == small {
-        font-weight: 500;
-    }
-    @else {
-        font-weight: 300; //Extra Small
-    }
-}
-/*=====================================
-Heading font-size setup
-=====================================*/
-@mixin headingFont-size ($size) {
-
-    @if $size == large {
-        font-size: 52px;
-    }
-    @else if $size == medium {
-        font-size: 24px;
-    }
-    @else if $size == small {
-        font-size: 18px;
-    }
-    @else {
-        font-size: 20px;
-    }
-}
-/*=====================================
 Flex setup
 =====================================*/
 @mixin Display-align-justify ($placement, $align, $justify) {
