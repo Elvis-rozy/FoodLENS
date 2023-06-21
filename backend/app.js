@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(cors())
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/foods", authenticateUser, foodRoute);
-app.use("/api/v1/all-foods",allFoods)
+app.use("/api/v1/all-foods-item",allFoods)
 
 app.use(errorHandler);
 app.use(notFound);
