@@ -2,7 +2,8 @@
 const Food = require("../model/Food");
 const { StatusCodes } = require("http-status-codes");
 const User = require("../model/User");
-const { BadrequestError } = require("../errors");
+const { BadrequestError ,NotFound} = require("../errors");
+
 
 //all food items controller
 const getAllFoods = async (req, res) => {
@@ -189,12 +190,13 @@ const deleteFood = async (req, res) => {
     user: { userId },
     params: { id: foodId },
   } = req;
-  const food = await NewFood.findByIdAndRemove({
+  const food = await Food.findByIdAndRemove({
     _id: foodId,
     createdBy: userId,
   });
+  res.status(StatusCodes.ACCEPTED).json("item deleted successfully")
   if (!food) {
-    throw new NotFoundError(`No food with id ${foodId}`);
+    throw new NotFound(`No food with id ${foodId}`);
   }
   res.status(StatusCodes.OK).send();
 };
