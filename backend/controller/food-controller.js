@@ -50,7 +50,7 @@ const getAllFoods = async (req, res) => {
     queryObj.category = { $regex: search, $options: "i" };
   }
 
-  let result = await Food.find(queryObj);
+  let result = Food.find(queryObj);
 
   //sorting
   if (sort === "a-z") {
@@ -65,6 +65,7 @@ const getAllFoods = async (req, res) => {
   const page = Number(req.query.page) || 1;
   const limit = Number(req.query.limit) || 5;
   const skip = (page - 1) * limit;
+  const endIndex=page*limit
 
   result = result.skip(skip).limit(limit);
 
@@ -129,7 +130,7 @@ const getAllFoodsByUser = async (req, res) => {
     queryObj.category = { $regex: search, $options: "i" };
   }
 
-  let result = await Food.find(queryObj);
+  let result = Food.find(queryObj);
 
   //sorting
   if (sort === "a-z") {
@@ -144,6 +145,7 @@ const getAllFoodsByUser = async (req, res) => {
   const page = Number(req.query.page) || 1;
   const limit = Number(req.query.limit) || 5;
   const skip = (page - 1) * limit;
+  const endIndex=page*limit
 
   result = result.skip(skip).limit(limit);
 

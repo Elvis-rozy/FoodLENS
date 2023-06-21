@@ -14,7 +14,6 @@ const UserSchema = new mongoose.Schema(
       type: String,
       maxlength: 20,
       minlength: 6,
-      required: [true, "Please Provide Your secondname "],
     },
     age: { type: Number },
     dob: { type: Date },

@@ -10,7 +10,8 @@ const registerUser = async (req, res) => {
   res.status(StatusCodes.OK).json({
     user: {
       email: user.email,
-      username: user.username,
+      firstname: user.firstname,
+      secondname: user.secondname,
       age: user.age,
       dob: user.dob,
       gender: user.gender,
@@ -45,7 +46,8 @@ const login = async (req, res) => {
   res.status(StatusCodes.OK).json({
     user: {
       email: user.email,
-      username: user.username,
+      firstname: user.firstname,
+      secondname: user.secondname,
       age: user.age,
       dob: user.dob,
       gender: user.gender,
@@ -58,7 +60,7 @@ const login = async (req, res) => {
 };
 
 const updateUserInfo = async (req, res) => {
-  const { email, diet, allergies, intolerance, age, username, dob, gender } =
+  const { email, diet, allergies, intolerance, age, firstname, secondname,dob, gender } =
     req.body;
 
   let user = await User.findOne({ _id: req.user.userId });
@@ -68,7 +70,8 @@ const updateUserInfo = async (req, res) => {
   user.allergies = allergies;
   user.intolerance = intolerance;
   user.age = age;
-  user.username = username;
+  user.firstname = firstname;
+  user.secondname = secondname;
   user.dob = dob;
   user.gender = gender;
 
@@ -78,7 +81,8 @@ const updateUserInfo = async (req, res) => {
   res.status(StatusCodes.OK).json({
     user: {
       email: user.email,
-      username: user.username,
+      firstname: user.firstname,
+      secondname: user.secondname,
       age: user.age,
       dob: user.dob,
       gender: user.gender,
@@ -86,6 +90,7 @@ const updateUserInfo = async (req, res) => {
       intolerance: user.intolerance,
       allergies: user.allergies,
       token,
+     
     },
   });
 };
