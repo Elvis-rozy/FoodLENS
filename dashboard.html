@@ -29,9 +29,9 @@
             -->
             <div class="mobile-menu hide-for-desktop">
                 <ul class="lnk">
-                    <li class="hide-for-desktop lnk"><a href="#">Profile</a></li><!--
-                --><li class="hide-for-desktop lnk"><a href="#">Edit Profile</a></li> <!--
-                --><li class="hide-for-desktop lnk"><a href="home.html">Home</a></li> <!--
+                    <li class="hide-for-desktop lnk"><a href="home.html">Home</a></li> <!--
+                --><li class="hide-for-desktop lnk Edit"><a href="#">Profile</a></li><!--
+                --><li class="hide-for-desktop lnk edit"><a href="#">Edit Profile</a></li> <!--
                 --><li class="hide-for-desktop lnk"><a href="categories.html">Categories</a></li><!--
                 --><li class="hide-for-desktop lnk"><a href="#contact">Contact Us</a></li>
                 </ul>
@@ -40,17 +40,18 @@
     </header>
     <section class="dash-hero">
         <div class="left">
+            <img class="dash-pic hide-for-desktop" src="Images/profiles/profile-Hero.jpg" alt="profile image">
             <h2>Hi Tristan</h2>
             <div class="bars">
-                <a href="#"><button class="edit-btn Active">Dashboard</button></a>
-                <a href="#"><button class="edit-btn">Edit Profile</button></a>
-                <a href="home.html"><button class="edit-btn">Home</button></a>
-                <a href="categories.html"><button class="edit-btn">Categories</button></a>
-                <a href="#contact"><button class="edit-btn">Contact Us</button></a>
+                <a id="editt"  href="#"><button class="Active">Dashboard</button></a>
+                <a id="edit" href="#"><button class="edit-btn">Edit Profile</button></a>
+                <a href="home.html"><button>Home</button></a>
+                <a href="categories.html"><button>Categories</button></a>
+                <a href="#contact"><button>Contact Us</button></a>
             </div>
         </div>
         <div class="middle">
-            <img src="Images/profiles/profile-Hero.jpg" alt="">
+            <img src="Images/profiles/profile-Hero.jpg" alt="profile image">
         </div>
         <div class="right">
             <div class="profile-details">
@@ -89,7 +90,7 @@
                 <h5>Allergens</h5>
                 <p>Dairy, Peanut and Yeast</p>
             </div>
-            <div class="profile-edit">
+            <div class="profile-edit invisible">
                 <div class="personal-info">
                     <h3>Personal Info</h3>
                     <div class="input-box spec1">
@@ -145,7 +146,7 @@
       -->
       <footer id="contact">
         <div class="first-sect">
-            <a href="#"><img class="footer_logo" src="Images/logo/Logo.png" alt=""></a>
+            <a href="#"><img class="footer_logo" src="Images/logo/Logo.png" alt="Foodlens logo"></a>
             <ul class="footer">
                 <li><a href="#">Help</a></li>
                 <li><a href="#">Privacy Policy</a></li>
@@ -175,5 +176,6 @@
     ==================== JavaScript File  ====================
       -->
     <script src="app/js/script.js"></script>
+    <script src="app/js/dash.js"></script>
 </body>
 </html>

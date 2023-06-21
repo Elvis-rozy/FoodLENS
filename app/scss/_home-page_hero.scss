@@ -1,5 +1,4 @@
 header .profile {
-    @include Display-align-justify ("flex", "center", "center");
     background-color: var(--background-light-gray);
     border-radius: 50%;
     min-height: 40px;
@@ -60,6 +59,25 @@ header .profile {
             position: absolute;
             left: 15px;
             top: 50%;
+        }
+    }
+}
+/*
+=========================================
+Mobile and Tab setup
+=========================================
+*/
+@media (max-width: 950px) {
+
+    header .profile {
+        display: none;
+    }
+
+    #home {
+        .search-form {
+            input {
+                width: 350px;
+            }
         }
     }
 }

@@ -44,3 +44,21 @@ Reviews Setup
         }
     }
 }
+/*
+=========================================
+Mobile and Tab setup
+=========================================
+*/
+@media (max-width: 550px) {
+
+    .review-cards {
+
+        h3 {
+            font-size: 20px;
+        }
+
+        .review-card {
+            width: 310px;
+        }
+    }
+}

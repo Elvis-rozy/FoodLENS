@@ -60,3 +60,24 @@ header {
         }
     }
 }
+/*
+=========================================
+Mobile and Tab setup
+=========================================
+*/
+@media (max-width: 950px) {
+
+    header {
+        @include width-height ("100vw", "auto");
+
+        nav {
+            @include width-height ("100%", "10vh");
+            padding: 10px 20px;
+
+            .header_logo {
+                @include width-height ("60px", "60px");
+                margin-top: 10px;
+            }
+        }
+    }
+}

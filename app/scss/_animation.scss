@@ -4,9 +4,7 @@ Brands Carousel Animation
 @keyframes carousel {
     from { left: 0; }
     to { left: -100%; }
-/*     from { transform: translateX(50%); }
-    to { transform: translateX(-10%); }
- */}
+}
 /*=========================================
 Hero Image Slideshow Animation
 =========================================*/
@@ -60,12 +58,4 @@ Slide-in Animation Styles
     transform: translateX(0);
     filter: blur(0);
     opacity: 1;
-}
-
-
-
-.favs.active {
-    cursor: grabbing;
-    cursor: -webkit-grabbing;
-    transform: scale(1.02);
 }

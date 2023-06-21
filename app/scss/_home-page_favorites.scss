@@ -2,7 +2,6 @@
     @include Display-align-justify ("flex", "center", "center");
     @include width-height ("100%", "100vh");
     flex-direction: column;
-    overflow-x: hidden;
 
     h3 {
         margin-bottom: 20px;
@@ -12,9 +11,13 @@
     }
 
     .favs {
-        position: relative;
-        display: flex;
-        gap: 20px;
+        overscroll-behavior-inline: contain;
+        grid-auto-columns: 36%;
+        grid-auto-flow: column;
+        overflow-x: auto;
+        padding: 30px;
+        display: grid;
+        gap: 30px;
 
         .fav {
             @include Display-align-justify ("flex", "start", "center");
@@ -22,7 +25,6 @@
             flex-direction: column;
             border-radius: 10px;
             overflow: hidden;
-            width: 450px;
 
             #fav1 {
                 @include width-height ("100%", "250px");
@@ -52,6 +54,31 @@
                     color: var(--text)
                 }
             }
+        }
+    }
+}
+
+.snaps-inline {
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: 30px;
+}
+
+.snaps-inline > * {
+    scroll-snap-align: start;
+}
+/*
+=========================================
+Mobile and Tab setup
+=========================================
+*/
+@media (max-width: 950px) {
+
+    #favorites {
+        padding: 13vh 0;
+        height: auto;
+
+        .favs {
+            grid-auto-columns: 86%;
         }
     }
 }

@@ -57,3 +57,24 @@ footer  {
         }
     }
 }
+/*
+=========================================
+Mobile and Tab setup
+=========================================
+*/
+@media (max-width: 950px) {
+
+    footer {
+        .first-sect {
+            display: block;
+        }
+
+        .copy_right {
+            display: block;
+
+            .links {
+                margin-top: 30px;
+            }
+        }
+    }
+}

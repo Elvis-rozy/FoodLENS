@@ -8,7 +8,7 @@ Brands Setup
     @include width-height ("100%", "100vh");
     padding: 15vh 0 20px;
     flex-direction: column;
-    overflow: hidden;
+    overflow-x: hidden;
     gap: 10px;
 
     h3 {
@@ -18,7 +18,6 @@ Brands Setup
 
     .group {
         @include width-height ("100%", "100px");
-        @include Display-align ("flex", "center");
         position: relative;
     }
 
@@ -95,6 +94,23 @@ Brands Setup
                     }
                 }
             }
+        }
+    }
+}
+/*=========================================
+Mobile and Tab setup
+=========================================*/
+@media (max-width: 950px) {
+
+    .trust {
+        height: auto;
+
+        .brands {
+            width: 350%;
+        }
+
+        .cards {
+            flex-direction: column;
         }
     }
 }

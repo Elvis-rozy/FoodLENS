@@ -1,13 +1,16 @@
+/*=========================================
+Dashboard Setup
+=========================================*/
 #head {
-    width: 200px;
     border-radius: 0 40px 40px 0;
+    width: 200px;
 }
 
 .dash-hero {
     background: linear-gradient(to right, rgb(240, 240, 240),
     rgb(143 141 141), rgb(215 213 213));
     @include width-height ("100%", "100vh");
-    grid-template-columns: .6fr 1.2fr 1.1fr;
+    grid-template-columns: .6fr 1.1fr 1.2fr;
     color: var(--text);
     padding: 30px;
     display: grid;
@@ -20,13 +23,18 @@
     .left {
         @include Display-align-justify ("flex", "center", "center");
 
+        .dash-pic {
+            @include width-height ("150px", "150px");
+            border-radius: 50% 30% 0 50%;
+        }
+
         h2 {
             background: rgb(128 128 128 / 7%);
             color: rgb(223 146 87);
             margin-bottom: 30px;
             border-radius: 10px;
             font-weight: 300;
-            font-size: 40px;
+            font-size: 34px;
             padding: 10px;
         }
 
@@ -56,11 +64,11 @@
     }
 
     .middle {
-        @include Display-align-justify ("flex", "center", "end");
+        @include Display-align-justify ("flex", "center", "center");
 
         img {
             box-shadow: -20px 20px 8px rgb(118, 117, 117);
-            @include width-height ("100%", "80vh");
+            @include width-height ("100%", "70vh");
             border-radius: 50% 30% 0 50%;
         }
     }
@@ -73,9 +81,8 @@
             flex-direction: column;
             margin-top: 60px;
             position: relative;
+            transition: 1s;
             width: 100%;
-
-            //display: none;
 
             h3 {
                 font-size: 24px;
@@ -122,11 +129,9 @@
             border-radius: 0 20px;
             position: absolute;
             padding: 20px;
+            transition: 1s;
             display: flex;
             gap: 20px;
-            //transform: translateX(200%);
-
-            display: none;
 
             .personal-info, .diet-comp, .tolerance, .meal-info {
                 flex-direction: column;
@@ -147,7 +152,7 @@
 
             .input-box {
                 position: relative;
-                width: 300px;
+                width: 350px;
 
                 label {
                     transform: translateY(-50%);
@@ -194,4 +199,79 @@
             @extend button ;
         }
     }
+}
+
+@media (max-width: 950px) {
+
+    .dash-hero {
+        grid-template-columns: .7fr 1.3fr;
+
+        .middle {
+            display: none;
+        }
+    }
+
+    #head {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    @media (max-width: 550px) {
+
+        .dash-hero {
+            @include Display-align ("flex", "start");
+            padding: 10vh 20px 30px;
+            flex-direction: column;
+
+            .left {
+                flex-direction: row;
+
+                h2 {
+                    margin-bottom: 0;
+                    font-size: 34px;
+                }
+
+                .dash-pic {
+                    @include width-height ("100px", "100px");
+                }
+
+                .bars {
+                    display: none;
+                }
+            }
+
+            .right {
+                justify-content: start;
+                width: 100%;
+
+                .profile-details {
+                    margin-top: 0;
+                }
+
+                .profile-edit {
+                   @include width-height ("100%", "100vh");
+                    align-items: center;
+                    border-radius: 0;
+                    top: 10vh;
+                }
+
+                .profile-submit {
+                    min-width: 300px;
+                }
+            }
+        }
+
+        footer .copy_right {
+            padding: 30px 10px;
+        }
+    }
+}
+
+.invisible {
+    filter: blur(50px);
+    transform: translateX(200%);
+}
+
+.visible {
+    transform: translateX(0);
 }

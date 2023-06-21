@@ -205,9 +205,6 @@ Brands Carousel Animation
   to {
     left: -100%;
   }
-  /*     from { transform: translateX(50%); }
-      to { transform: translateX(-10%); }
-   */
 }
 /*=========================================
 Hero Image Slideshow Animation
@@ -304,12 +301,6 @@ Slide-in Animation Styles
   opacity: 1;
 }
 
-.favs.active {
-  cursor: grabbing;
-  cursor: -webkit-grabbing;
-  transform: scale(1.02);
-}
-
 /*=========================================
 Global Styles
 =========================================*/
@@ -376,28 +367,38 @@ header nav .btns {
   gap: 20px;
 }
 
+/*
+=========================================
+Mobile and Tab setup
+=========================================
+*/
+@media (max-width: 950px) {
+  header {
+    width: 100vw;
+    height: auto;
+  }
+  header nav {
+    width: 100%;
+    height: 10vh;
+    padding: 10px 20px;
+  }
+  header nav .header_logo {
+    width: 60px;
+    height: 60px;
+    margin-top: 10px;
+  }
+}
 /*=========================================
 Hero Setup
 =========================================*/
-.hero {
-  width: 100vw;
-  height: 100vh;
+.screen {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
   position: relative;
-}
-.hero .screen {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
   height: 100vh;
-  flex-direction: column;
-  position: relative;
 }
-.hero .screen::before {
+.screen::before {
   content: "";
   position: absolute;
   top: 0;
@@ -410,23 +411,40 @@ Hero Setup
   background-position: center;
   background-repeat: no-repeat;
 }
-.hero .screen h1 {
+.screen h1 {
   padding-bottom: 20px;
   color: var(--white);
   position: relative;
   font-size: 52px;
-  z-index: 5;
 }
-.hero .screen p {
+.screen p {
   color: rgb(227, 227, 227);
   padding-bottom: 40px;
+  position: relative;
   font-size: 18px;
-  z-index: 2;
 }
-.hero .screen .bttn {
+.screen .bttn {
   padding: 15px 40px;
 }
 
+/*
+=========================================
+Mobile and Tab setup
+=========================================
+*/
+@media (max-width: 550px) {
+  .hero .screen h1 {
+    font-size: 24px;
+    margin: 0 10px;
+  }
+  .hero .screen p {
+    font-size: 14px;
+    margin: 0 10px;
+  }
+  .hero .screen .bttn {
+    padding: 7px 40px;
+  }
+}
 /*==========================================
 Footer Setup
 ==========================================*/
@@ -479,6 +497,22 @@ footer .copy_right .links img:hover {
   opacity: 0.6;
 }
 
+/*
+=========================================
+Mobile and Tab setup
+=========================================
+*/
+@media (max-width: 950px) {
+  footer .first-sect {
+    display: block;
+  }
+  footer .copy_right {
+    display: block;
+  }
+  footer .copy_right .links {
+    margin-top: 30px;
+  }
+}
 /*=========================================
 Landing page Styles
 =========================================*/
@@ -497,7 +531,7 @@ Brands Setup
   height: 100vh;
   padding: 15vh 0 20px;
   flex-direction: column;
-  overflow: hidden;
+  overflow-x: hidden;
   gap: 10px;
 }
 .trust h3 {
@@ -507,8 +541,6 @@ Brands Setup
 .trust .group {
   width: 100%;
   height: 100px;
-  display: flex;
-  align-items: center;
   position: relative;
 }
 .trust .brands {
@@ -578,6 +610,20 @@ Brands Setup
 }
 
 /*=========================================
+Mobile and Tab setup
+=========================================*/
+@media (max-width: 950px) {
+  .trust {
+    height: auto;
+  }
+  .trust .brands {
+    width: 350%;
+  }
+  .trust .cards {
+    flex-direction: column;
+  }
+}
+/*=========================================
 About Setup
 =========================================*/
 .main .topH2 {
@@ -630,6 +676,7 @@ About Setup
   align-items: end;
   flex-direction: column;
   margin-right: 40px;
+  margin-bottom: 0;
   gap: 40px;
 }
 .main .about .first-box p {
@@ -645,8 +692,7 @@ About Setup
 .main .about .second-box p {
   padding-left: 40px;
 }
-.main .about .first-box img,
-.main .about .second-box img {
+.main .about .first-box img, .main .about .second-box img {
   width: 300px;
   height: 350px;
 }
@@ -686,6 +732,9 @@ About Setup
   width: 100%;
   gap: 10px;
 }
+.new-section .about-cards .about-card:not(:last-child) {
+  margin-bottom: 0;
+}
 .new-section .about-cards .about-card:hover {
   box-shadow: 1px 4px 6px rgb(153, 153, 153);
   transform: scale(1.1);
@@ -706,6 +755,40 @@ About Setup
   padding-bottom: 20px;
 }
 
+/*=========================================
+Mobile and Tab setup
+=========================================*/
+@media (max-width: 950px) {
+  .main .topH2 {
+    font-size: 34px;
+  }
+  .main .about {
+    display: block;
+  }
+  .main .about h2 {
+    font-size: 30px;
+    transform: rotate(0);
+  }
+  .main .about .first-box {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  .main .about .first-box p {
+    padding-right: 0;
+  }
+  .main .about .second-box {
+    margin-left: 0;
+  }
+  .main .about .second-box p {
+    padding-left: 0;
+  }
+  .main .new-section .about-cards {
+    display: block;
+  }
+  .main .new-section .about-cards .about-card:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
 /*=========================================
 Reviews Setup
 =========================================*/
@@ -751,6 +834,22 @@ Reviews Setup
   font-size: 13px;
 }
 
+/*
+=========================================
+Mobile and Tab setup
+=========================================
+*/
+@media (max-width: 550px) {
+  .review-cards h3 {
+    font-size: 20px;
+  }
+  .review-cards .review-card {
+    width: 310px;
+  }
+}
+/*=========================================
+Blog setup
+=========================================*/
 #blog {
   background: url("/Images/backgrounds/blog-bg.png");
   background-size: cover;
@@ -764,8 +863,27 @@ Reviews Setup
 }
 
 /*=========================================
+Mobile and Tab setup
+=========================================*/
+@media (max-width: 950px) {
+  #blog .new-section {
+    padding: 0 20px;
+  }
+  #blog .new-section .about-cards {
+    display: block;
+  }
+  #blog .new-section .about-cards .about-card:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+/*=========================================
 Login page Styles
 =========================================*/
+/*
+=========================================
+Login Form setup
+=========================================
+*/
 .form {
   display: flex;
   align-items: center;
@@ -880,6 +998,21 @@ Login page Styles
   color: var(--cta);
 }
 
+/*
+=========================================
+Mobile and Tab setup
+=========================================
+*/
+@media (max-width: 950px) {
+  .form .input-box {
+    width: 300px;
+  }
+}
+/*
+=========================================
+Signup Form setup
+=========================================
+*/
 .form .h1B {
   padding-bottom: 30px;
 }
@@ -891,9 +1024,6 @@ Login page Styles
 Home page Styles
 =========================================*/
 header .profile {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: var(--background-light-gray);
   border-radius: 50%;
   min-height: 40px;
@@ -958,6 +1088,19 @@ header .profile img {
   top: 50%;
 }
 
+/*
+=========================================
+Mobile and Tab setup
+=========================================
+*/
+@media (max-width: 950px) {
+  header .profile {
+    display: none;
+  }
+  #home .search-form input {
+    width: 350px;
+  }
+}
 #categories {
   display: flex;
   align-items: center;
@@ -1023,6 +1166,26 @@ header .profile img {
   background-image: url("/Images/backgrounds/cat-fruits.jpg");
 }
 
+/*
+=========================================
+Mobile and Tab setup
+=========================================
+*/
+@media (max-width: 950px) {
+  #categories {
+    padding-top: 7vh;
+    height: auto;
+  }
+  #categories .boxes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 950px) and (max-width: 550px) {
+  #categories .boxes span {
+    width: 160px;
+    height: 100px;
+  }
+}
 #favorites {
   display: flex;
   align-items: center;
@@ -1030,7 +1193,6 @@ header .profile img {
   width: 100%;
   height: 100vh;
   flex-direction: column;
-  overflow-x: hidden;
 }
 #favorites h3 {
   margin-bottom: 20px;
@@ -1039,9 +1201,13 @@ header .profile img {
   font-size: 22px;
 }
 #favorites .favs {
-  position: relative;
-  display: flex;
-  gap: 20px;
+  overscroll-behavior-inline: contain;
+  grid-auto-columns: 36%;
+  grid-auto-flow: column;
+  overflow-x: auto;
+  padding: 30px;
+  display: grid;
+  gap: 30px;
 }
 #favorites .favs .fav {
   display: flex;
@@ -1051,7 +1217,6 @@ header .profile img {
   flex-direction: column;
   border-radius: 10px;
   overflow: hidden;
-  width: 450px;
 }
 #favorites .favs .fav #fav1 {
   width: 100%;
@@ -1081,19 +1246,45 @@ header .profile img {
   color: var(--text);
 }
 
+.snaps-inline {
+  scroll-snap-type: inline mandatory;
+  scroll-padding-inline: 30px;
+}
+
+.snaps-inline > * {
+  scroll-snap-align: start;
+}
+
+/*
+=========================================
+Mobile and Tab setup
+=========================================
+*/
+@media (max-width: 950px) {
+  #favorites {
+    padding: 13vh 0;
+    height: auto;
+  }
+  #favorites .favs {
+    grid-auto-columns: 86%;
+  }
+}
 /*=========================================
 Profile page Styles
 =========================================*/
+/*=========================================
+Dashboard Setup
+=========================================*/
 #head {
-  width: 200px;
   border-radius: 0 40px 40px 0;
+  width: 200px;
 }
 
 .dash-hero {
   background: linear-gradient(to right, rgb(240, 240, 240), rgb(143, 141, 141), rgb(215, 213, 213));
   width: 100%;
   height: 100vh;
-  grid-template-columns: 0.6fr 1.2fr 1.1fr;
+  grid-template-columns: 0.6fr 1.1fr 1.2fr;
   color: var(--text);
   padding: 30px;
   display: grid;
@@ -1107,13 +1298,18 @@ Profile page Styles
   align-items: center;
   justify-content: center;
 }
+.dash-hero .left .dash-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50% 30% 0 50%;
+}
 .dash-hero .left h2 {
   background: rgba(128, 128, 128, 0.07);
   color: rgb(223, 146, 87);
   margin-bottom: 30px;
   border-radius: 10px;
   font-weight: 300;
-  font-size: 40px;
+  font-size: 34px;
   padding: 10px;
 }
 .dash-hero .left .bars {
@@ -1139,12 +1335,12 @@ Profile page Styles
 .dash-hero .middle {
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: center;
 }
 .dash-hero .middle img {
   box-shadow: -20px 20px 8px rgb(118, 117, 117);
   width: 100%;
-  height: 80vh;
+  height: 70vh;
   border-radius: 50% 30% 0 50%;
 }
 .dash-hero .right {
@@ -1159,6 +1355,7 @@ Profile page Styles
   flex-direction: column;
   margin-top: 60px;
   position: relative;
+  transition: 1s;
   width: 100%;
 }
 .dash-hero .right .profile-details h3 {
@@ -1197,9 +1394,9 @@ Profile page Styles
   border-radius: 0 20px;
   position: absolute;
   padding: 20px;
+  transition: 1s;
   display: flex;
   gap: 20px;
-  display: none;
 }
 .dash-hero .right .profile-edit .personal-info, .dash-hero .right .profile-edit .diet-comp, .dash-hero .right .profile-edit .tolerance, .dash-hero .right .profile-edit .meal-info {
   flex-direction: column;
@@ -1216,7 +1413,7 @@ Profile page Styles
 }
 .dash-hero .right .profile-edit .input-box {
   position: relative;
-  width: 300px;
+  width: 350px;
 }
 .dash-hero .right .profile-edit .input-box label {
   transform: translateY(-50%);
@@ -1252,4 +1449,290 @@ Profile page Styles
   text-align: center;
   width: 30px;
   padding: 0;
+}
+@media (max-width: 950px) {
+  .dash-hero {
+    grid-template-columns: 0.7fr 1.3fr;
+  }
+  .dash-hero .middle {
+    display: none;
+  }
+  #head {
+    width: 100%;
+    border-radius: 0;
+  }
+}
+@media (max-width: 950px) and (max-width: 550px) {
+  .dash-hero {
+    display: flex;
+    align-items: start;
+    padding: 10vh 20px 30px;
+    flex-direction: column;
+  }
+  .dash-hero .left {
+    flex-direction: row;
+  }
+  .dash-hero .left h2 {
+    margin-bottom: 0;
+    font-size: 34px;
+  }
+  .dash-hero .left .dash-pic {
+    width: 100px;
+    height: 100px;
+  }
+  .dash-hero .left .bars {
+    display: none;
+  }
+  .dash-hero .right {
+    justify-content: start;
+    width: 100%;
+  }
+  .dash-hero .right .profile-details {
+    margin-top: 0;
+  }
+  .dash-hero .right .profile-edit {
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    border-radius: 0;
+    top: 10vh;
+  }
+  .dash-hero .right .profile-submit {
+    min-width: 300px;
+  }
+  footer .copy_right {
+    padding: 30px 10px;
+  }
+}
+.invisible {
+  filter: blur(50px);
+  transform: translateX(200%);
+}
+
+.visible {
+  transform: translateX(0);
+}
+
+/*=========================================
+Profile page Styles
+=========================================*/
+header nav .search-form {
+  position: relative;
+}
+header nav .search-form input {
+  background-color: rgb(225, 225, 225);
+  width: 350px;
+  height: 35px;
+  padding: 0 10px 0 35px;
+  border-radius: 30px;
+  box-shadow: none;
+  color: var(--text);
+  text-align: start;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  outline: none;
+}
+header nav .search-form input::placeholder {
+  color: rgb(158, 158, 158);
+  font-size: 14px;
+}
+header nav .search-form input:hover {
+  background: rgb(204, 204, 204);
+}
+header nav .search-form img {
+  width: 23px;
+  height: 22px;
+  transform: translateY(-50%);
+  filter: brightness(1.4);
+  position: absolute;
+  left: 10px;
+  top: 50%;
+}
+
+.result {
+  background: url("/Images/backgrounds/features-bg.png");
+  background-size: contain;
+  background-position: top;
+  background-repeat: repeat;
+  width: 100%;
+  height: auto;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 15vh 30px 40px;
+  color: var(--text);
+  display: grid;
+  gap: 30px;
+}
+.result img {
+  width: 100%;
+  height: 300px;
+}
+.result .food-details {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  padding: 0 30px;
+  gap: 10px;
+}
+.result .food-details p {
+  text-align: start;
+}
+.result .food-details .foodInfo {
+  width: 100%;
+}
+.result .food-details .foodInfo table {
+  border-collapse: collapse;
+  margin-top: 10px;
+  width: 100%;
+}
+.result .food-details .foodInfo table td {
+  border: 1px solid #dbdbdb;
+  padding: 8px 20px;
+  text-align: start;
+}
+.result .food-details .foodInfo table .last {
+  text-align: center;
+}
+.result .nutrition-facts .cal {
+  font-weight: 700;
+  font-size: 18px;
+  padding: 10px;
+}
+.result .nutrition-facts table {
+  border-collapse: collapse;
+  margin-top: 10px;
+  width: 100%;
+}
+.result .nutrition-facts table th, .result .nutrition-facts table td {
+  border: 1px solid #dbdbdb;
+  padding: 8px 20px;
+  text-align: start;
+}
+.result .nutrition-facts table .last {
+  text-align: center;
+}
+.result .ingredients-info {
+  display: flex;
+  align-items: start;
+  justify-content:  space-between;
+  flex-direction: column;
+  text-align: start;
+  gap: 10px;
+}
+.result .ingredients-info h3 {
+  text-align: start;
+}
+.result .ingredients-info p {
+  border: 1px solid #dbdbdb;
+  padding: 10px;
+}
+
+.video-tutorial {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 0;
+}
+.video-tutorial h3 {
+  padding-bottom: 30px;
+}
+.video-tutorial .video {
+  width: 800px;
+  height: 350px;
+  position: relative;
+  transition: 0.3s;
+}
+.video-tutorial .video:hover {
+  filter: brightness(0.7);
+}
+.video-tutorial h4 {
+  padding: 10px 0;
+}
+
+.more {
+  overscroll-behavior-inline: contain;
+  grid-auto-columns: 36%;
+  grid-auto-flow: column;
+  overflow-x: auto;
+  padding: 30px;
+  display: grid;
+  gap: 30px;
+}
+.more .more-card {
+  background: rgba(128, 128, 128, 0.1019607843);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.more .more-card img {
+  width: 100%;
+  height: 250px;
+}
+.more .more-card h5 {
+  text-align: start;
+  font-size: 18px;
+  padding: 5px;
+}
+.more .more-card p {
+  padding: 0 0 10px 5px;
+  text-align: start;
+  font-size: 15px;
+}
+
+.snaps-inline {
+  scroll-snap-type: inline mandatory;
+  scroll-padding-inline: 30px;
+}
+
+.snaps-inline > * {
+  scroll-snap-align: start;
+}
+
+/*=========================================
+Profile page Styles
+=========================================*/
+.search-result {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  padding: 18vh 40px 40px;
+  flex-direction: column;
+}
+.search-result h3 {
+  margin-bottom: 15px;
+}
+.search-result .results {
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  display: grid;
+  gap: 20px;
+}
+.search-result .results .result-card {
+  background-color: rgba(149, 149, 151, 0.25);
+  width: 100%;
+  height: auto;
+  transition: 0.3s;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.search-result .results .result-card:hover {
+  box-shadow: 3px 4px 8px rgb(179, 176, 176);
+  transform: scale(1.05);
+}
+.search-result .results .result-card:hover img {
+  filter: brightness(0.5);
+}
+.search-result .results .result-card img {
+  width: 100%;
+  height: 120px;
+}
+.search-result .results .result-card h5 {
+  padding: 10px 15px 0;
+  text-align: start;
+  font-size: 15px;
+}
+.search-result .results .result-card p {
+  padding: 10px 15px 10px;
+  text-align: start;
+  font-size: 12px;
 }
