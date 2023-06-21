@@ -7,7 +7,7 @@ const UserSchema = new mongoose.Schema(
     username: {
       type: String,
       maxlength: 20,
-      minlength: 6,
+      minlength: 3,
       required: [true, "Please Provide Your firstname "],
     },
     email: {
