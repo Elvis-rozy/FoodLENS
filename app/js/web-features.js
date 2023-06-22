@@ -72,9 +72,9 @@ linK.addEventListener('click', () => {
 })
 
 
-async function fetchUserData() {
+/* async function fetchUserData() {
     try {
-        const response = await fetch ('.....', {
+        const response = await fetch ('https://.....', {
             method: 'POST',
             //what other headers or body parameters should we add here
         });
@@ -123,3 +123,4 @@ document.getElementById("signup-form").addEventListener("submit", function(event
         // You can display an error message or handle the error in a desired way
     });
 });
+ */

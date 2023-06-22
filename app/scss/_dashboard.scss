@@ -46,6 +46,7 @@ Dashboard Setup
 
             button {
                 min-width: 100%;
+                transition: .3s;
 
                 &.Active {
                     background: rgba(0, 0, 84, 0.43);
@@ -197,6 +198,7 @@ Dashboard Setup
 
         .profile-submit {
             @extend button ;
+            width: 100%;
         }
     }
 }
