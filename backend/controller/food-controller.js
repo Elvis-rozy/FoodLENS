@@ -1,5 +1,6 @@
 
 const Food = require("../model/Food");
+const UserFood = require("../model/UserFood");
 const { StatusCodes } = require("http-status-codes");
 const User = require("../model/User");
 const { BadrequestError ,NotFound} = require("../errors");
@@ -131,7 +132,7 @@ const getAllFoodsByUser = async (req, res) => {
     queryObj.category = { $regex: search, $options: "i" };
   }
 
-  let result = Food.find(queryObj);
+  let result = UserFood.find(queryObj);
 
   //sorting
   if (sort === "a-z") {
@@ -150,7 +151,7 @@ const getAllFoodsByUser = async (req, res) => {
 
   result = result.skip(skip).limit(limit);
 
-  const totalCount = await Food.countDocuments(queryObj);
+  const totalCount = await UserFood.countDocuments(queryObj);
   const numOfPages = Math.ceil(totalCount / limit);
 
   //setting content-range header
@@ -167,7 +168,7 @@ const getAllFoodsByUser = async (req, res) => {
 
 const createFood = async (req, res) => {
   req.body.createdBy = req.user.userId;
-  const newFood = await Food.create({ ...req.body });
+  const newFood = await UserFood.create({ ...req.body });
 
   res.status(StatusCodes.CREATED).json({ newFood });
 };
@@ -178,7 +179,7 @@ const getSingleFood = async (req, res) => {
     params: { id: foodId },
   } = req;
 
-  const food = await Food.findOne({ _id: foodId, createdBy: userId });
+  const food = await UserFood.findOne({ _id: foodId, createdBy: userId });
   if (!food) {
     throw new BadrequestError(`No food with id ${foodId}`);
   }
