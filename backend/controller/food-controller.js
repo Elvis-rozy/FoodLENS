@@ -191,7 +191,7 @@ const deleteFood = async (req, res) => {
     user: { userId },
     params: { id: foodId },
   } = req;
-  const food = await Food.findByIdAndRemove({
+  const food = await UserFood.findByIdAndRemove({
     _id: foodId,
     createdBy: userId,
   });
