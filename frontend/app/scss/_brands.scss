@@ -39,6 +39,11 @@ Brands Setup
 
         img {
             @include width-height ("120px", "100px");
+            transition: .3s;
+
+            &:hover {
+                transform: scale(1.1);
+            }
         }
     }
 
