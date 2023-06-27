@@ -1,8 +1,7 @@
 header .profile {
-    background-color: var(--background-light-gray);
     border-radius: 50%;
-    min-height: 40px;
-    min-width: 40px;
+    min-height: 35px;
+    min-width: 35px;
     @extend button ;
 
     & img {
@@ -22,8 +21,8 @@ header .profile {
         left: 0;
         right: 0;
         bottom: 0;
-        filter: brightness(.7);
-        animation: slideshow2 30s ease-in forwards infinite;
+        filter: brightness(.6);
+        animation: slideshow 50s ease-in forwards infinite;
         @include background-size-position-repeat ("cover", "center", "no-repeat");
     }
 
@@ -48,7 +47,7 @@ header .profile {
             }
 
             &:hover {
-                background: rgb(93 93 126 / 61%);
+                background-color: rgba(5, 5, 51, 0.678);
             }
         }
 

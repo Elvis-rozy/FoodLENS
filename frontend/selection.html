@@ -15,12 +15,12 @@
     -->
     <header>
         <nav>
-            <a href="#"><img class="header_logo" src="Images/logo/Logo.png" alt="Foodlens logo"></a>
+            <a class="logo" href="home.html"><img src="Images/logo/Logo.png" alt="Foodlens logo">FoodLENS</a>
             <ul>
                 <li class="hide-for-mobile"><a href="#">Home</a></li>
                 <li class="hide-for-mobile"><a href="#categories">Categories</a></li>
                 <li class="hide-for-mobile"><a href="#favorites">Favorites</a></li>
-                <li class="hide-for-mobile"><a href="about.html">about</a></li>
+                <li class="hide-for-mobile"><a href="about.html">About</a></li>
                 <li class="hide-for-mobile"><a href="#contact">Contact</a></li>
             </ul>
             <div class="search-form">
@@ -58,28 +58,25 @@
     <section class="result">
         <img src="Images/backgrounds/selection.jpg" alt="food image">
         <div class="food-details">
-            <h3>Food Name</h3>
+            <h3 id="foodName">Food Name</h3>
             Description
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
-                 elit. Quae dolores culpa quos sint perferendis ea
-                 elit. Quae dolores culpa quos sint perferendis ea
-                 elit. Quae dolores culpa quos sint perferendis ea
-                 elit. Quae dolores culpa quos sint perferendis ea
+            <p id="descript">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae dolores culpa quos sint perferendis ea sint perferendis ea
+                 elit. Quae dolores culpa quos sint perferendis ea elit. Quae dolores culpa quos sint perferendis ea elit. Quae dolores culpa
             </p>
             <div class="foodInfo">
                 <table>
                     <tbody>
                         <tr>
                             <td>Serving Quantity:</td>
-                            <td class="last">33</td>
+                            <td id="servQty" class="last">33</td>
                         </tr>
                         <tr>
                             <td>Serving Unit:</td>
-                            <td class="last">15</td>
+                            <td id="servUnit" class="last">15</td>
                         </tr>
                         <tr>
                             <td>Serving Weight Grams:</td>
-                            <td class="last">47grams</td>
+                            <td id="servWtgrm" class="last">47grams</td>
                         </tr>
                     </tbody>
                 </table>
@@ -234,35 +231,60 @@
       -->
       <footer id="contact">
         <div class="first-sect">
-            <a href="#"><img class="footer_logo" src="Images/logo/Logo.png" alt="Foodlens logo"></a>
+            <div class="logo-box">
+                <a class="logo" href="home.html"><img src="Images/logo/Logo.png" alt="Foodlens logo">FoodLENS</a>
+                <ul class="footer mode">
+                    <li id="tt">Love our work?</li>
+                    <li>Contact us >></li>
+                    <li id="toggle-mode">Dark/Light mode</li>
+                </ul>
+            </div>
             <ul class="footer">
-                <li><a href="#">Help</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Data Policy</a></li>
+                <li>Elvis Oguoma O.</li>
+                <li><a href="https://www.linkedin.com/in/elvis-oguoma-66a77318a"><button id="socials">
+                    <img src="Images/logo/linkedin.png" alt="linkedin">
+                </button>Linkedin</a></li>
+                <li><a href="https://www.twitter.com/r0elle"><button id="socials">
+                    <img src="Images/logo/twitter.png" alt="twitter">
+                </button>Twitter</a></li>
+                <li><a href="elvisrozy52@gmail.com"><button id="socials">
+                    <img src="Images/logo/gmail.png" alt="gmail">
+                </button>Gmail</a></li>
             </ul>
             <ul class="footer">
-                <li><a href="#">Legal</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact</a></li>
+                <li>Aralu Kenechukwu C.</li>
+                <li><a href="https://www.linkedin.com/in/kenechukwu-aralu-1b7238207"><button id="socials">
+                    <img src="Images/logo/linkedin.png" alt="linkedin">
+                </button>Linkedin</a></li>
+                <li><a href="https://twitter.com/aralukene"><button id="socials">
+                    <img src="Images/logo/twitter.png" alt="twitter">
+                </button>Twitter</a></li>
+                <li><a href="junioraralu@gmail.com"><button id="socials">
+                    <img src="Images/logo/gmail.png" alt="gmail">
+                </button>Gmail</a></li>
             </ul>
             <ul class="footer">
-                <li><a href="#">Follow Us</a></li>
+                <li>Aweda Ifeoluwa</li>
+                <li><a href="https://ng.linkedin.com/in/aweda-ifeoluwa-b91b9976"><button id="socials">
+                    <img src="Images/logo/linkedin.png" alt="linkedin">
+                </button>Linkedin</a></li>
+                <li><a href="https://twitter.com/LovethSir"><button id="socials">
+                    <img src="Images/logo/twitter.png" alt="twitter">
+                </button>Twitter</a></li>
+                <li><a href="ifeI1939@gmail.com"><button id="socials">
+                    <img src="Images/logo/gmail.png" alt="gmail">
+                </button>Gmail</a></li>
             </ul>
         </div>
         <div class="copy_right">
             &copy;Copyright FoodLENS 2023
-            <div class="links">
-                <a href="#"><button id="socials"><img src="Images/logo/facebook.png" alt="facebook"></button></a>
-                <a href="#"><button id="socials"><img src="Images/logo/instagram.png" alt="instagram"></button></a>
-                <a href="#"><button id="socials"><img src="Images/logo/pinterest.png" alt="pinterest"></button></a>
-                <a href="#"><button id="socials"><img src="Images/logo/twitter.png" alt="twitter"></button></a>
-                <a href="#"><button id="socials"><img src="Images/logo/youtube.png" alt="youtube"></button></a>
-            </div>
+            <a href="#">Back to top</a>
         </div>
     </footer>
     <!--
     ==================== JavaScript File  ====================
       -->
-  <script src="app/js/script.js"></script>
+<!--   <script src="app/js/globals.js"></script>
+ -->  <script src="app/js/fetch_to_select.js"></script>
 </body>
 </html>

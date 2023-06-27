@@ -1,8 +1,6 @@
-/*
-=========================================
+/*=========================================
 Login Form setup
-=========================================
-*/
+=========================================*/
 .form {
     @include Display-align-justify ("flex", "center", "center");
     @include width-height ("100%", "100vh");
@@ -40,9 +38,16 @@ Login Form setup
     }
 
     .input-box {
+        @include Display-align ("flex", "center");
         border-bottom: 2px solid var(--white);
         border-radius: 20px;
         width: 400px;
+
+        img {
+            margin-right: 20px;
+            cursor: pointer;
+            width: 20px;
+        }
 
         label {
             transform: translateY(-50%);
@@ -91,23 +96,13 @@ Login Form setup
         }
     }
 
-    .login-btn {
-        background: var(--background-light-gray);
-        box-shadow: 4px 8px 8px rgb(8 8 8);
-        border-radius: 30px;
-        font-weight: 600;
-        padding: 13px 0;
-        font-size: 18px;
-        cursor: pointer;
-        transition: .3s;
-        width: 100%;
+    button {
+        min-width: 100%;
+        min-height: 45px;
+    }
 
-        &:hover {
-            box-shadow: inset 9px 9px 12px rgb(204, 204, 204), inset -9px -9px 12px var(--white);
-            background: var(--white);
-            transform: scale(.97);
-            color: var(--cta);
-        }
+    .login-btn {
+        @extend button ;
     }
 
     .register-link {

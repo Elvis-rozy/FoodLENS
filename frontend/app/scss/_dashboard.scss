@@ -46,6 +46,7 @@ Dashboard Setup
 
             button {
                 min-width: 100%;
+                transition: .3s;
 
                 &.Active {
                     background: rgba(0, 0, 84, 0.43);
@@ -127,7 +128,7 @@ Dashboard Setup
             background: linear-gradient(45deg, rgb(75 75 126), rgb(247 172 114));
             flex-direction: column;
             border-radius: 0 20px;
-            position: absolute;
+            position: relative;
             padding: 20px;
             transition: 1s;
             display: flex;
@@ -197,6 +198,7 @@ Dashboard Setup
 
         .profile-submit {
             @extend button ;
+            width: 100%;
         }
     }
 }
@@ -220,11 +222,12 @@ Dashboard Setup
 
         .dash-hero {
             @include Display-align ("flex", "start");
-            padding: 10vh 20px 30px;
+            padding: 13vh 0 0;
             flex-direction: column;
 
             .left {
                 flex-direction: row;
+                padding-left: 20px;
 
                 h2 {
                     margin-bottom: 0;
@@ -245,14 +248,16 @@ Dashboard Setup
                 width: 100%;
 
                 .profile-details {
+                    padding: 20px;
                     margin-top: 0;
                 }
 
                 .profile-edit {
                    @include width-height ("100%", "100vh");
+                   position: absolute;
                     align-items: center;
                     border-radius: 0;
-                    top: 10vh;
+                    top: 12vh;
                 }
 
                 .profile-submit {
@@ -265,13 +270,4 @@ Dashboard Setup
             padding: 30px 10px;
         }
     }
-}
-
-.invisible {
-    filter: blur(50px);
-    transform: translateX(200%);
-}
-
-.visible {
-    transform: translateX(0);
 }
