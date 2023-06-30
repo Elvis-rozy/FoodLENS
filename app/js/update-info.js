@@ -14,9 +14,9 @@ eyeicon.onclick = ()  => {
     }
 }
 /*=========================================
-Login-Form Validation and Submission
+Update-Form Validation and Submission
 =========================================*/
-const token = document.getElementById('token');
+const username = document.getElementById('name');
 const email = document.getElementById('email');
 const form = document.getElementById('form');
 
@@ -24,13 +24,17 @@ form.addEventListener('submit', function (e) {
     e.preventDefault();
     console.log('clicked');
 
-    if (email.value == null || email.value === "") {
+    if (username.value == null || username.value === "") {
+        e.preventDefault();
+        alert("Username is required");
+        return false;
+    } else if (username.value.length < 6) {
+        e.preventDefault();
+        alert("Username must be 6 characters or more");
+        return false;
+    } else if (email.value == null || email.value === "") {
         e.preventDefault();
         alert("Email address cannot be blank");
-        return false;
-    } else if (token.value == null || token.value === "") {
-        e.preventDefault();
-        alert("Token cannot be blank");
         return false;
     } else if (password.value == null || password.value === "") {
         e.preventDefault();
@@ -54,21 +58,23 @@ form.addEventListener('submit', function (e) {
         // Collect form data
         var formData = new FormData(this);
         // Make a POST request using fetch API
-        fetch("http://localhost:3000/api/v1/auth/login", {
+        fetch("http://localhost:3000/api/v1/auth/updateUser", {
             method: "POST",
             body: formData
         }).then(function(response) {
             if (response.ok) {
                 // Successful response handling
-                console.log("Login successful!");
+                alert("New form data successfully submitted!");
+                console.log("New form data successfully submitted!");
             } else {
                 // Error response handling
-                console.log("Invalid credentials.");
+                console.log("Error submitting form data.");
+                console.error(error);
             }
         })
         .catch(function(error) {
             // Network or fetch API error handling
-            console.log("An error occurred whilst fetching login POST - data:", error);
+            console.log("An error occurred whilst fetching update POST - data:", error);
         });
     }
 })
