@@ -165,12 +165,27 @@ Mobile and Tab setup
                 transform: rotate(0);
             }
 
+            .first-box, .second-box {
+                flex-direction: row;
+                align-items: start;
+
+                p {
+                    text-align: start;
+                }
+            }
+
             .first-box {
                 margin-right: 0;
                 margin-bottom: 30px;
 
                 p {
                     padding-right: 0;
+                }
+            }
+            @media(max-width: 550px) {
+
+                .first-box img, .second-box img {
+                    display: none;
                 }
             }
 

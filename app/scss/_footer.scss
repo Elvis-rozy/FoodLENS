@@ -82,7 +82,13 @@ footer  {
         padding: 30px 40px;
         color: var(--accent);
 
+        img {
+            @include width-height("30px", "30px");
+        }
+
         a {
+            display: flex;
+            align-items: center;
             color: var(--accent);
         }
     }

@@ -499,8 +499,14 @@ Mobile and Tab setup
   header nav {
     width: 100%;
     height: 10vh;
+  }
+}
+@media (max-width: 950px) and (max-width: 550px) {
+  header nav {
     padding: 10px 20px;
   }
+}
+@media (max-width: 950px) {
   header nav .header_logo {
     width: 60px;
     height: 60px;
@@ -643,7 +649,13 @@ footer .copy_right {
   padding: 30px 40px;
   color: var(--accent);
 }
+footer .copy_right img {
+  width: 30px;
+  height: 30px;
+}
 footer .copy_right a {
+  display: flex;
+  align-items: center;
   color: var(--accent);
 }
 
@@ -951,6 +963,13 @@ Mobile and Tab setup
     font-size: 30px;
     transform: rotate(0);
   }
+  .main .about .first-box, .main .about .second-box {
+    flex-direction: row;
+    align-items: start;
+  }
+  .main .about .first-box p, .main .about .second-box p {
+    text-align: start;
+  }
   .main .about .first-box {
     margin-right: 0;
     margin-bottom: 30px;
@@ -958,12 +977,21 @@ Mobile and Tab setup
   .main .about .first-box p {
     padding-right: 0;
   }
+}
+@media (max-width: 950px) and (max-width: 550px) {
+  .main .about .first-box img, .main .about .second-box img {
+    display: none;
+  }
+}
+@media (max-width: 950px) {
   .main .about .second-box {
     margin-left: 0;
   }
   .main .about .second-box p {
     padding-left: 0;
   }
+}
+@media (max-width: 950px) {
   .main .new-section .about-cards {
     display: block;
   }
@@ -1008,12 +1036,12 @@ Reviews Setup
   font-size: 18px;
 }
 .review-cards .review-card .head-info {
-  font-size: 10.3px;
+  font-size: 12px;
 }
 .review-cards .review-card .info {
   padding: 15px 20px 30px;
   font-weight: 500;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 /*
@@ -1213,7 +1241,9 @@ header .profile img {
   justify-content: center;
   width: 100%;
   height: 100vh;
+  flex-direction: column;
   position: relative;
+  transition: 0.3s;
 }
 #home::before {
   content: "";
@@ -1228,37 +1258,25 @@ header .profile img {
   background-position: center;
   background-repeat: no-repeat;
 }
-#home .search-form {
+#home h1 {
+  padding-bottom: 20px;
+  color: var(--white);
   position: relative;
+  font-size: 52px;
 }
-#home .search-form input {
-  box-shadow: 3px 8px 8px rgb(0, 0, 0);
-  background-color: rgba(0, 0, 84, 0.43);
-  width: 550px;
-  height: 50px;
-  padding: 4px 20px 0 60px;
-  border-radius: 30px;
-  text-align: start;
-  color: var(--cta);
-  font-size: 18px;
-  cursor: pointer;
+#home p {
+  color: rgb(227, 227, 227);
+  padding-bottom: 40px;
+  position: relative;
+  font-size: 20px;
+}
+#home a {
+  color: var(--white);
+  font-weight: 700;
   transition: 0.3s;
-  outline: none;
 }
-#home .search-form input::placeholder {
-  color: rgb(158, 158, 158);
-}
-#home .search-form input:hover {
-  background-color: rgba(5, 5, 51, 0.678);
-}
-#home .search-form img {
-  width: 40px;
-  height: 45px;
-  transform: translateY(-50%);
-  filter: brightness(1.4);
-  position: absolute;
-  left: 15px;
-  top: 50%;
+#home a:hover {
+  color: var(--cta);
 }
 
 /*
@@ -1829,6 +1847,24 @@ header nav .search-form img {
   padding: 20px;
 }
 
+/*
+=========================================
+Mobile and Tab setup
+=========================================
+*/
+@media (max-width: 550px) {
+  .result {
+    display: flex;
+    flex-direction: column;
+    padding: 12vh 0 40px;
+  }
+  .result img {
+    border-radius: 0;
+  }
+  .result .food-details {
+    padding: 0 20px;
+  }
+}
 .video-tutorial {
   display: flex;
   align-items: center;
@@ -1851,6 +1887,17 @@ header nav .search-form img {
   padding: 10px 0;
 }
 
+/*
+=========================================
+Mobile and Tab setup
+=========================================
+*/
+@media (max-width: 550px) {
+  .video-tutorial .video {
+    width: 100%;
+    height: 500px;
+  }
+}
 .more {
   overscroll-behavior-inline: contain;
   grid-auto-columns: 36%;
@@ -1945,71 +1992,73 @@ header {
 }
 
 .categories {
-  position: relative;
-  height: auto;
+  text-align: center;
 }
-.categories .buttons {
-  position: fixed;
+.categories .cat-header {
   border-bottom: 1px solid rgba(189, 188, 188, 0.32);
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  align-items: center;
+  padding-top: 13vh;
+  position: fixed;
   width: 100%;
   background: white;
-  padding: 15vh 30px 10px;
   z-index: 3;
 }
-.categories .buttons .small {
-  color: var(--text);
-  color: rgb(134, 134, 135);
-  transition: 0.3s;
-  font-size: 16px;
+.categories .cat-header h2 {
+  padding-bottom: 20px;
+  color: var(--cta);
 }
-.categories .buttons .small:hover {
+.categories .cat-header .buttons {
+  height: 30px;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(6, 1fr);
+}
+.categories .cat-header .buttons .btn {
+  color: rgb(134, 134, 135);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.categories .cat-header .buttons .btn:hover {
   color: var(--cta);
   font-weight: 700;
   font-size: 20px;
 }
-.categories .group {
-  grid-template-columns: repeat(5, 1fr);
-  padding: 25vh 50px 50px;
-  gap: 20px;
+.categories .section-center {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 30vh 50px 40px;
+  gap: 40px 25px;
 }
-.categories .group .pod, .categories .group .pad {
-  background: white;
-  width: 100%;
-  height: 180px;
+.categories .section-center .menu-item {
+  display: flex;
+  flex-direction: column;
   position: relative;
+  height: 170px;
+  overflow: hidden;
+  border-radius: 30px 0;
   transition: 0.3s;
 }
-.categories .group .pod:hover, .categories .group .pad:hover {
+.categories .section-center .menu-item:hover {
   box-shadow: 3px 4px 6px #817e7e;
   transform: scale(1.03);
 }
-.categories .group .pod img, .categories .group .pad img {
+.categories .section-center .menu-item .photo {
   width: 100%;
   height: 100%;
 }
-.categories .group .pod h5, .categories .group .pod p, .categories .group .pad h5, .categories .group .pad p {
-  position: absolute;
-  text-align: start;
-  padding: 3px 10px 3px;
-  background: var(--white);
-  border-radius: 0 10px 0 0;
-}
-.categories .group .pod h5, .categories .group .pad h5 {
-  bottom: 15px;
-  font-size: 14px;
-}
-.categories .group .pod p, .categories .group .pad p {
+.categories .section-center .menu-item .item-info {
+  padding: 5px 10px 5px 5px;
   bottom: 0;
-  font-size: 10px;
+  background: white;
+  border-radius: 0 15px 0 0;
+  position: absolute;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
 }
-
-.big {
-  color: var(--cta);
-  font-weight: 700;
-  font-size: 20px;
+.categories .section-center .menu-item .item-info h4, .categories .section-center .menu-item .item-info p {
+  text-align: start;
 }
 
 .Grid {
@@ -2018,4 +2067,32 @@ header {
 
 .Hide {
   display: none;
+}
+
+/*
+=========================================
+Mobile and Tab setup
+=========================================
+*/
+@media (max-width: 950px) {
+  .categories .section-center {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 25vh 20px 30px;
+  }
+}
+@media (max-width: 950px) and (max-width: 550px) {
+  header nav .search-form input {
+    width: 200px;
+  }
+  .categories .section-center {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 33vh 20px 30px;
+  }
+  .categories .cat-header .buttons {
+    grid-template-columns: repeat(3, 1fr);
+    height: 80px;
+  }
+  .categories .cat-header .buttons .btn:hover {
+    font: 17px;
+  }
 }

@@ -85,7 +85,10 @@ Mobile and Tab setup
 
         nav {
             @include width-height ("100%", "10vh");
-            padding: 10px 20px;
+
+            @media (max-width: 550px) {
+                padding: 10px 20px;
+            }
 
             .header_logo {
                 @include width-height ("60px", "60px");

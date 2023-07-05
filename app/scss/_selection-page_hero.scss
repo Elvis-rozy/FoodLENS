@@ -135,3 +135,24 @@ header {
         }
     }
 }
+/*
+=========================================
+Mobile and Tab setup
+=========================================
+*/
+@media (max-width: 550px) {
+
+    .result {
+        display: flex;
+        flex-direction: column;
+        padding: 12vh 0 40px;
+
+        img {
+            border-radius: 0;
+        }
+
+        .food-details {
+            padding: 0 20px;
+        }
+    }
+}
