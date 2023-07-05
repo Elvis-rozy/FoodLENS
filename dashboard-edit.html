@@ -32,7 +32,7 @@
                     <li class="hide-for-desktop lnk"><a href="home.html">Home</a></li> <!--
                 --><li class="hide-for-desktop lnk Edit"><a href="dashboard.html">Profile</a></li><!--
                 --><li class="hide-for-desktop lnk edit"><a href="#">Edit Profile</a></li> <!--
-                --><li class="hide-for-desktop lnk"><a href="categories.html">Categories</a></li><!--
+                --><li class="hide-for-desktop lnk"><a href="categoriesAll.html">Categories</a></li><!--
                 --><li class="hide-for-desktop lnk"><a href="#contact">Contact Us</a></li>
                 </ul>
             </div>
@@ -46,7 +46,7 @@
                 <a href="dashboard.html"><button class="edit-btn">Dashboard</button></a>
                 <a href="#"><button class="Active">Edit Profile</button></a>
                 <a href="home.html"><button class="home-btn">Home</button></a>
-                <a href="categories.html"><button class="cat-btn">Categories</button></a>
+                <a href="categoriesAll.html"><button class="cat-btn">Categories</button></a>
                 <a href="#contact"><button class="contct-btn">Contact Us</button></a>
             </div>
         </div>
@@ -57,50 +57,62 @@
             <div class="profile-edit">
                 <div class="personal-info">
                     <h3>Personal Info</h3>
-                    <div class="input-box spec1">
-                        <input class="input" type="name" id="name" name="name" required>
-                        <label for="name">Username</label>
-                    </div>
-                    <div class="input-box spec1">
-                        <input class="input" type="email" id="email" name="email" required>
-                        <label for="email">Email</label>
-                    </div>
-                    <div class="input-box spec1">
-                        <input class="input" type="password" id="password" name="password" required>
-                        <label for="password">Password</label>
-                    </div>
-                    <div class="input-box spec1">
-                        <input class="input" type="text" id="bio" name="bio" placeholder="eg. I'm an athlete with fairly average culinary skills..." required>
-                        <label for="bio">Bio</label>
-                    </div>
+                    <!--
+                    ==================== Form Section  ====================
+                    -->
+                    <section>
+                        <form id="form">
+                            <div class="input-box spec1">
+                                <input class="input" type="name" id="name" name="name">
+                                <label for="name">Username</label>
+                            </div>
+                            <div class="input-box spec1">
+                                <input class="input" type="email" id="email" name="email">
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="input-box spec1">
+                                <input class="input" type="password" id="password" name="password">
+                                <img id="eyeicon" src="Images/logo/eye-close.png" alt="">
+                                <label for="password">New Password</label>
+                            </div>
+                            <div class="input-box spec1">
+                                <input class="input" type="text" id="bio" name="bio" placeholder="eg. I'm an athlete with fairly average culinary skills...">
+                                <label for="bio">Bio</label>
+                            </div>
+
+                            <div class="meal-info">
+                                <div class="diet-comp">
+                                    <div class="input-box">
+                                        <label for="preference" id="percents-label">Carbohydrates</label>
+                                        <input class="percents" type="number" id="preference" name="preference" placeholder="%">
+                                    </div>
+                                    <div class="input-box">
+                                        <label for="allergens" id="percents-label">Proteins</label>
+                                        <input class="percents" type="number" id="allergens" name="allergens"  placeholder="%">
+                                    </div>
+                                    <div class="input-box">
+                                        <label for="preference" id="percents-label">Fats</label>
+                                        <input class="percents" type="number" id="preference" name="preference" placeholder="%">
+                                    </div>
+                                </div>
+                                <div class="tolerance">
+                                    <div class="input-box spec1">
+                                        <input class="input" type="text" id="preference" name="preference" placeholder="eg. bromate free, low fats etc">
+                                        <label for="preference">Meal Preference</label>
+                                    </div>
+                                    <div class="input-box spec1">
+                                        <input class="input" type="text" id="allergens" name="allergens"  placeholder="eg. almond, cream etc">
+                                        <label for="allergens">Allergens</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--
+                            ==================== Submit Button  ====================
+                            -->
+                            <button><input type="submit" class="profile-submit" value="Save Changes"></button>
+                        </form>
+                    </section>
                 </div>
-                <div class="meal-info">
-                    <div class="diet-comp">
-                        <div class="input-box">
-                            <label for="preference" id="percents-label">Carbohydrates</label>
-                            <input class="percents" type="number" id="preference" name="preference" placeholder="%" required>
-                        </div>
-                        <div class="input-box">
-                            <label for="allergens" id="percents-label">Proteins</label>
-                            <input class="percents" type="number" id="allergens" name="allergens"  placeholder="%" required>
-                        </div>
-                        <div class="input-box">
-                            <label for="preference" id="percents-label">Fats</label>
-                            <input class="percents" type="number" id="preference" name="preference" placeholder="%" required>
-                        </div>
-                    </div>
-                    <div class="tolerance">
-                        <div class="input-box spec1">
-                            <input class="input" type="text" id="preference" name="preference" placeholder="eg. bromate free, low fats etc" required>
-                            <label for="preference">Meal Preference</label>
-                        </div>
-                        <div class="input-box spec1">
-                            <input class="input" type="text" id="allergens" name="allergens"  placeholder="eg. almond, cream etc" required>
-                            <label for="allergens">Allergens</label>
-                        </div>
-                    </div>
-                </div>
-                <button><input type="submit" class="profile-submit" value="Save Changes"></button>
             </div>
         </div>
     </section>
@@ -112,9 +124,9 @@
             <div class="logo-box">
                 <a class="logo" href="home.html"><img src="Images/logo/Logo.png" alt="Foodlens logo">FoodLENS</a>
                 <ul class="footer mode">
-                    <li id="tt">Love our work?</li>
-                    <li>Contact us >></li>
+                    <li id="tt">Love our work? Contact us</li>
                     <li id="toggle-mode">Dark/Light mode</li>
+                    <li id="logout">Log out</li>
                 </ul>
             </div>
             <ul class="footer">
@@ -164,5 +176,6 @@
       -->
       <script src="app/js/dashboard.js"></script>
       <script src="app/js/globals.js"></script>
+      <script src="app/js/update-info.js"></script>
 </body>
 </html>

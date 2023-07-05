@@ -28,7 +28,7 @@ setInterval(() => {
         myImage.setAttribute("src", "Images/profiles/prof-2.jpg");
         Heading.textContent = ("James Billway")
         info.textContent = ("Busy high school teacher with a sweet tooth");
-        details.textContent = ("I used to give in to my hunger for sugary treats but was recommended controlled and healthier alternatives from the use of foodlens");
+        details.textContent = ("I used to give-in to my hunger for sugary treats but was recommended controlled and healthier alternatives from the use of foodlens");
     } else if (Src == "Images/profiles/prof-2.jpg") {
         myImage.setAttribute("src", "Images/profiles/prof-3.jpg");
         Heading.textContent = ("Emily Anthlers")

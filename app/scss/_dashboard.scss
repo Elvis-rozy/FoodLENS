@@ -9,7 +9,6 @@ Dashboard Setup
 .dash-hero {
     background: linear-gradient(to right, rgb(240, 240, 240),
     rgb(143 141 141), rgb(215 213 213));
-    @include width-height ("100%", "100vh");
     grid-template-columns: .6fr 1.1fr 1.2fr;
     color: var(--text);
     padding: 30px;
@@ -134,13 +133,13 @@ Dashboard Setup
             display: flex;
             gap: 20px;
 
-            .personal-info, .diet-comp, .tolerance, .meal-info {
+            form, .diet-comp, .tolerance, .meal-info {
                 flex-direction: column;
                 display: flex;
             }
 
-            .personal-info, .tolerance {
-                gap: 20px;
+            form, .tolerance {
+                gap: 30px;
             }
 
             .diet-comp {
@@ -154,6 +153,16 @@ Dashboard Setup
             .input-box {
                 position: relative;
                 width: 350px;
+
+                img {
+                    margin-right: 20px;
+                    position: absolute;
+                    cursor: pointer;
+                    bottom: 25%;
+                    width: 20px;
+                    right: 0;
+                }
+
 
                 label {
                     transform: translateY(-50%);
@@ -207,6 +216,7 @@ Dashboard Setup
 
     .dash-hero {
         grid-template-columns: .7fr 1.3fr;
+        height: 100vh;
 
         .middle {
             display: none;
@@ -214,20 +224,22 @@ Dashboard Setup
     }
 
     #head {
-        width: 100%;
         border-radius: 0;
+        width: 100%;
     }
 
     @media (max-width: 550px) {
 
         .dash-hero {
             @include Display-align ("flex", "start");
-            padding: 13vh 0 0;
             flex-direction: column;
+            padding: 13vh 0 0;
+            height: auto;
+            gap: 0;
 
             .left {
-                flex-direction: row;
-                padding-left: 20px;
+                display: flex;
+                flex-direction: column;
 
                 h2 {
                     margin-bottom: 0;
@@ -245,6 +257,7 @@ Dashboard Setup
 
             .right {
                 justify-content: start;
+                height: 100vh;
                 width: 100%;
 
                 .profile-details {
@@ -254,8 +267,8 @@ Dashboard Setup
 
                 .profile-edit {
                    @include width-height ("100%", "100vh");
+                   align-items: center;
                    position: absolute;
-                    align-items: center;
                     border-radius: 0;
                     top: 12vh;
                 }
