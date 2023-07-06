@@ -1308,6 +1308,7 @@ Home page Styles
 =========================================*/
 header .profile {
   border-radius: 50%;
+  box-shadow: none;
   min-height: 35px;
   min-width: 35px;
 }
@@ -1562,6 +1563,10 @@ Dashboard Setup
 #head {
   border-radius: 0 40px 40px 0;
   width: 200px;
+}
+
+.prof {
+  height: 100vh;
 }
 
 .dash-hero {

@@ -21,8 +21,6 @@ const email = document.getElementById('email');
 const form = document.getElementById('form');
 
 form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    console.log('clicked');
 
     if (username.value == null || username.value === "") {
         e.preventDefault();
@@ -53,13 +51,34 @@ form.addEventListener('submit', function (e) {
         alert("Password cannot be password.");
         return false;
     } else {
-        // Prevent form submission
-        e.preventDefault();
         // Collect form data
         var formData = new FormData(this);
+
+        function passValue () {
+            const username = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const bio = document.getElementById('bio').value;
+            const carb = document.getElementById('carbPercent').value;
+            const prot = document.getElementById('protPercent').value;
+            const fat = document.getElementById('fatPercent').value;
+            const preference = document.getElementById('preference').value;
+            const allergens = document.getElementById('allergens').value;
+            sessionStorage.setItem('textvalue', username);
+            sessionStorage.setItem('emailvalue', email);
+            sessionStorage.setItem('biovalue', bio);
+            sessionStorage.setItem('carbvalue', carb);
+            sessionStorage.setItem('protvalue', prot);
+            sessionStorage.setItem('fatvalue', fat);
+            sessionStorage.setItem('preferencevalue', preference);
+            sessionStorage.setItem('allergenvalue', allergens);
+            return false;
+        }
+
+        passValue();
+
         // Make a POST request using fetch API
         fetch("http://localhost:3000/api/v1/auth/updateUser", {
-            method: "POST",
+            method: "POST" ,
             body: formData
         }).then(function(response) {
             if (response.ok) {
