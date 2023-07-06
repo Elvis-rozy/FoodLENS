@@ -1,31 +1,34 @@
 .more {
     overscroll-behavior-inline: contain;
-    grid-auto-columns: 36%;
+    grid-auto-columns: 40%;
     grid-auto-flow: column;
     overflow-x: auto;
     padding: 30px;
     display: grid;
-    gap: 30px;
+    gap: 20px;
+
+    .middle {
+        flex-direction: column;
+        display: flex;
+        gap: 20px;
+    }
+
+    #middle {
+        animation: slideshow2 45s ease-in forwards infinite;
+        height: 140px;
+    }
 
     .more-card {
-        background: #8080801a;
+        animation: slideshow1 70s ease-in forwards infinite;
+        @include background-size-position-repeat ("cover", "center", "no-repeat");
         border-radius: 3px;
         overflow: hidden;
+        position: relative;
+        transition: .3s;
+        height: 300px;
 
-        img {
-            @include width-height ("100%", "220px");
-        }
-
-        h5 {
-            text-align: start;
-            font-size: 18px;
-            padding: 5px;
-        }
-
-        p {
-            padding: 0 0 10px 5px;
-            text-align: start;
-            font-size: 15px;
+        &:hover {
+            filter: brightness(.6);
         }
     }
 }

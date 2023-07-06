@@ -99,6 +99,10 @@ body.dark-mode #favorites .favs .fav:hover {
   box-shadow: none;
 }
 
+body.dark-mode .result {
+  color: rgba(188, 161, 199, 0.9098039216);
+}
+
 /*=========================================
 Button Styles
 =========================================*/
@@ -380,9 +384,86 @@ Hero Image Slideshow Animation
     background-image: url("/Images/backgrounds/bgA.jpg");
   }
 }
-@keyframes animateScreen {
+@keyframes slideshow1 {
+  0% {
+    background-image: url("/Images/slides/bgF.jpg");
+  }
+  5% {
+    background-image: url("/Images/slides/16b3a432e9d807de7940cb65a6f0fedc.jpg");
+  }
+  15% {
+    background-image: url("/Images/slides/16b3a432e9d807de7940cb65a6f0fedc.jpg");
+  }
+  20% {
+    background-image: url("/Images/slides/245b97f1096f95c0f8648c174c9be601.jpg");
+  }
+  35% {
+    background-image: url("/Images/slides/245b97f1096f95c0f8648c174c9be601.jpg");
+  }
+  40% {
+    background-image: url("/Images/slides/315500666c99de44cdb9eec200816994.jpg");
+  }
+  55% {
+    background-image: url("/Images/slides/315500666c99de44cdb9eec200816994.jpg");
+  }
+  60% {
+    background-image: url("/Images/slides/34ff8f934db798c1298ad5e4aa8af2d9.jpg");
+  }
+  75% {
+    background-image: url("/Images/slides/34ff8f934db798c1298ad5e4aa8af2d9.jpg");
+  }
+  80% {
+    background-image: url("/Images/slides/49344337569164cedcb668e7eb97d371.jpg");
+  }
+  90% {
+    background-image: url("/Images/slides/5118033fca76e1f08a94540033cfb072.jpg");
+  }
+  95% {
+    background-image: url("/Images/slides/bgF.jpg");
+  }
   100% {
-    filter: hue-rotate(360deg);
+    background-image: url("/Images/slides/bgF.jpg");
+  }
+}
+@keyframes slideshow2 {
+  0% {
+    background-image: url("/Images/slides/804dd89153c50707d4160bb6b9280b6b.jpg");
+  }
+  5% {
+    background-image: url("/Images/slides/83c0fccb564423516db8cebfc20df8d0.jpg");
+  }
+  15% {
+    background-image: url("/Images/slides/83c0fccb564423516db8cebfc20df8d0.jpg");
+  }
+  20% {
+    background-image: url("/Images/slides/89736796162717062a6a928efacb0929.jpg");
+  }
+  35% {
+    background-image: url("/Images/slides/89736796162717062a6a928efacb0929.jpg");
+  }
+  40% {
+    background-image: url("/Images/slides/90e43f8e494e5a2b8da78a73bb647b80.jpg");
+  }
+  55% {
+    background-image: url("/Images/slides/90e43f8e494e5a2b8da78a73bb647b80.jpg");
+  }
+  60% {
+    background-image: url("/Images/slides/91cd4e5b806b29d230b5f67f8bef2c75.jpg");
+  }
+  75% {
+    background-image: url("/Images/slides/91cd4e5b806b29d230b5f67f8bef2c75.jpg");
+  }
+  80% {
+    background-image: url("/Images/slides/b399a33bbddf7e4602bcc62ed4312a85.jpg");
+  }
+  90% {
+    background-image: url("/Images/slides/b399a33bbddf7e4602bcc62ed4312a85.jpg");
+  }
+  95% {
+    background-image: url("/Images/slides/804dd89153c50707d4160bb6b9280b6b.jpg");
+  }
+  100% {
+    background-image: url("/Images/slides/804dd89153c50707d4160bb6b9280b6b.jpg");
   }
 }
 /*=========================================
@@ -971,8 +1052,8 @@ Mobile and Tab setup
     text-align: start;
   }
   .main .about .first-box {
-    margin-right: 0;
     margin-bottom: 30px;
+    margin-right: 0;
   }
   .main .about .first-box p {
     padding-right: 0;
@@ -1875,8 +1956,8 @@ Mobile and Tab setup
   padding-bottom: 30px;
 }
 .video-tutorial .video {
-  width: 850px;
-  height: 350px;
+  width: 900px;
+  height: 400px;
   position: relative;
   transition: 0.3s;
 }
@@ -1900,31 +1981,35 @@ Mobile and Tab setup
 }
 .more {
   overscroll-behavior-inline: contain;
-  grid-auto-columns: 36%;
+  grid-auto-columns: 40%;
   grid-auto-flow: column;
   overflow-x: auto;
   padding: 30px;
   display: grid;
-  gap: 30px;
+  gap: 20px;
+}
+.more .middle {
+  flex-direction: column;
+  display: flex;
+  gap: 20px;
+}
+.more #middle {
+  animation: slideshow2 45s ease-in forwards infinite;
+  height: 140px;
 }
 .more .more-card {
-  background: rgba(128, 128, 128, 0.1019607843);
+  animation: slideshow1 70s ease-in forwards infinite;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: 3px;
   overflow: hidden;
+  position: relative;
+  transition: 0.3s;
+  height: 300px;
 }
-.more .more-card img {
-  width: 100%;
-  height: 220px;
-}
-.more .more-card h5 {
-  text-align: start;
-  font-size: 18px;
-  padding: 5px;
-}
-.more .more-card p {
-  padding: 0 0 10px 5px;
-  text-align: start;
-  font-size: 15px;
+.more .more-card:hover {
+  filter: brightness(0.6);
 }
 
 .snaps-inline {
@@ -1934,9 +2019,7 @@ Mobile and Tab setup
 
 .snaps-inline > * {
   scroll-snap-align: start;
-}
-
-/*=========================================
+} /*=========================================
 Profile page Styles
 =========================================*/
 .search-result {
@@ -2050,7 +2133,7 @@ header {
 .categories .section-center .menu-item .item-info {
   padding: 5px 10px 5px 5px;
   bottom: 0;
-  background: white;
+  background: rgba(0, 0, 84, 0.38);
   border-radius: 0 15px 0 0;
   position: absolute;
   display: flex;
@@ -2059,6 +2142,9 @@ header {
 }
 .categories .section-center .menu-item .item-info h4, .categories .section-center .menu-item .item-info p {
   text-align: start;
+  font-weight: 500;
+  color: #fff;
+  text-shadow: 2px 0.5px black;
 }
 
 .Grid {
@@ -2067,6 +2153,12 @@ header {
 
 .Hide {
   display: none;
+}
+
+.big {
+  color: var(--cta);
+  font-weight: 700;
+  font-size: 20px;
 }
 
 /*

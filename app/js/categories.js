@@ -1,4 +1,5 @@
 let buttonDisplay = document.querySelector(".buttons");
+const searchform = document.querySelector(".search-form");
 
 const categories = document.querySelector('.categories');
 const selection = document.querySelector('.search-result-section');
@@ -67,7 +68,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
       // mapping through the butons array
       let categoryBtn = categories.map((category) => {
-        return `<h3 class="btn" data-filter=${category}>${category.charAt(0).toUpperCase() + category.slice(1)}</h3>`;
+        return `<h3 id="${category}" class="btn" data-filter=${category}>${category.charAt(0).toUpperCase() + category.slice(1)}</h3>`;
       });
 
       categoryBtn = categoryBtn.join("");
@@ -88,8 +89,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
           if (filter == "All") {
             displayMenuItem(data);
+            console.log(data);
           } else {
             displayMenuItem(menuCategory);
+            console.log(menuCategory)
           }
         });
       });
@@ -111,17 +114,21 @@ function displayMenuItem(menuItems) {
   displayMenu = displayMenu.join("");
   sectionCenter.innerHTML = displayMenu;
 
-//categories to selection page flow
+  //categories to selection page flow
   const elements = document.querySelectorAll('.menu-item');
 
-  fetch('app/js/fooddata.json').then(response => response.json())
+  //fetch the json file and convert to javascript object
+  fetch('https://backend-hzm1.onrender.com/api/v1/all-foods-item/all')
+  .then(response => response.json())
   .then(data => {
 
+    // Add click event listeners to each element
     elements.forEach((element, Index)=>{
       element.addEventListener('click', ()=>{
 
         //hide categories page and show selection page
         categories.classList.add('Hide');
+        searchform.classList.add('Hide');
         link.classList.remove('Hide');
         selection.classList.remove('Hide');
 
