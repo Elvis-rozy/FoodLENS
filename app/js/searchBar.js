@@ -1,4 +1,5 @@
-fetch('app/js/fooddata.json').then(response => response.json())
+fetch('https://backend-hzm1.onrender.com/api/v1/all-foods-item/all')
+.then(response => response.json())
 .then(data => {
     const categories = [...new Set(data.map((item)=> {return item}))]
 

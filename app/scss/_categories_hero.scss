@@ -68,7 +68,7 @@ header {
             .item-info {
                 padding: 5px 10px 5px 5px;
                 bottom: 0;
-                background: white;
+                background: rgb(0 0 84 / 38%);
                 border-radius: 0 15px 0 0;
                 position: absolute;
                 display: flex;
@@ -77,6 +77,9 @@ header {
 
                 h4, p {
                     text-align: start;
+                    font-weight: 500;
+                    color: #fff;
+                    text-shadow: 2px 0.5px black;
                 }
             }
         }
@@ -89,6 +92,12 @@ header {
 
 .Hide {
     display: none;
+}
+
+.big {
+    color: var(--cta);
+    font-weight: 700;
+    font-size: 20px;
 }
 /*
 =========================================
