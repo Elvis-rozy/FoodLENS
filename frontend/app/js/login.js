@@ -60,10 +60,16 @@ form.addEventListener("submit", function (e) {
         if (response.ok) {
           return response.json().then((user) => {
             console.log(user);
+            const loggedIn = true;
+            sessionStorage.setItem("loggedIn", loggedIn);
+            console.log("Login successful!");
+            if (user && loggedIn) {
+                localStorage.setItem("user",user)
+              window.location.href = dashboard.html;
+            }
           });
 
           // Successful response handling
-          console.log("Login successful!");
         } else {
           // Error response handling
           console.log("Invalid credentials.");
