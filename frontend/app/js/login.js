@@ -48,7 +48,7 @@ form.addEventListener("submit", function (e) {
     const data = { email: email, password: password };
 
     // Make a POST request using fetch API
-    //"http://localhost:3000/api/v1/auth/login"
+    //fetch("http://localhost:3000/api/v1/auth/login", {
     fetch("https://foodlens.onrender.com/api/v1/auth/login", {
       method: "POST",
       headers: {
@@ -65,7 +65,7 @@ form.addEventListener("submit", function (e) {
             sessionStorage.setItem("loggedIn", loggedIn);
             console.log("Login successful!");
             if (user && loggedIn) {
-              localStorage.setItem("user", JSON.stringify(user));
+              sessionStorage.setItem("user", JSON.stringify(user));
               window.location.href = "dashboard.html";
             }
           });
