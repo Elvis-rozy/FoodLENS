@@ -64,7 +64,7 @@ form.addEventListener("submit", function (e) {
     const data = { username: username, email: email, password: password };
 
     // Make a POST request using fetch API
-    fetch("/api/v1/auth/register", {
+    fetch("https://foodlens.onrender.com/api/v1/auth/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
