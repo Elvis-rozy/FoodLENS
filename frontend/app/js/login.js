@@ -64,8 +64,8 @@ form.addEventListener("submit", function (e) {
             sessionStorage.setItem("loggedIn", loggedIn);
             console.log("Login successful!");
             if (user && loggedIn) {
-                localStorage.setItem("user",user)
-              window.location.href = dashboard.html;
+                localStorage.setItem("user",JSON.stringify(user))
+              window.location.href = "dashboard.html";
             }
           });
 
