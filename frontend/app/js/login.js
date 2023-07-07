@@ -48,7 +48,8 @@ form.addEventListener("submit", function (e) {
     const data = { email: email, password: password };
 
     // Make a POST request using fetch API
-    fetch("http://localhost:3000/api/v1/auth/login", {
+    //"http://localhost:3000/api/v1/auth/login"
+    fetch("/api/v1/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -64,7 +65,7 @@ form.addEventListener("submit", function (e) {
             sessionStorage.setItem("loggedIn", loggedIn);
             console.log("Login successful!");
             if (user && loggedIn) {
-                localStorage.setItem("user",JSON.stringify(user))
+              localStorage.setItem("user", JSON.stringify(user));
               window.location.href = "dashboard.html";
             }
           });
