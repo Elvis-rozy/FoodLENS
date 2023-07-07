@@ -49,7 +49,7 @@ form.addEventListener("submit", function (e) {
 
     // Make a POST request using fetch API
     //"http://localhost:3000/api/v1/auth/login"
-    fetch("https://foodlens.onrender.com/api/v1/auth/register", {
+    fetch("https://foodlens.onrender.com/api/v1/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
