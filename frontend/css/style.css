@@ -106,7 +106,10 @@ body.dark-mode .result {
 /*=========================================
 Button Styles
 =========================================*/
-button, .dash-hero .right .profile-submit, header .profile, .form .login-btn {
+button,
+.dash-hero .right .profile-submit,
+header .profile,
+.form .login-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -122,7 +125,10 @@ button, .dash-hero .right .profile-submit, header .profile, .form .login-btn {
   position: relative;
   cursor: pointer;
 }
-button::before, .dash-hero .right .profile-submit::before, header .profile::before, .form .login-btn::before {
+button::before,
+.dash-hero .right .profile-submit::before,
+header .profile::before,
+.form .login-btn::before {
   content: "";
   top: 0;
   left: 0;
@@ -131,7 +137,10 @@ button::before, .dash-hero .right .profile-submit::before, header .profile::befo
   position: absolute;
   background: rgba(255, 255, 255, 0.1);
 }
-button::after, .dash-hero .right .profile-submit::after, header .profile::after, .form .login-btn::after {
+button::after,
+.dash-hero .right .profile-submit::after,
+header .profile::after,
+.form .login-btn::after {
   content: "";
   top: 0;
   left: -100%;
@@ -139,61 +148,99 @@ button::after, .dash-hero .right .profile-submit::after, header .profile::after,
   height: 100%;
   transition: 0.5s;
   position: absolute;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
 }
-button:hover::after, .dash-hero .right .profile-submit:hover::after, header .profile:hover::after, .form .login-btn:hover::after {
+button:hover::after,
+.dash-hero .right .profile-submit:hover::after,
+header .profile:hover::after,
+.form .login-btn:hover::after {
   left: 100%;
 }
-button span, .dash-hero .right .profile-submit span, header .profile span, .form .login-btn span {
+button span,
+.dash-hero .right .profile-submit span,
+header .profile span,
+.form .login-btn span {
   position: absolute;
   transition: 0.5s;
   display: block;
 }
-button span:nth-child(1), .dash-hero .right .profile-submit span:nth-child(1), header .profile span:nth-child(1), .form .login-btn span:nth-child(1) {
+button span:nth-child(1),
+.dash-hero .right .profile-submit span:nth-child(1),
+header .profile span:nth-child(1),
+.form .login-btn span:nth-child(1) {
   top: 0;
   left: 0;
   width: 0;
   height: 1px;
   background: #fff;
 }
-button span:nth-child(2), .dash-hero .right .profile-submit span:nth-child(2), header .profile span:nth-child(2), .form .login-btn span:nth-child(2) {
+button span:nth-child(2),
+.dash-hero .right .profile-submit span:nth-child(2),
+header .profile span:nth-child(2),
+.form .login-btn span:nth-child(2) {
   top: 0;
   left: 0;
   height: 0;
   width: 1px;
   background: #fff;
 }
-button span:nth-child(3), .dash-hero .right .profile-submit span:nth-child(3), header .profile span:nth-child(3), .form .login-btn span:nth-child(3) {
+button span:nth-child(3),
+.dash-hero .right .profile-submit span:nth-child(3),
+header .profile span:nth-child(3),
+.form .login-btn span:nth-child(3) {
   bottom: 0;
   right: 0;
   width: 0;
   height: 1px;
   background: #fff;
 }
-button span:nth-child(4), .dash-hero .right .profile-submit span:nth-child(4), header .profile span:nth-child(4), .form .login-btn span:nth-child(4) {
+button span:nth-child(4),
+.dash-hero .right .profile-submit span:nth-child(4),
+header .profile span:nth-child(4),
+.form .login-btn span:nth-child(4) {
   bottom: 0;
   right: 0;
   height: 0;
   width: 1px;
   background: #fff;
 }
-button:hover span:nth-child(1), .dash-hero .right .profile-submit:hover span:nth-child(1), header .profile:hover span:nth-child(1), .form .login-btn:hover span:nth-child(1) {
+button:hover span:nth-child(1),
+.dash-hero .right .profile-submit:hover span:nth-child(1),
+header .profile:hover span:nth-child(1),
+.form .login-btn:hover span:nth-child(1) {
   transform: translateX(100%);
   width: 100%;
 }
-button:hover span:nth-child(2), .dash-hero .right .profile-submit:hover span:nth-child(2), header .profile:hover span:nth-child(2), .form .login-btn:hover span:nth-child(2) {
+button:hover span:nth-child(2),
+.dash-hero .right .profile-submit:hover span:nth-child(2),
+header .profile:hover span:nth-child(2),
+.form .login-btn:hover span:nth-child(2) {
   transform: translateY(100%);
   height: 100%;
 }
-button:hover span:nth-child(3), .dash-hero .right .profile-submit:hover span:nth-child(3), header .profile:hover span:nth-child(3), .form .login-btn:hover span:nth-child(3) {
+button:hover span:nth-child(3),
+.dash-hero .right .profile-submit:hover span:nth-child(3),
+header .profile:hover span:nth-child(3),
+.form .login-btn:hover span:nth-child(3) {
   transform: translateX(-100%);
   width: 100%;
 }
-button:hover span:nth-child(4), .dash-hero .right .profile-submit:hover span:nth-child(4), header .profile:hover span:nth-child(4), .form .login-btn:hover span:nth-child(4) {
+button:hover span:nth-child(4),
+.dash-hero .right .profile-submit:hover span:nth-child(4),
+header .profile:hover span:nth-child(4),
+.form .login-btn:hover span:nth-child(4) {
   transform: translateY(-100%);
   height: 100%;
 }
-button:hover, .dash-hero .right .profile-submit:hover, header .profile:hover, .form .login-btn:hover {
+button:hover,
+.dash-hero .right .profile-submit:hover,
+header .profile:hover,
+.form .login-btn:hover {
   transform: scale(0.97);
   color: var(--cta);
 }
@@ -709,14 +756,26 @@ footer .first-sect .footer li a {
   display: flex;
   align-items: center;
 }
-footer .first-sect .footer li a button, footer .first-sect .footer li a .dash-hero .right .profile-submit, .dash-hero .right footer .first-sect .footer li a .profile-submit, footer .first-sect .footer li a header .profile, header footer .first-sect .footer li a .profile, footer .first-sect .footer li a .form .login-btn, .form footer .first-sect .footer li a .login-btn {
+footer .first-sect .footer li a button,
+footer .first-sect .footer li a .dash-hero .right .profile-submit,
+.dash-hero .right footer .first-sect .footer li a .profile-submit,
+footer .first-sect .footer li a header .profile,
+header footer .first-sect .footer li a .profile,
+footer .first-sect .footer li a .form .login-btn,
+.form footer .first-sect .footer li a .login-btn {
   min-width: 30px;
   min-height: 30px;
   border-radius: 50%;
   margin-right: 20px;
   box-shadow: none;
 }
-footer .first-sect .footer li a button img, footer .first-sect .footer li a .dash-hero .right .profile-submit img, .dash-hero .right footer .first-sect .footer li a .profile-submit img, footer .first-sect .footer li a header .profile img, header footer .first-sect .footer li a .profile img, footer .first-sect .footer li a .form .login-btn img, .form footer .first-sect .footer li a .login-btn img {
+footer .first-sect .footer li a button img,
+footer .first-sect .footer li a .dash-hero .right .profile-submit img,
+.dash-hero .right footer .first-sect .footer li a .profile-submit img,
+footer .first-sect .footer li a header .profile img,
+header footer .first-sect .footer li a .profile img,
+footer .first-sect .footer li a .form .login-btn img,
+.form footer .first-sect .footer li a .login-btn img {
   width: 18px;
   height: 18px;
 }
@@ -799,7 +858,8 @@ Brands Setup
 .trust .brands:hover {
   animation-play-state: paused;
 }
-.trust .brands .set1, .trust .brands .set2 {
+.trust .brands .set1,
+.trust .brands .set2 {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -967,7 +1027,8 @@ About Setup
 .main .about .second-box p {
   padding-left: 40px;
 }
-.main .about .first-box img, .main .about .second-box img {
+.main .about .first-box img,
+.main .about .second-box img {
   width: 350px;
   height: 350px;
 }
@@ -1044,11 +1105,13 @@ Mobile and Tab setup
     font-size: 30px;
     transform: rotate(0);
   }
-  .main .about .first-box, .main .about .second-box {
+  .main .about .first-box,
+  .main .about .second-box {
     flex-direction: row;
     align-items: start;
   }
-  .main .about .first-box p, .main .about .second-box p {
+  .main .about .first-box p,
+  .main .about .second-box p {
     text-align: start;
   }
   .main .about .first-box {
@@ -1060,7 +1123,8 @@ Mobile and Tab setup
   }
 }
 @media (max-width: 950px) and (max-width: 550px) {
-  .main .about .first-box img, .main .about .second-box img {
+  .main .about .first-box img,
+  .main .about .second-box img {
     display: none;
   }
 }
@@ -1182,7 +1246,12 @@ Login Form setup
   flex-direction: column;
   position: relative;
 }
-.form h1, .form .input-box, .form input, .form label, .form a, .form p {
+.form h1,
+.form .input-box,
+.form input,
+.form label,
+.form a,
+.form p {
   position: relative;
 }
 .form::before {
@@ -1241,7 +1310,8 @@ Login Form setup
   text-align: start;
   outline: none;
 }
-.form .input-box input:focus ~ label, .form .input-box input:valid ~ label {
+.form .input-box input:focus ~ label,
+.form .input-box input:valid ~ label {
   top: -7px;
 }
 .form .remember-forgot {
@@ -1262,7 +1332,12 @@ Login Form setup
   text-decoration: underline;
   color: var(--cta);
 }
-.form button, .form .dash-hero .right .profile-submit, .dash-hero .right .form .profile-submit, .form header .profile, header .form .profile, .form .login-btn {
+.form button,
+.form .dash-hero .right .profile-submit,
+.dash-hero .right .form .profile-submit,
+.form header .profile,
+header .form .profile,
+.form .login-btn {
   min-width: 100%;
   min-height: 45px;
 }
@@ -1567,17 +1642,25 @@ Dashboard Setup
 
 .prof {
   height: 100vh;
+  width: 100%;
 }
 
 .dash-hero {
-  background: linear-gradient(to right, rgb(240, 240, 240), rgb(143, 141, 141), rgb(215, 213, 213));
+  background: linear-gradient(
+    to right,
+    rgb(240, 240, 240),
+    rgb(143, 141, 141),
+    rgb(215, 213, 213)
+  );
   grid-template-columns: 0.6fr 1.1fr 1.2fr;
   color: var(--text);
   padding: 30px;
   display: grid;
   gap: 30px;
 }
-.dash-hero .left, .dash-hero .right, .dash-hero .middle {
+.dash-hero .left,
+.dash-hero .right,
+.dash-hero .middle {
   flex-direction: column;
 }
 .dash-hero .left {
@@ -1605,16 +1688,34 @@ Dashboard Setup
   width: 60%;
   gap: 30px;
 }
-.dash-hero .left .bars button, .dash-hero .left .bars .right .profile-submit, .dash-hero .right .left .bars .profile-submit, .dash-hero .left .bars .form .login-btn, .form .dash-hero .left .bars .login-btn, .dash-hero .left .bars header .profile, header .dash-hero .left .bars .profile {
+.dash-hero .left .bars button,
+.dash-hero .left .bars .right .profile-submit,
+.dash-hero .right .left .bars .profile-submit,
+.dash-hero .left .bars .form .login-btn,
+.form .dash-hero .left .bars .login-btn,
+.dash-hero .left .bars header .profile,
+header .dash-hero .left .bars .profile {
   min-width: 100%;
   transition: 0.3s;
 }
-.dash-hero .left .bars button.Active, .dash-hero .left .bars .right .Active.profile-submit, .dash-hero .right .left .bars .Active.profile-submit, .dash-hero .left .bars .form .Active.login-btn, .form .dash-hero .left .bars .Active.login-btn, .dash-hero .left .bars header .Active.profile, header .dash-hero .left .bars .Active.profile {
+.dash-hero .left .bars button.Active,
+.dash-hero .left .bars .right .Active.profile-submit,
+.dash-hero .right .left .bars .Active.profile-submit,
+.dash-hero .left .bars .form .Active.login-btn,
+.form .dash-hero .left .bars .Active.login-btn,
+.dash-hero .left .bars header .Active.profile,
+header .dash-hero .left .bars .Active.profile {
   background: rgba(0, 0, 84, 0.43);
   transform: scale(1.2);
   color: var(--white);
 }
-.dash-hero .left .bars button.Active:hover, .dash-hero .left .bars .right .Active.profile-submit:hover, .dash-hero .right .left .bars .Active.profile-submit:hover, .dash-hero .left .bars .form .Active.login-btn:hover, .form .dash-hero .left .bars .Active.login-btn:hover, .dash-hero .left .bars header .Active.profile:hover, header .dash-hero .left .bars .Active.profile:hover {
+.dash-hero .left .bars button.Active:hover,
+.dash-hero .left .bars .right .Active.profile-submit:hover,
+.dash-hero .right .left .bars .Active.profile-submit:hover,
+.dash-hero .left .bars .form .Active.login-btn:hover,
+.form .dash-hero .left .bars .Active.login-btn:hover,
+.dash-hero .left .bars header .Active.profile:hover,
+header .dash-hero .left .bars .Active.profile:hover {
   box-shadow: 2px 3px 8px rgb(100, 99, 99);
   background: rgba(0, 0, 84, 0.43);
   transform: scale(1.2);
@@ -1686,11 +1787,15 @@ Dashboard Setup
   display: flex;
   gap: 20px;
 }
-.dash-hero .right .profile-edit form, .dash-hero .right .profile-edit .diet-comp, .dash-hero .right .profile-edit .tolerance, .dash-hero .right .profile-edit .meal-info {
+.dash-hero .right .profile-edit form,
+.dash-hero .right .profile-edit .diet-comp,
+.dash-hero .right .profile-edit .tolerance,
+.dash-hero .right .profile-edit .meal-info {
   flex-direction: column;
   display: flex;
 }
-.dash-hero .right .profile-edit form, .dash-hero .right .profile-edit .tolerance {
+.dash-hero .right .profile-edit form,
+.dash-hero .right .profile-edit .tolerance {
   gap: 30px;
 }
 .dash-hero .right .profile-edit .diet-comp {
@@ -1905,7 +2010,8 @@ header nav .search-form img {
   margin-top: 10px;
   width: 100%;
 }
-.result .nutrition-facts table th, .result .nutrition-facts table td {
+.result .nutrition-facts table th,
+.result .nutrition-facts table td {
   border: 1px solid #dbdbdb;
   padding: 8px 20px;
   text-align: start;
@@ -1916,7 +2022,7 @@ header nav .search-form img {
 .result .ingredients-info {
   display: flex;
   align-items: start;
-  justify-content:  space-between;
+  justify-content: space-between;
   flex-direction: column;
   padding: 0 30px;
   text-align: start;
@@ -2145,7 +2251,8 @@ header {
   gap: 5px;
   flex-direction: column;
 }
-.categories .section-center .menu-item .item-info h4, .categories .section-center .menu-item .item-info p {
+.categories .section-center .menu-item .item-info h4,
+.categories .section-center .menu-item .item-info p {
   text-align: start;
   font-weight: 500;
   color: #fff;
@@ -2191,5 +2298,178 @@ Mobile and Tab setup
   }
   .categories .cat-header .buttons .btn:hover {
     font: 17px;
+  }
+}
+
+/*
+=========================================
+new dashboard css
+=========================================
+*/
+
+#userName {
+  font-size: medium;
+  font-weight: 12px;
+  font-family: "Times New Roman", Times, serif;
+  padding: 5px;
+  text-transform: capitalize;
+}
+
+.account {
+  display: flex;
+  height: 30px;
+  width: 150px;
+  background-color: blue;
+  color: white;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.bxs-down-arrow {
+  font-size: 9px;
+}
+.dashboard-heading {
+  color: #000;
+}
+.logout.show {
+  display: block;
+}
+.logout {
+  position: relative;
+  height: 30px;
+  width: 150px;
+  background-color: rgb(161, 161, 201);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+
+  display: none;
+}
+.logout-text {
+  font-size: medium;
+  font-weight: 12px;
+  font-family: "Times New Roman", Times, serif;
+}
+li .logout {
+  position: absolute;
+  margin-top: 10px;
+  justify-content: center;
+  padding-top: 7px;
+}
+.dashboard-main {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1500px;
+  margin-top: -30px;
+  margin-left: 80px;
+  padding-left: 40px;
+  position: absolute;
+  transform: translateX(20%);
+  height: 700px;
+}
+.dashbtn {
+  width: 100px;
+  height: 40px;
+}
+.dashboard-main .middle {
+  padding-right: 30px;
+  margin-left: 0px;
+}
+
+nav {
+  width: 100%;
+  height: 13.7vh;
+}
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  width: 100%;
+  padding: 1.25rem 2.5rem;
+}
+nav .logo img {
+  width: 70px;
+  height: 50px;
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: rgb(65, 53, 96);
+}
+
+nav ul {
+  display: flex;
+}
+nav ul li:not(:last-child) {
+  margin-right: 30px;
+}
+
+nav ul li {
+  position: relative;
+}
+nav ul li a {
+  display: flex;
+  justify-content: center;
+  color: rgb(203, 203, 203);
+  font-size: 15px;
+  transition: 0.3s;
+}
+nav ul li a::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: var(--cta);
+  transition: opacity 0.3s;
+  border-radius: 50%;
+  position: absolute;
+  display: block;
+  bottom: -80%;
+  opacity: 0;
+}
+nav ul li a:hover::before {
+  opacity: 1;
+}
+nav ul li a:hover {
+  color: var(--cta);
+}
+nav .btns {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-active {
+  color: var(--cta);
+}
+.nav-active::before {
+  opacity: 1;
+}
+
+/*
+=========================================
+Mobile and Tab setup
+=========================================
+*/
+@media (max-width: 950px) {
+  nav {
+    width: 100%;
+    height: 10vh;
+  }
+}
+@media (max-width: 950px) and (max-width: 550px) {
+  nav {
+    padding: 10px 20px;
+  }
+}
+@media (max-width: 950px) {
+  nav .header_logo {
+    width: 60px;
+    height: 60px;
+    margin-top: 10px;
   }
 }

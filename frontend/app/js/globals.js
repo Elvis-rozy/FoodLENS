@@ -1,3 +1,5 @@
+//preventing dashboard access without credentials
+
 /*=====================================
 Mobile menu setup
 =====================================*/
@@ -8,32 +10,36 @@ const linK = document.querySelector(".lnk");
 /*============================================
 Menu Icon Open and Close Function
 ============================================*/
-Bttn.addEventListener("click", () => {
+
+if (Bttn) {
+  Bttn.addEventListener("click", () => {
     //close menu
-    if (Bttn.classList.contains('menu-open')) {
-        console.log('Menu Closed')
-        Bttn.classList.remove('menu-open')
-        navBar.classList.remove('nav-open')
-    }//Open menu
+    if (Bttn.classList.contains("menu-open")) {
+      console.log("Menu Closed");
+      Bttn.classList.remove("menu-open");
+      navBar.classList.remove("nav-open");
+    } //Open menu
     else {
-        console.log('Menu Opened')
-        Bttn.classList.add('menu-open')
-        navBar.classList.add('nav-open')
+      console.log("Menu Opened");
+      Bttn.classList.add("menu-open");
+      navBar.classList.add("nav-open");
     }
-})
-//Menu Links Closing Function
-linK.addEventListener('click', () => {
-    Bttn.classList.remove('menu-open')
-    navBar.classList.remove('nav-open')
-})
+  });
+  //Menu Links Closing Function
+  linK.addEventListener("click", () => {
+    Bttn.classList.remove("menu-open");
+    navBar.classList.remove("nav-open");
+  });
+}
 
 /*============================================
 Dark mode / Light mode setup
 ============================================*/
 const body = document.querySelector("body");
 const toggleBtn = document.getElementById("toggle-mode");
-
-toggleBtn.addEventListener("click", function() {
+if (toggleBtn) {
+  toggleBtn.addEventListener("click", function () {
     body.classList.toggle("dark-mode");
     console.log("clicker");
   });
+}

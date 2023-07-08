@@ -3,58 +3,80 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!--
     ==================== stylesheet  ====================
     -->
     <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <script src="app/js/protectDashboard.js"></script>
-    <title>FoodLENS-Profile-page</title>
+    <title>dashboard</title>
   </head>
-  <body id="body">
+  <body>
     <!--
     ==================== Header & Nav  ====================
     -->
-    <header id="head">
-      <nav>
+
+    <nav>
+      <div class="nav-header">
         <a class="logo" href="home.html"
           ><img src="Images/logo/Logo.png" alt="Foodlens logo" />FoodLENS</a
         >
-        <!--
+        <h2><span class="dashboard-heading">Dashboard</span></h2>
+
+        <ul>
+          <li>
+            <div class="account">
+              <span><i class="bx bxs-user-circle"></i></span>
+              <h2 id="userName">Tristan</h2>
+              <span><i class="bx bxs-down-arrow"></i></span>
+            </div>
+
+            <ul class="logout">
+              <li class="logout-text">Logout</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!--
             ==================== Mobile menu Icon  ====================
             -->
-        <div id="menu" href="" class="hide-for-desktop menu-icon">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <!--
+      <div id="menu" href="" class="hide-for-desktop menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <!--
             ==================== Mobile menu Links  ====================
             -->
-        <div class="mobile-menu hide-for-desktop">
-          <ul class="lnk">
-            <li class="hide-for-desktop lnk"><a href="home.html">Home</a></li>
-            <!--
+      <div class="mobile-menu hide-for-desktop">
+        <ul class="lnk">
+          <li class="hide-for-desktop lnk dashbtn">
+            <a href="home.html">Home</a>
+          </li>
+          <!--
                 -->
-            <li class="hide-for-desktop lnk Edit"><a href="#">Profile</a></li>
-            <!--
+          <li class="hide-for-desktop lnk Edit dashbtn">
+            <a href="#">Profile</a>
+          </li>
+          <!--
                 -->
-            <li class="hide-for-desktop lnk edit">
-              <a href="dashboard-edit.html">Edit Profile</a>
-            </li>
-            <!--
+
+          <!--
                 -->
-            <li class="hide-for-desktop lnk">
-              <a href="categories.html">Categories</a>
-            </li>
-            <!--
+          <li class="hide-for-desktop lnk dashbtn">
+            <a href="categories.html">All foods</a>
+          </li>
+          <!--
                 -->
-            <li class="hide-for-desktop lnk">
-              <a href="#contact">Contact Us</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+        </ul>
+      </div>
+    </nav>
+
     <section class="dash-hero prof">
       <div class="left">
         <img
@@ -62,66 +84,68 @@
           src="Images/profiles/profile-Hero.jpg"
           alt="profile image"
         />
-        <h2>Hi <span id="userName"> Tristan</span></h2>
+
         <div class="bars">
-          <a href="#"><button class="Active">Dashboard</button></a>
-          <a href="dashboard-edit.html"
-            ><button class="edit-btn">Edit Profile</button></a
-          >
-          <a href="home.html"><button class="home-btn">Home</button></a>
+          <a href="#"><button class="Active dashbtn">Profile</button></a>
+          <a href="home.html"><button class="home-btn dashbtn">Home</button></a>
           <a href="categories.html"
-            ><button class="cat-btn">Categories</button></a
+            ><button class="cat-btn dashbtn">All foods</button></a
           >
-          <a href="#contact"><button class="contct-btn">Contact Us</button></a>
         </div>
       </div>
-      <div class="middle">
-        <img src="Images/profiles/profile-Hero.jpg" alt="profile image" />
-      </div>
-      <div class="right">
-        <div class="profile-details">
-          <h3>Personal Info</h3>
-          <h5>Contact</h5>
-          <p class="mail" id="email">tristan4414@gmail.com</p>
-          <h5>Bio</h5>
-          <p id="bio">
-            I'm a self motivated athlete with a keen sense of taste and fairly
-            average culinary skills.
-          </p>
-          <table>
-            <caption>
-              Diet
-            </caption>
-            <thead>
-              <tr>
-                <th>Composition</th>
-                <th>Percentage</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Carbohydrates</td>
-                <td id="percen"><span id="carb">48</span>%</td>
-              </tr>
-              <tr>
-                <td>Proteins</td>
-                <td id="percen"><span id="prot">28</span>%</td>
-              </tr>
-              <tr>
-                <td>Fats</td>
-                <td id="percen"><span id="fat">24</span>%</td>
-              </tr>
-            </tbody>
-          </table>
-          <h5>Meal Preference</h5>
-          <p id="preference">
-            Non Dairy, Gluten Free, Bromate Free, Low Fat, Vegan
-          </p>
-          <h5>Allergens</h5>
-          <p id="allergens">Dairy, Peanut and Yeast</p>
+      <div class="dashboard-main">
+        <div class="middle">
+          <img src="Images/profiles/profile-Hero.jpg" alt="profile image" />
+        </div>
+        <div class="right">
+          <div class="profile-details">
+            <h3>Personal Info</h3>
+            <h5>Contact</h5>
+            <p class="mail" id="email">tristan4414@gmail.com</p>
+            <h5>Bio</h5>
+            <p id="bio">
+              I'm a self motivated athlete with a keen sense of taste and fairly
+              average culinary skills.
+            </p>
+            <table>
+              <caption>
+                Diet
+              </caption>
+              <thead>
+                <tr>
+                  <th>Composition</th>
+                  <th>Percentage</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Carbohydrates</td>
+                  <td id="percen"><span id="carb">48</span>%</td>
+                </tr>
+                <tr>
+                  <td>Proteins</td>
+                  <td id="percen"><span id="prot">28</span>%</td>
+                </tr>
+                <tr>
+                  <td>Fats</td>
+                  <td id="percen"><span id="fat">24</span>%</td>
+                </tr>
+              </tbody>
+            </table>
+            <h5>Meal Preference</h5>
+            <p id="preference">
+              Non Dairy, Gluten Free, Bromate Free, Low Fat, Vegan
+            </p>
+            <h5>Allergens</h5>
+            <p id="allergens">Dairy, Peanut and Yeast</p>
+          </div>
+          <button class="edit">
+            <a href="dashboard-edit.html">Edit Profile</a>
+          </button>
         </div>
       </div>
     </section>
+
     <!--
     ==================== Footer & Contact  ====================
       -->
@@ -218,8 +242,9 @@
     <!--
     ==================== JavaScript File  ====================
       -->
+
+    <script src="app/js/dashboardUpdate.js"></script>
     <script src="app/js/dashboard.js"></script>
     <script src="app/js/globals.js"></script>
-    <script src="app/js/dashboardUpdate.js"></script>
   </body>
 </html>
