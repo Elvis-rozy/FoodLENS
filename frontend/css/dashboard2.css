@@ -138,13 +138,29 @@ nav .btns {
 
   background-color: white;
 }
+.side-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100px;
+}
+.inf1 p {
+  width: 100px;
+
+  text-align: left;
+
+}
+.inf1{margin-left: 20px;}
 
 .container {
   display: grid;
   grid-template-columns: 20% 80%;
+  margin-top: 20px;
 }
 
 .dash-list {
+  margin-left: 20px;
+  margin-top: 30px;
 }
 
 .user {
@@ -208,7 +224,7 @@ nav .btns {
 
 .basic-info {
   width: 500px;
-  min-height: 300px;
+  min-height: 200px;
   background-color: white;
   margin: 20px;
   display: flex;
@@ -273,8 +289,8 @@ nav .btns {
 .profile-container {
   margin-left: 17px;
 }
-.profile-heading{
-  margin-left: 5%
+.profile-heading {
+  margin-left: 5%;
 }
 .profile-heading,
 .info-heading {

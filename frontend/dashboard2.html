@@ -51,11 +51,10 @@
 
 <main class="container">
 <div class="dash-list">
-<article class="dash-sidebar active" ><span><i class='bx bx-detail'></i></span>Profile</article>
-<article class="dash-sidebar active" ><span><i class='bx bx-bowl-rice'></i></span>All Foods</article>
-<article class="dash-sidebar active" ><span><i class='bx bx-home'></i></span>Home</article>
-<article class="dash-sidebar active" ><span><i class='bx bx-cog'></i></span>Settings</article>
-<article class="dash-sidebar active" >All Foods</article>
+<article class="dash-sidebar active side-link" ><i class='bx bx-detail'></i><span class="inf1"><p>Profile</p></span></article>
+<article class="dash-sidebar active side-link" ><i class='bx bx-bowl-rice'></i><span class="inf1"><p>All Foods</p></span></article>
+<article class="dash-sidebar active side-link" ><i class='bx bx-home'></i><span class="inf1"><p>Home</p></span></article>
+<article class="dash-sidebar active side-link" ><i class='bx bx-cog'></i><span class="inf1"><p>Settings</p></span></article>
 </div>
 
 <div class="all">
@@ -162,8 +161,8 @@
 <section class="user">
     <div class="edit-user">
       <article class="edit-info">
-        <h2>John</h2>
-        <p>john@gmail.com</p>
+        <h2 id="userName">John</h2>
+        <p id="email">john@gmail.com</p>
         </article>
         <div class="flex-img"><img src="./Images/profiles/prof-1.jpg"  class="edit-img"><p class="edit-text">Edit Profile</p></div>
     </div>
@@ -180,8 +179,8 @@
        <main class="user-intro">
         <div class="flex-img2"><img src="./Images/profiles/prof-1.jpg"  class="profile-img"></div>
         <article class="beside-logo">
-        <h2>John</h2>
-        <p>john@gmail.com</p>
+        <h2 id="userName">John</h2>
+        <p id="enail">john@gmail.com</p>
         
     </article>
        </main> 
@@ -190,24 +189,17 @@
 
        <article class="basic-info">
         <main class="info">
-          <p  class="inf">Username</p> <p class="inf">John</p> 
+          <p class="inf">Username</p> <p class="inf"  id="userName" >John</p> 
         </main>
         <div class="border"></div>
         <main class="info">
-          <p  class="inf">Email</p> <p class="inf">john@gmail.com</p> 
+          <p  class="inf">Email</p> <p class="inf" id="email">john@gmail.com</p> 
         </main>
         <div class="border"></div>
         <main class="info">
-          <p  class="inf">Diet</p> <p class="inf">Vegan</p> 
+          <p  class="inf">Diet</p> <p class="inf" id="diet">Veganww</p> 
         </main>
-        <div class="border"></div>
-        <main class="info">
-          <p  class="inf">Allergens</p> <p class="inf">this,that and those</p> 
-        </main>
-        <div class="border"></div>
-        <main class="info">
-          <p  class="inf">Intolerance</p> <p class="inf">this,that and those</p> 
-        </main>
+     
 
 
 
@@ -227,7 +219,7 @@
   
 </article>
 <p class="info-heading">Intolerance</p>
-<article class="allergy-container">
+<article class="allergy-container" id="intolerance">
   <p class="allergy">Egg</p>
    <p class="allergy">Diary</p>
     <p class="allergy">Sea fish</p>
@@ -303,6 +295,9 @@
         </div>
     </footer>
  <script src="app/js/dashboard.js"></script>
+ 
+    <script src="app/js/dashboardUpdate.js"></script>
+    <script src="app/js/globals.js"></script>
   </body>
 </html>
 

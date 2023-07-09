@@ -66,7 +66,7 @@ form.addEventListener("submit", function (e) {
             console.log("Login successful!");
             if (user && loggedIn) {
               sessionStorage.setItem("user", JSON.stringify(user));
-              window.location.href = "dashboard-new.html";
+              window.location.href = "dashboard2.html";
             }
           });
 
