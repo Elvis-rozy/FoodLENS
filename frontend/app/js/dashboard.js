@@ -9,6 +9,7 @@ const editBtn = document.querySelector("#edit");
 
 const userDropDown = document.querySelector(".bxs-down-arrow");
 const logoutDom = document.querySelector(".logout");
+const account = document.querySelector(".account");
 const Active = document.querySelector(".Active");
 const Editbtn = document.querySelector(".edit-btn");
 const Homebtn = document.querySelector(".home-btn");
@@ -66,7 +67,7 @@ if (Editbtn) {
     Contctbtn.classList.remove("Active");
   });
 }
-userDropDown.addEventListener("click", () => {
+account.addEventListener("mouseover", () => {
   console.log("hi");
   logoutDom.classList.toggle("show");
 });
@@ -86,4 +87,5 @@ defaultBtnActive = () => {
 customBtn.addEventListener("click", defaultBtnActive);
 
 defaultUploadBtn.addEventListener("change", (e) => {
-  const file = e.target.files[0];})
+  const file = e.target.files[0];
+});

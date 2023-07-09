@@ -16,7 +16,17 @@ document.getElementById("email").innerHTML = user.email;
 document.getElementById("userName").innerText = user.username;
 document.getElementById("email").innerHTML = user.email;
 document.getElementById("diet").innerHTML = user.diet;
+
+
+//edit info update value
+document.getElementById("edit-userName").value = user.username;
+document.getElementById("edit-email").value = user.email;
+document.getElementById("edit-diet").value = user.diet;
+
 const profile_editbtn = document.querySelector(".flex-img");
+const editpage = document.querySelector(".profile-edit-page");
+const userPage = document.querySelector(".user");
+const container = document.querySelector(".all");
 
 //document.getElementById("intolerance").innerHTML = user.intolerance;
 
@@ -32,4 +42,23 @@ let all_intolerance = user.intolerance.map((item) => {
 all_intolerance = all_intolerance.join("");
 document.querySelector("#intolerance").innerHTML = all_intolerance;
 
-profile_editbtn.addEventListener(click, () => {});
+profile_editbtn.addEventListener("click", () => {
+  console.log("HI");
+  userPage.classList.add("hide");
+  editpage.classList.add("show");
+  container.classList.add("host-edit");
+});
+
+
+//edit page 
+let edit_allergies = user.allergies.map((item) => {
+  return `<p class="allergy1">${item} <span><i class='bx bx-x'></i></span></p>`;
+});
+edit_allergies = edit_allergies.join("");
+document.querySelector(".allergy-container1").innerHTML = edit_allergies;
+
+let edit_intolerance = user.intolerance.map((item) => {
+  return ` <p class="allergy1">${item} <span><i class='bx bx-x'></i></span></p>`;
+});
+edit_intolerance = edit_intolerance.join("");
+document.querySelector("#intolerance-container1").innerHTML = edit_intolerance;

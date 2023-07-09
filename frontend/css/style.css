@@ -2319,7 +2319,7 @@ new dashboard css
   display: flex;
   height: 30px;
   width: 150px;
-  background-color: blue;
+  background-color: rgba(188, 161, 199, 0.9098039216);
   color: white;
   border-radius: 5px;
   justify-content: center;

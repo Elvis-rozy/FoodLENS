@@ -22,7 +22,7 @@
   display: flex;
   height: 30px;
   width: 150px;
-  background-color: blue;
+  background-color:rgba(188, 161, 199, 0.9098039216);
   color: white;
   border-radius: 5px;
   justify-content: center;
@@ -43,6 +43,7 @@
   height: 30px;
   width: 150px;
   background-color: rgb(161, 161, 201);
+
   color: white;
   border-radius: 5px;
   cursor: pointer;
@@ -143,14 +144,16 @@ nav .btns {
   justify-content: space-between;
   align-items: center;
   width: 100px;
+  cursor: pointer;
 }
 .inf1 p {
   width: 100px;
 
   text-align: left;
-
 }
-.inf1{margin-left: 20px;}
+.inf1 {
+  margin-left: 20px;
+}
 
 .container {
   display: grid;
@@ -170,8 +173,8 @@ nav .btns {
   margin-top: 40px;
   position: absolute;
 }
-.user.show {
-  opacity: 1;
+.user.hide {
+  opacity: 0;
 }
 
 .edit-user {
@@ -194,10 +197,10 @@ nav .btns {
 .all {
   background-color: #f1eaeaec;
   position: relative;
-  min-height: 500px;
+  min-height: 600px;
 }
 .all.host-user {
-  min-height: 500px;
+  min-height: 600px;
 }
 .all.host-edit {
   min-height: 1200px;
@@ -243,6 +246,7 @@ nav .btns {
   width: 100%;
   height: 0.9px;
   background-color: rgb(236, 227, 227);
+  color: white;
   padding: 0px;
 }
 .flex-img {
@@ -250,11 +254,13 @@ nav .btns {
   grid-template-columns: 1% 99%;
   width: 180px;
   height: 40px;
-  background-color: aliceblue;
+  background-color:rgba(188, 161, 199, 0.9098039216);
+  color: white;
   margin: 10px;
   justify-content: space-between;
   padding: 7px;
   font-size: 15px;
+  cursor: pointer;
 }
 .edit-text {
   font-size: 13px;
@@ -283,7 +289,7 @@ nav .btns {
   margin: auto;
   padding: 0;
   overflow-y: scroll;
-  height: 400px;
+  height: 500px;
   margin-left: 30px;
 }
 .profile-container {
@@ -311,7 +317,8 @@ nav .btns {
   height: 30px;
   margin: 10px;
   letter-spacing: 1px;
-  background-color: blue;
+  background-color:rgba(188, 161, 199, 0.9098039216);
+  color: white;
 
   border-radius: 5px;
   padding: 5px;
@@ -340,11 +347,16 @@ nav .btns {
 
 .profile-edit-page {
   position: absolute;
-  display: none;
+  opacity: 0;
   width: 100%;
   min-height: 200px;
-
+  display: none;
   z-index: 5;
+}
+
+.profile-edit-page.show {
+  opacity: 1;
+  display: block;
 }
 .image-section {
   position: relative;
@@ -413,21 +425,26 @@ nav .btns {
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
+  min-height: 150px;
+  color: white;
 }
 .allergy1 {
   height: 20px;
   margin: 10px;
   letter-spacing: 1px;
-  background-color: blue;
+  background-color:rgba(188, 161, 199, 0.9098039216);
   font-size: 10px;
   border-radius: 5px;
   padding: 5px;
   display: flex;
   justify-content: space-between;
+  color: white;
+  
 }
 .bx-x {
   cursor: pointer;
   font-size: 14px;
+  color: red;
 }
 
 .allergy-dom {
@@ -435,6 +452,8 @@ nav .btns {
   justify-content: center;
   align-items: center;
   flex-direction: row;
+
+  
 }
 
 .select-body {
@@ -450,7 +469,7 @@ nav .btns {
 .select-body p {
   font-size: 12px;
   width: 50px;
-  background-color: blue;
+  background-color:rgba(188, 161, 199, 0.9098039216);
   color: white;
   margin-bottom: 5px;
   padding: 5px;
@@ -461,13 +480,14 @@ nav .btns {
 
 select {
   outline: none;
-  border: 1px solid #000;
-  background-color: #757070;
+  
+  background-color: #beb9b9;
   border-radius: 3px;
+  overflow-y: scroll;
 }
 
 .save-btn {
-  background-color: blue;
+  background-color:rgba(188, 161, 199, 0.9098039216);
   padding: 10px;
   color: white;
   width: 400px;
