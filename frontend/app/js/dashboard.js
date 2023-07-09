@@ -1,3 +1,6 @@
+const defaultUploadBtn = document.querySelector(".default-camera-btn");
+const customBtn = document.querySelector(".bx-camera");
+
 /*=====================================
 Profile page Setup
 =====================================*/
@@ -43,14 +46,16 @@ if (Contctbtn) {
     Homebtn.classList.remove("Active");
   });
 }
-Active.addEventListener("click", function () {
-  Active.classList.add("Active");
+if (Active) {
+  Active.addEventListener("click", function () {
+    Active.classList.add("Active");
 
-  Editbtn.classList.remove("Active");
-  Catbtn.classList.remove("Active");
-  Homebtn.classList.remove("Active");
-  Contctbtn.classList.remove("Active");
-});
+    Editbtn.classList.remove("Active");
+    Catbtn.classList.remove("Active");
+    Homebtn.classList.remove("Active");
+    Contctbtn.classList.remove("Active");
+  });
+}
 if (Editbtn) {
   Editbtn.addEventListener("click", function () {
     Editbtn.classList.add("Active");
@@ -72,3 +77,13 @@ logoutDom.addEventListener("click", () => {
   localStorage.setItem("loggedIn", loggedIn);
   window.location.href = "login.html";
 });
+
+//upload picture  in edit profile page logic
+defaultBtnActive = () => {
+  defaultUploadBtn.click();
+  console.log("Hi");
+};
+customBtn.addEventListener("click", defaultBtnActive);
+
+defaultUploadBtn.addEventListener("change", (e) => {
+  const file = e.target.files[0];})

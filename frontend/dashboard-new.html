@@ -12,7 +12,7 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <script src="app/js/protectDashboard.js"></script>
+    <!-- <script src="app/js/protectDashboard.js"></script>-->
     <title>dashboard</title>
   </head>
   <body>
@@ -93,57 +93,36 @@
           >
         </div>
       </div>
-      <div class="dashboard-main">
-        <div class="middle">
-          <img src="Images/profiles/profile-Hero.jpg" alt="profile image" />
-        </div>
-        <div class="right">
-          <div class="profile-details">
-            <h3>Personal Info</h3>
-            <h5>Contact</h5>
-            <p class="mail" id="email">tristan4414@gmail.com</p>
-            <h5>Bio</h5>
-            <p id="bio">
-              I'm a self motivated athlete with a keen sense of taste and fairly
-              average culinary skills.
-            </p>
-            <table>
-              <caption>
-                Diet
-              </caption>
-              <thead>
-                <tr>
-                  <th>Composition</th>
-                  <th>Percentage</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Carbohydrates</td>
-                  <td id="percen"><span id="carb">48</span>%</td>
-                </tr>
-                <tr>
-                  <td>Proteins</td>
-                  <td id="percen"><span id="prot">28</span>%</td>
-                </tr>
-                <tr>
-                  <td>Fats</td>
-                  <td id="percen"><span id="fat">24</span>%</td>
-                </tr>
-              </tbody>
-            </table>
-            <h5>Meal Preference</h5>
-            <p id="preference">
-              Non Dairy, Gluten Free, Bromate Free, Low Fat, Vegan
-            </p>
-            <h5>Allergens</h5>
-            <p id="allergens">Dairy, Peanut and Yeast</p>
+      <main class="main-dash">
+        <h1 class="heading">Profile</h1>
+        <div class="dashboard-main">
+          <div class="middle">
+            <img src="Images/profiles/profile-Hero.jpg" alt="profile image" />
+          </div>
+          <div class="right">
+            <div class="profile-details">
+              <h3>Personal Info</h3>
+              <h5>Email</h5>
+              <p class="mail" id="email">tristan4414@gmail.com</p>
+              <h5>Bio</h5>
+              <p id="bio">
+                I'm a self motivated athlete with a keen sense of taste and
+                fairly average culinary skills.
+              </p>
+
+              <h5>Meal Preference</h5>
+              <p id="preference">
+                Non Dairy, Gluten Free, Bromate Free, Low Fat, Vegan
+              </p>
+              <h5>Allergens</h5>
+              <p id="allergens">Dairy, Peanut and Yeast</p>
+            </div>
           </div>
           <button class="edit">
             <a href="dashboard-edit.html">Edit Profile</a>
           </button>
         </div>
-      </div>
+      </main>
     </section>
 
     <!--
