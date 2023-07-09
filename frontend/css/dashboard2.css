@@ -22,7 +22,7 @@
   display: flex;
   height: 30px;
   width: 150px;
-  background-color:rgba(188, 161, 199, 0.9098039216);
+  background-color: rgba(188, 161, 199, 0.9098039216);
   color: white;
   border-radius: 5px;
   justify-content: center;
@@ -169,7 +169,7 @@ nav .btns {
 .user {
   display: grid;
   grid-template-columns: 25% 75%;
-  background-color: #f5f1f1;
+  background-color: rgb(243, 243, 245);
   margin-top: 40px;
   position: absolute;
 }
@@ -177,6 +177,19 @@ nav .btns {
   opacity: 0;
 }
 
+input {
+  outline: none;
+}
+.capitalised,
+.username,
+#username,
+#userName,
+#userName1,
+#edit-userName,
+#edit-diet,
+#diet {
+  text-transform: capitalize;
+}
 .edit-user {
   display: flex;
   flex-direction: column;
@@ -195,7 +208,7 @@ nav .btns {
   flex-direction: column;
 }
 .all {
-  background-color: #f1eaeaec;
+  background-color: rgb(243, 243, 245);
   position: relative;
   min-height: 600px;
 }
@@ -215,7 +228,7 @@ nav .btns {
   justify-content: space-around;
 }
 .beside-logo {
-  transform: translate(-100%, 30%);
+  transform: translate(-70%, 30%);
 }
 
 .beside-logo h2 {
@@ -254,7 +267,7 @@ nav .btns {
   grid-template-columns: 1% 99%;
   width: 180px;
   height: 40px;
-  background-color:rgba(188, 161, 199, 0.9098039216);
+  background-color: rgba(188, 161, 199, 0.9098039216);
   color: white;
   margin: 10px;
   justify-content: space-between;
@@ -285,11 +298,11 @@ nav .btns {
 .profile {
   display: flex;
   flex-direction: column;
-
+  background-color: rgb(243, 243, 245);
   margin: auto;
   padding: 0;
   overflow-y: scroll;
-  height: 500px;
+  height: 490px;
   margin-left: 30px;
 }
 .profile-container {
@@ -317,7 +330,7 @@ nav .btns {
   height: 30px;
   margin: 10px;
   letter-spacing: 1px;
-  background-color:rgba(188, 161, 199, 0.9098039216);
+  background-color: rgba(188, 161, 199, 0.9098039216);
   color: white;
 
   border-radius: 5px;
@@ -329,7 +342,7 @@ nav .btns {
 }
 
 .img-span {
-  background-color: #000;
+  background-color: rgb(185, 157, 157);
   color: white;
   width: 120px;
   height: 120px;
@@ -365,7 +378,7 @@ nav .btns {
   padding-top: 30px;
 }
 .picture {
-  background-color: rgb(20, 20, 20);
+  background-color: white;
   width: 500px;
   height: 200px;
   margin: auto;
@@ -378,7 +391,7 @@ nav .btns {
   margin-right: -100px;
 }
 .bx-camera {
-  color: white;
+  color: black;
 }
 .profile-edit-page-heading {
   padding-top: 20px;
@@ -404,7 +417,7 @@ nav .btns {
   justify-content: space-between;
   align-items: center;
   margin: 10px;
-  background-color: bisque;
+ 
   width: 400px;
 }
 .inpt {
@@ -419,7 +432,7 @@ nav .btns {
 
 .allergy-container1 {
   width: 50%;
-  background-color: rgb(185, 157, 157);
+  background-color: rgb(238, 231, 231);
   margin: 20px 0 20px -10px;
   display: flex;
   flex-wrap: wrap;
@@ -432,14 +445,13 @@ nav .btns {
   height: 20px;
   margin: 10px;
   letter-spacing: 1px;
-  background-color:rgba(188, 161, 199, 0.9098039216);
+  background-color: rgba(188, 161, 199, 0.9098039216);
   font-size: 10px;
   border-radius: 5px;
   padding: 5px;
   display: flex;
   justify-content: space-between;
   color: white;
-  
 }
 .bx-x {
   cursor: pointer;
@@ -452,8 +464,6 @@ nav .btns {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-
-  
 }
 
 .select-body {
@@ -469,7 +479,7 @@ nav .btns {
 .select-body p {
   font-size: 12px;
   width: 50px;
-  background-color:rgba(188, 161, 199, 0.9098039216);
+  background-color: rgba(188, 161, 199, 0.9098039216);
   color: white;
   margin-bottom: 5px;
   padding: 5px;
@@ -480,14 +490,14 @@ nav .btns {
 
 select {
   outline: none;
-  
+
   background-color: #beb9b9;
   border-radius: 3px;
   overflow-y: scroll;
 }
 
 .save-btn {
-  background-color:rgba(188, 161, 199, 0.9098039216);
+  background-color: rgba(188, 161, 199, 0.9098039216);
   padding: 10px;
   color: white;
   width: 400px;

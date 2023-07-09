@@ -67,13 +67,9 @@ if (Editbtn) {
     Contctbtn.classList.remove("Active");
   });
 }
-userDropDown.addEventListener("mouseover", () => {
+userDropDown.addEventListener("click", () => {
   console.log("hi");
   logoutDom.classList.toggle("show");
-});
-logoutDom.addEventListener("mouseout", () => {
-  console.log("hi");
-  logoutDom.classList.remove("show");
 });
 
 logoutDom.addEventListener("click", () => {
