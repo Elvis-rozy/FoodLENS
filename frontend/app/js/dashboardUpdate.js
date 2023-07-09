@@ -13,10 +13,9 @@ document.getElementById("email").innerHTML = user.email;
 //document.getElementById("allergens").innerHTML = user.allergies;
 
 // javascript for dashboard2
-document.getElementById("userName").innerText = user.username;
+document.getElementById("userName").innerHTML = user.username;
 document.getElementById("email").innerHTML = user.email;
 document.getElementById("diet").innerHTML = user.diet;
-
 
 //edit info update value
 document.getElementById("edit-userName").value = user.username;
@@ -49,8 +48,7 @@ profile_editbtn.addEventListener("click", () => {
   container.classList.add("host-edit");
 });
 
-
-//edit page 
+//edit page
 let edit_allergies = user.allergies.map((item) => {
   return `<p class="allergy1">${item} <span><i class='bx bx-x'></i></span></p>`;
 });
