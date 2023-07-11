@@ -103,6 +103,18 @@ body.dark-mode .result {
   color: rgba(188, 161, 199, 0.9098039216);
 }
 
+body.dark-mode .new-section .three-cards .card {
+  background: #000;
+}
+
+body.dark-mode .categories .cat-header {
+  background: #000;
+}
+
+body.dark-mode header {
+  background: rgba(0, 0, 0, 0.831372549);
+}
+
 /*=========================================
 Button Styles
 =========================================*/
@@ -195,6 +207,7 @@ button:hover span:nth-child(4), .dash-hero .right .profile-submit:hover span:nth
 }
 button:hover, .dash-hero .right .profile-submit:hover, header .profile:hover, .form .login-btn:hover {
   transform: scale(0.97);
+  box-shadow: none;
   color: var(--cta);
 }
 
@@ -243,7 +256,7 @@ Menu Links Action
 Mobile menu Styles
 =========================================*/
 .mobile-menu {
-  width: 50%;
+  width: 70%;
   height: 100%;
   background: rgba(0, 0, 0, 0.39);
   transform: translateX(500px);
@@ -251,7 +264,7 @@ Mobile menu Styles
   text-align: center;
   font-size: 22px;
   position: fixed;
-  transition: 1s;
+  transition: 0.3s;
   z-index: 20;
   right: 0;
   top: 0;
@@ -350,34 +363,22 @@ Hero Image Slideshow Animation
   5% {
     background-image: url("/Images/backgrounds/bgB.jpg");
   }
-  15% {
+  25% {
     background-image: url("/Images/backgrounds/bgB.jpg");
   }
-  20% {
+  30% {
     background-image: url("/Images/backgrounds/bgC.jpg");
   }
-  35% {
+  50% {
     background-image: url("/Images/backgrounds/bgC.jpg");
-  }
-  40% {
-    background-image: url("/Images/backgrounds/bgD.jpg");
   }
   55% {
     background-image: url("/Images/backgrounds/bgD.jpg");
   }
-  60% {
-    background-image: url("/Images/backgrounds/bgE.jpg");
-  }
   75% {
-    background-image: url("/Images/backgrounds/bgE.jpg");
+    background-image: url("/Images/backgrounds/bgD.jpg");
   }
   80% {
-    background-image: url("/Images/backgrounds/bgF.jpg");
-  }
-  90% {
-    background-image: url("/Images/backgrounds/bgF.jpg");
-  }
-  95% {
     background-image: url("/Images/backgrounds/bgA.jpg");
   }
   100% {
@@ -467,7 +468,7 @@ Hero Image Slideshow Animation
   }
 }
 /*=========================================
-Slide-in Animation Styles
+Landing page Slide-in Animation Styles
 =========================================*/
 .hidden {
   transition: all 1s;
@@ -514,12 +515,13 @@ header nav {
 header nav .logo {
   display: flex;
   align-items: center;
+  font-size: 13px;
   flex-direction: column;
   color: rgb(65, 53, 96);
 }
 header nav .logo img {
-  width: 70px;
-  height: 50px;
+  width: 50px;
+  height: 40px;
 }
 header nav ul {
   display: flex;
@@ -585,6 +587,13 @@ Mobile and Tab setup
 @media (max-width: 950px) and (max-width: 550px) {
   header nav {
     padding: 10px 20px;
+  }
+  header nav .logo {
+    font-size: 14px;
+  }
+  header nav .logo img {
+    width: 50px;
+    height: 40px;
   }
 }
 @media (max-width: 950px) {
@@ -704,10 +713,10 @@ footer .first-sect .footer li:nth-child(1) {
   padding-bottom: 25px;
 }
 footer .first-sect .footer li a {
-  color: var(--text);
-  transition: 0.4s;
   display: flex;
   align-items: center;
+  color: var(--text);
+  transition: 0.4s;
 }
 footer .first-sect .footer li a button, footer .first-sect .footer li a .dash-hero .right .profile-submit, .dash-hero .right footer .first-sect .footer li a .profile-submit, footer .first-sect .footer li a header .profile, header footer .first-sect .footer li a .profile, footer .first-sect .footer li a .form .login-btn, .form footer .first-sect .footer li a .login-btn {
   min-width: 30px;
@@ -885,11 +894,11 @@ About Setup
   font-style: italic;
   color: var(--cta);
   font-size: 55px;
-  height: 400px;
+  height: 300px;
 }
 .main .topH2 span {
-  display: inline-block;
   animation: dance 2s infinite;
+  display: inline-block;
 }
 .main .topH2 span:nth-child(1) {
   animation-delay: 0.1s;
@@ -917,11 +926,11 @@ About Setup
 }
 .main .topH2::before {
   content: "";
-  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  position: absolute;
   filter: brightness(0.7);
   background-image: url("/images/backgrounds/about-bg.jpg");
   background-size: cover;
@@ -987,46 +996,46 @@ About Setup
   font-weight: 700;
   font-size: 24px;
 }
-.new-section .about-cards {
+.new-section .three-cards {
   padding-bottom: 30px;
   position: relative;
   text-align: start;
   display: flex;
   gap: 25px;
 }
-.new-section .about-cards .about-card {
+.new-section .three-cards .card {
   border: 1px solid rgb(225, 225, 225);
   display: flex;
   align-items: center;
   background: rgb(245, 245, 245);
   flex-direction: column;
   border-radius: 3px;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
   transition: 0.3s;
   width: 100%;
   gap: 10px;
 }
-.new-section .about-cards .about-card:not(:last-child) {
+.new-section .three-cards .card:not(:last-child) {
   margin-bottom: 0;
 }
-.new-section .about-cards .about-card:hover {
+.new-section .three-cards .card:hover {
   box-shadow: 1px 4px 6px rgb(153, 153, 153);
   transform: scale(1.05);
 }
-.new-section .about-cards .about-card img {
+.new-section .three-cards .card img {
   width: 100%;
   height: 220px;
 }
-.new-section .about-cards .about-card h5 {
+.new-section .three-cards .card h5 {
   font-weight: 500;
   font-size: 18px;
 }
-.new-section .about-cards .about-card p {
+.new-section .three-cards .card p {
   padding: 10px 15px 30px;
   font-size: 13px;
 }
-.new-section .about-cards .about-card .btn {
+.new-section .three-cards .card .btn {
   padding-bottom: 20px;
 }
 
@@ -1038,11 +1047,13 @@ Mobile and Tab setup
     font-size: 34px;
   }
   .main .about {
+    padding: 20px;
     display: block;
   }
   .main .about h2 {
-    font-size: 30px;
     transform: rotate(0);
+    font-size: 30px;
+    height: 40px;
   }
   .main .about .first-box, .main .about .second-box {
     flex-direction: row;
@@ -1058,13 +1069,6 @@ Mobile and Tab setup
   .main .about .first-box p {
     padding-right: 0;
   }
-}
-@media (max-width: 950px) and (max-width: 550px) {
-  .main .about .first-box img, .main .about .second-box img {
-    display: none;
-  }
-}
-@media (max-width: 950px) {
   .main .about .second-box {
     margin-left: 0;
   }
@@ -1072,11 +1076,19 @@ Mobile and Tab setup
     padding-left: 0;
   }
 }
+@media (max-width: 950px) and (max-width: 550px) {
+  .main .about .first-box img, .main .about .second-box img {
+    display: none;
+  }
+}
 @media (max-width: 950px) {
-  .main .new-section .about-cards {
+  .main .new-section {
+    padding: 0 10px;
+  }
+  .main .new-section .three-cards {
     display: block;
   }
-  .main .new-section .about-cards .about-card:not(:last-child) {
+  .main .new-section .three-cards .card:not(:last-child) {
     margin-bottom: 30px;
   }
 }
@@ -1125,17 +1137,16 @@ Reviews Setup
   font-size: 14px;
 }
 
-/*
-=========================================
+/*=========================================
 Mobile and Tab setup
-=========================================
-*/
+=========================================*/
 @media (max-width: 550px) {
   .review-cards h3 {
     font-size: 20px;
   }
   .review-cards .review-card {
-    width: 310px;
+    width: 100%;
+    border-radius: 0;
   }
 }
 /*=========================================
@@ -1158,12 +1169,12 @@ Mobile and Tab setup
 =========================================*/
 @media (max-width: 950px) {
   #blog .new-section {
-    padding: 0 20px;
+    padding: 0 10px;
   }
-  #blog .new-section .about-cards {
+  #blog .new-section .three-cards {
     display: block;
   }
-  #blog .new-section .about-cards .about-card:not(:last-child) {
+  #blog .new-section .three-cards .card:not(:last-child) {
     margin-bottom: 30px;
   }
 }
@@ -1281,21 +1292,17 @@ Login Form setup
   color: var(--cta);
 }
 
-/*
-=========================================
+/*=========================================
 Mobile and Tab setup
-=========================================
-*/
+=========================================*/
 @media (max-width: 950px) {
   .form .input-box {
     width: 300px;
   }
 }
-/*
-=========================================
+/*=========================================
 Signup Form setup
-=========================================
-*/
+=========================================*/
 .form .h1B {
   padding-bottom: 30px;
 }
@@ -1370,8 +1377,16 @@ Mobile and Tab setup
   header .profile {
     display: none;
   }
-  #home .search-form input {
-    width: 350px;
+  #home p {
+    padding: 0 5px 40px;
+  }
+}
+@media (max-width: 550px) {
+  #home h1 {
+    font-size: 34px;
+  }
+  #home p {
+    font-size: 17px;
   }
 }
 #categories {
@@ -1455,7 +1470,7 @@ Mobile and Tab setup
 */
 @media (max-width: 950px) {
   #categories {
-    padding-top: 7vh;
+    padding: 7vh 0 40px;
     height: auto;
   }
   #categories .boxes {
@@ -1570,10 +1585,11 @@ Dashboard Setup
 }
 
 .dash-hero {
-  background: linear-gradient(to right, rgb(240, 240, 240), rgb(143, 141, 141), rgb(215, 213, 213));
+  background: linear-gradient(45deg, rgba(19, 2, 60, 0.65), rgb(106, 152, 177), rgba(18, 255, 167, 0.8));
   grid-template-columns: 0.6fr 1.1fr 1.2fr;
   color: var(--text);
   padding: 30px;
+  color: var(--white);
   display: grid;
   gap: 30px;
 }
@@ -1588,7 +1604,7 @@ Dashboard Setup
 .dash-hero .left .dash-pic {
   width: 150px;
   height: 150px;
-  border-radius: 50% 30% 0 50%;
+  border-radius: 50%;
 }
 .dash-hero .left h2 {
   background: rgba(128, 128, 128, 0.07);
@@ -1624,12 +1640,18 @@ Dashboard Setup
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 .dash-hero .middle img {
-  box-shadow: -20px 20px 8px rgb(118, 117, 117);
+  box-shadow: -20px 20px 8px rgba(42, 42, 42, 0.68);
   width: 100%;
   height: 70vh;
-  border-radius: 50% 30% 0 50%;
+  border-radius: 50%;
+}
+.dash-hero .middle button, .dash-hero .middle .right .profile-submit, .dash-hero .right .middle .profile-submit, .dash-hero .middle .form .login-btn, .form .dash-hero .middle .login-btn, .dash-hero .middle header .profile, header .dash-hero .middle .profile {
+  position: absolute;
+  min-width: 70px;
+  bottom: 20%;
 }
 .dash-hero .right {
   display: flex;
@@ -1654,7 +1676,7 @@ Dashboard Setup
   font-size: 18px;
 }
 .dash-hero .right .profile-details .mail {
-  color: rgba(0, 0, 84, 0.43);
+  color: rgb(255, 191, 143);
   font-size: 13px;
 }
 .dash-hero .right .profile-details p {
@@ -1677,7 +1699,6 @@ Dashboard Setup
   text-align: center;
 }
 .dash-hero .right .profile-edit {
-  background: linear-gradient(45deg, rgb(75, 75, 126), rgb(247, 172, 114));
   flex-direction: column;
   border-radius: 0 20px;
   position: relative;
@@ -1685,6 +1706,9 @@ Dashboard Setup
   transition: 1s;
   display: flex;
   gap: 20px;
+}
+.dash-hero .right .profile-edit .h3 {
+  padding-bottom: 20px;
 }
 .dash-hero .right .profile-edit form, .dash-hero .right .profile-edit .diet-comp, .dash-hero .right .profile-edit .tolerance, .dash-hero .right .profile-edit .meal-info {
   flex-direction: column;
@@ -1713,7 +1737,7 @@ Dashboard Setup
 }
 .dash-hero .right .profile-edit .input-box label {
   transform: translateY(-50%);
-  color: rgb(211, 211, 211);
+  color: rgb(255, 255, 255);
   pointer-events: none;
   position: absolute;
   font-size: 12px;
@@ -1724,8 +1748,8 @@ Dashboard Setup
 .dash-hero .right .profile-edit .input-box input {
   width: 100%;
   height: 30px;
-  border: 1px solid rgb(223, 218, 218);
-  color: rgb(211, 211, 211);
+  border: 1px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
   background: transparent;
   padding: 0 20px 0 20px;
   border-radius: 5px;
@@ -1776,17 +1800,30 @@ Dashboard Setup
     display: flex;
     flex-direction: column;
   }
+}
+@media (max-width: 950px) and (max-width: 550px) and (min-width: 550px) {
+  .dash-hero .left {
+    padding-left: 20px;
+  }
+}
+@media (max-width: 950px) and (max-width: 550px) {
   .dash-hero .left h2 {
     margin-bottom: 0;
     font-size: 34px;
   }
+}
+@media (max-width: 950px) and (max-width: 550px) {
   .dash-hero .left .dash-pic {
     width: 100px;
     height: 100px;
   }
+}
+@media (max-width: 950px) and (max-width: 550px) {
   .dash-hero .left .bars {
     display: none;
   }
+}
+@media (max-width: 950px) and (max-width: 550px) {
   .dash-hero .right {
     justify-content: start;
     height: 100vh;
@@ -1802,17 +1839,191 @@ Dashboard Setup
     align-items: center;
     position: absolute;
     border-radius: 0;
-    top: 12vh;
   }
   .dash-hero .right .profile-submit {
     min-width: 300px;
   }
+}
+@media (max-width: 950px) and (max-width: 550px) {
   footer .copy_right {
     padding: 30px 10px;
   }
 }
 /*=========================================
-Profile page Styles
+Dashboard Setup
+=========================================*/
+#header {
+  background: white;
+}
+
+header nav .dash-profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  min-height: 27px;
+  gap: 5px;
+  border-radius: 6px;
+  background: blue;
+  color: var(--white);
+}
+header nav .dash-profile span {
+  font-size: 15px;
+}
+header nav .dash-profile img {
+  width: 15px;
+}
+
+.dashboard {
+  background: pink;
+  padding-top: 13vh;
+}
+.dashboard .left-sect {
+  display: flex;
+  position: fixed;
+  width: 45vw;
+  height: 85vh;
+  top: 12.5vh;
+}
+.dashboard .left-sect .links {
+  width: 100%;
+  padding-top: 10px;
+}
+.dashboard .left-sect .links li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+}
+.dashboard .left-sect .links li img {
+  width: 15px;
+  margin-right: 5px;
+}
+.dashboard .left-sect .info {
+  margin: 30px 15px 0;
+  padding: 30px 10px;
+  border-radius: 5px 5px 0 0;
+  width: 100%;
+}
+.dashboard .left-sect .info h2 {
+  font-size: 18px;
+}
+.dashboard .left-sect .info p {
+  padding: 5px 0 20px;
+  font-size: 14px;
+}
+.dashboard .left-sect .info a {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 22px;
+  font-size: 13px;
+  color: var(--text);
+  background: #e7e7f3;
+  height: 45px;
+  border-radius: 3px;
+  padding-left: 10px;
+}
+.dashboard .left-sect .info a img {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+.dashboard .left-sect #footer {
+  background: white;
+  position: fixed;
+  height: 3vh;
+  bottom: 0;
+  width: 100%;
+}
+.dashboard .links, .dashboard .info, .dashboard .details {
+  background: var(--white);
+}
+.dashboard .details {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: space-evenly;
+  background: transparent;
+  margin-top: 90px;
+  height: auto;
+  width: 85%;
+}
+.dashboard .details .personal-details {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 40px;
+  gap: 35px;
+  width: 47%;
+}
+.dashboard .details .personal-details #header {
+  position: fixed;
+  background: pink;
+  top: 12%;
+  left: 44.7%;
+  width: 100%;
+  padding: 8vh 0 20px;
+}
+.dashboard .details .personal-details h2 {
+  font-size: 18px;
+  text-align: start;
+}
+.dashboard .details .personal-details .personal {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  background: white;
+  padding: 12px 40px;
+  border-radius: 5px;
+  gap: 20px;
+}
+.dashboard .details .personal-details .personal img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.dashboard .details .personal-details .personal .contact h2 {
+  font-size: 16px;
+}
+.dashboard .details .personal-details .personal .contact p {
+  font-size: 13px;
+}
+.dashboard .details .personal-details table {
+  background: white;
+  border-radius: 5px;
+  text-align: start;
+}
+.dashboard .details .personal-details table tr:not(:last-child) td {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+}
+.dashboard .details .personal-details table td {
+  height: 45px;
+  text-align: start;
+  padding-left: 20px;
+}
+.dashboard .details .personal-details .blocks {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  background: white;
+  border-radius: 5px;
+  padding: 10px;
+}
+.dashboard .details .personal-details .blocks span {
+  background: blue;
+  padding: 3px 5px;
+  border-radius: 3px;
+  font-size: 12px;
+  color: white;
+}
+.dashboard .details h4 {
+  font-size: 14px;
+  text-align: start;
+}
+
+/*=========================================
+Selected page Styles
 =========================================*/
 header nav .search-form {
   position: relative;
@@ -1933,11 +2144,9 @@ header nav .search-form img {
   padding: 20px;
 }
 
-/*
-=========================================
+/*=========================================
 Mobile and Tab setup
-=========================================
-*/
+=========================================*/
 @media (max-width: 550px) {
   .result {
     display: flex;
@@ -1979,7 +2188,7 @@ Mobile and Tab setup
 =========================================
 */
 @media (max-width: 550px) {
-  .video-tutorial .video {
+  .video-tutorial {
     width: 100%;
     height: 500px;
   }
@@ -2024,55 +2233,9 @@ Mobile and Tab setup
 
 .snaps-inline > * {
   scroll-snap-align: start;
-} /*=========================================
-Profile page Styles
-=========================================*/
-.search-result {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-  padding: 18vh 40px 40px;
-  flex-direction: column;
 }
-.search-result h3 {
-  margin-bottom: 15px;
-}
-.search-result .results {
-  grid-template-columns: repeat(4, 1fr);
-  width: 100%;
-  display: grid;
-  gap: 20px;
-}
-.search-result .results .result-card {
-  background-color: rgba(149, 149, 151, 0.25);
-  width: 100%;
-  height: auto;
-  transition: 0.3s;
-  border-radius: 5px;
-  overflow: hidden;
-}
-.search-result .results .result-card:hover {
-  box-shadow: 3px 4px 8px rgb(179, 176, 176);
-  transform: scale(1.05);
-}
-.search-result .results .result-card:hover img {
-  filter: brightness(0.5);
-}
-.search-result .results .result-card img {
-  width: 100%;
-  height: 120px;
-}
-.search-result .results .result-card h5 {
-  padding: 10px 15px 0;
-  text-align: start;
-  font-size: 15px;
-}
-.search-result .results .result-card p {
-  padding: 10px 15px 10px;
-  text-align: start;
-  font-size: 12px;
-} /*=========================================
+
+/*=========================================
 Categories page Styles
 =========================================*/
 header {
@@ -2084,10 +2247,10 @@ header {
 }
 .categories .cat-header {
   border-bottom: 1px solid rgba(189, 188, 188, 0.32);
+  background: var(--white);
   padding-top: 13vh;
   position: fixed;
   width: 100%;
-  background: white;
   z-index: 3;
 }
 .categories .cat-header h2 {
@@ -2095,37 +2258,37 @@ header {
   color: var(--cta);
 }
 .categories .cat-header .buttons {
+  grid-template-columns: repeat(6, 1fr);
+  place-items: center;
   height: 30px;
   display: grid;
-  place-items: center;
-  grid-template-columns: repeat(6, 1fr);
 }
 .categories .cat-header .buttons .btn {
   color: rgb(134, 134, 135);
-  cursor: pointer;
-  font-size: 16px;
   font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
   transition: 0.3s;
 }
 .categories .cat-header .buttons .btn:hover {
-  color: var(--cta);
   font-weight: 700;
+  color: var(--cta);
   font-size: 20px;
 }
 .categories .section-center {
-  display: grid;
   grid-template-columns: repeat(4, 1fr);
   padding: 30vh 50px 40px;
   gap: 40px 25px;
+  display: grid;
 }
 .categories .section-center .menu-item {
-  display: flex;
   flex-direction: column;
-  position: relative;
-  height: 170px;
-  overflow: hidden;
   border-radius: 30px 0;
+  overflow: hidden;
+  position: relative;
   transition: 0.3s;
+  height: 170px;
+  display: flex;
 }
 .categories .section-center .menu-item:hover {
   box-shadow: 3px 4px 6px #817e7e;
@@ -2136,20 +2299,20 @@ header {
   height: 100%;
 }
 .categories .section-center .menu-item .item-info {
-  padding: 5px 10px 5px 5px;
-  bottom: 0;
   background: rgba(0, 0, 84, 0.38);
+  padding: 5px 10px 5px 5px;
   border-radius: 0 15px 0 0;
+  flex-direction: column;
   position: absolute;
   display: flex;
+  bottom: 0;
   gap: 5px;
-  flex-direction: column;
 }
 .categories .section-center .menu-item .item-info h4, .categories .section-center .menu-item .item-info p {
-  text-align: start;
-  font-weight: 500;
-  color: #fff;
   text-shadow: 2px 0.5px black;
+  font-weight: 500;
+  text-align: start;
+  color: #fff;
 }
 
 .Grid {
@@ -2161,8 +2324,8 @@ header {
 }
 
 .big {
-  color: var(--cta);
   font-weight: 700;
+  color: var(--cta);
   font-size: 20px;
 }
 

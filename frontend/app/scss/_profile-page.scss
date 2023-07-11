@@ -1,0 +1,194 @@
+/*=========================================
+Dashboard Setup
+=========================================*/
+#header {
+    background: white;
+}
+header nav .dash-profile {
+    @include Display-align-justify ("flex", "center", "center");
+    min-width: 120px;
+    min-height: 27px;
+    gap: 5px;
+    border-radius: 6px;
+    background: blue;
+    color: var(--white);
+
+    span {
+        font-size: 15px;
+    }
+
+    img {
+        width: 15px;
+    }
+}
+
+.dashboard {
+    background: pink;
+    padding-top: 13vh;
+
+    .left-sect {
+        display: flex;
+        position: fixed;
+        width: 45vw;
+        height: 85vh;
+        top: 12.5vh;
+
+        .links {
+            width: 100%;
+            padding-top: 10px;
+
+            li {
+                @include Display-align-justify ("flex", "center", "center");
+                height: 40px;
+
+                img {
+                    width: 15px;
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        .info {
+            margin: 30px 15px 0;
+            padding: 30px 10px;
+            border-radius: 5px 5px 0 0;
+            width: 100%;
+
+            h2 {
+                font-size: 18px;
+            }
+
+            p {
+                padding: 5px 0 20px;
+                font-size: 14px;
+            }
+
+            a {
+                @include Display-align-justify ("flex", "center", "start");
+                gap: 22px;
+                font-size: 13px;
+                color: var(--text);
+                background: #e7e7f3;
+                height: 45px;
+                border-radius: 3px;
+                padding-left: 10px;
+
+                img {
+                    border-radius: 50%;
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+
+        #footer {
+            background: white;
+            position: fixed;
+            height: 3vh;
+            bottom: 0;
+            width: 100%;
+        }
+    }
+
+    .links, .info, .details {
+        background: var(--white);
+    }
+
+    .details {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        justify-content: space-evenly;
+        background: transparent;
+        margin-top: 90px;
+        height: auto;
+        width: 85%;
+
+        .personal-details {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 40px;
+            gap: 35px;
+            width: 47%;
+
+            #header {
+                position: fixed;
+                background: pink;
+                top: 12%;
+                left: 44.7%;
+                width: 100%;
+                padding: 8vh 0 20px;
+
+            }
+
+            h2 {
+                font-size: 18px;
+                text-align: start
+            }
+
+            .personal {
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                background: white;
+                padding: 12px 40px;
+                border-radius: 5px;
+                gap: 20px;
+
+                img {
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                }
+
+                .contact {
+                    h2 {
+                        font-size: 16px;
+                    }
+                    p {
+                        font-size: 13px;
+                    }
+                }
+            }
+
+            table {
+                background: white;
+                border-radius: 5px;
+                text-align: start;
+
+                tr:not(:last-child) td{
+                    border-bottom: 1px solid rgb(0 0 0 / 18%);
+                }
+
+                td {
+                    height: 45px;
+                    text-align: start;
+                    padding-left: 20px;
+                }
+            }
+
+            .blocks {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+                background: white;
+                border-radius: 5px;
+                padding: 10px;
+
+                span {
+                    background: blue;
+                    padding: 3px 5px;
+                    border-radius: 3px;
+                    font-size: 12px;
+                    color: white;
+                }
+            }
+        }
+
+        h4 {
+            font-size: 14px;
+            text-align: start
+        }
+    }
+}

@@ -9,7 +9,6 @@
     -->
     <link rel="stylesheet" href="css/style.css">
     <title>FoodLENS-Categories-page</title>
-
 </head>
 <body>
     <!--
@@ -17,7 +16,13 @@
     -->
     <header>
         <nav>
+            <!--
+            ==================== Logo  ====================
+            -->
             <a class="logo" href="home.html"><img src="Images/logo/Logo.png" alt="Foodlens logo">FoodLENS</a>
+            <!--
+            ==================== Desktop links  ====================
+            -->
             <ul class="hide-for-mobile">
                 <li class="hide-for-mobile"><a class="link1" href="home.html">Home</a></li>
                 <li class="hide-for-mobile"><a class="link2" href="about.html">About</a></li>
@@ -54,30 +59,33 @@
         </nav>
     </header>
     <!--
-        ==================== Categories Section  ====================
+    ==================== Categories Section  ====================
     -->
-    <section class="categories">
+    <section class="categories groups">
         <div class="cat-header">
             <h2>Categories</h2>
-            <!--filter Buttons-->
+            <!--Filter Buttons-->
             <div class="buttons"></div>
         </div>
-        <!-- menu items-->
+        <!-- Category items-->
         <div class="section-center" id="root"></div>
     </section>
     <!--
-        ==================== Search Result Section  ====================
+    ==================== Search Result Section  ====================
     -->
     <section class="search-result-section Hide">
         <div class="result">
-            <img id="img" src="Images/backgrounds/selection.jpg" alt="food image">
+            <img id="img" src="" alt="food image">
             <div class="food-details">
                 <h3 id="foodName"></h3>
-                <span>Cuisine:  <p id="cuisine"></p></span>
-                <span>Category:  <p id="category"></p></span>
+                <span>Cuisine:<p id="cuisine"></p></span>
+                <span>Category:<p id="category"></p></span>
                 Description
                 <p id="descript"></p>
                 <div class="foodInfo">
+                    <!--
+                    ==================== Quantity table  ====================
+                    -->
                     <table>
                         <tbody>
                             <tr>
@@ -199,8 +207,8 @@
     </section>
     <!--
     ==================== Footer & Contact  ====================
-      -->
-      <footer id="contact">
+    -->
+    <footer id="contact">
         <div class="first-sect">
             <div class="logo-box">
                 <a class="logo" href="home.html"><img src="Images/logo/Logo.png" alt="Foodlens logo">FoodLENS</a>
@@ -210,6 +218,9 @@
                     <li id="logout">Log out</li>
                 </ul>
             </div>
+            <!--
+            ==================== Contributors Contacts  ====================
+            -->
             <ul class="footer">
                 <li>Elvis Oguoma O.</li>
                 <li><a href="https://www.linkedin.com/in/elvis-oguoma-66a77318a"><button id="socials">
@@ -248,7 +259,7 @@
             </ul>
         </div>
         <div class="copy_right">
-            &copy;Copyright FoodLENS 2023
+            <a href="https://github.com/Elvis-rozy/FoodLENS"><img src="/Images/logo/pngwing.com.png">Github Repository FoodLENS 2023</a>
             <a href="#">Back to top</a>
         </div>
     </footer>

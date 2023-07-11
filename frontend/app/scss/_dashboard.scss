@@ -11,11 +11,11 @@ Dashboard Setup
 }
 
 .dash-hero {
-    background: linear-gradient(to right, rgb(240, 240, 240),
-    rgb(143 141 141), rgb(215 213 213));
+    background: linear-gradient(45deg, rgb(19 2 60 / 65%), rgb(106 152 177), rgb(18 255 167 / 80%));
     grid-template-columns: .6fr 1.1fr 1.2fr;
     color: var(--text);
     padding: 30px;
+    color: var(--white);
     display: grid;
     gap: 30px;
 
@@ -28,7 +28,7 @@ Dashboard Setup
 
         .dash-pic {
             @include width-height ("150px", "150px");
-            border-radius: 50% 30% 0 50%;
+            border-radius: 50%;
         }
 
         h2 {
@@ -69,11 +69,18 @@ Dashboard Setup
 
     .middle {
         @include Display-align-justify ("flex", "center", "center");
+        position: relative;
 
         img {
-            box-shadow: -20px 20px 8px rgb(118, 117, 117);
+            box-shadow: -20px 20px 8px rgb(42 42 42 / 68%);
             @include width-height ("100%", "70vh");
-            border-radius: 50% 30% 0 50%;
+            border-radius: 50%;
+        }
+
+        button {
+            position: absolute;
+            min-width: 70px;
+            bottom: 20%;
         }
     }
 
@@ -98,7 +105,7 @@ Dashboard Setup
             }
 
             .mail {
-                color: rgba(0, 0, 84, 0.43);
+                color: rgb(255 191 143);
                 font-size: 13px;
             }
 
@@ -128,7 +135,6 @@ Dashboard Setup
         }
 
         .profile-edit {
-            background: linear-gradient(45deg, rgb(75 75 126), rgb(247 172 114));
             flex-direction: column;
             border-radius: 0 20px;
             position: relative;
@@ -136,6 +142,10 @@ Dashboard Setup
             transition: 1s;
             display: flex;
             gap: 20px;
+
+            .h3 {
+                padding-bottom: 20px;
+            }
 
             form, .diet-comp, .tolerance, .meal-info {
                 flex-direction: column;
@@ -170,7 +180,7 @@ Dashboard Setup
 
                 label {
                     transform: translateY(-50%);
-                    color: rgb(211 211 211);
+                    color: rgb(255, 255, 255);
                     pointer-events: none;
                     position: absolute;
                     font-size: 12px;
@@ -181,8 +191,8 @@ Dashboard Setup
 
                 input {
                     @include width-height ("100%", "30px");
-                    border: 1px solid rgb(223 218 218);
-                    color: rgb(211 211 211);
+                    border: 1px solid rgb(255, 255, 255);
+                    color: rgb(255, 255, 255);
                     background: transparent;
                     padding: 0 20px 0 20px;
                     border-radius: 5px;
@@ -245,6 +255,10 @@ Dashboard Setup
                 display: flex;
                 flex-direction: column;
 
+                @media (min-width: 550px) {
+                    padding-left: 20px;
+                }
+
                 h2 {
                     margin-bottom: 0;
                     font-size: 34px;
@@ -274,7 +288,6 @@ Dashboard Setup
                    align-items: center;
                    position: absolute;
                     border-radius: 0;
-                    top: 12vh;
                 }
 
                 .profile-submit {

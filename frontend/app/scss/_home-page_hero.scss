@@ -64,11 +64,20 @@ Mobile and Tab setup
         display: none;
     }
 
+    #home p{
+        padding: 0 5px 40px;
+    }
+}
+@media (max-width: 550px) {
+
     #home {
-        .search-form {
-            input {
-                width: 350px;
-            }
+
+        h1 {
+            font-size: 34px;
+        }
+
+        p {
+            font-size: 17px;
         }
     }
 }
