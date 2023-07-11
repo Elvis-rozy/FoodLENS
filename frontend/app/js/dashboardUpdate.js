@@ -156,11 +156,6 @@ let all_intolerance = intolerance_array.map((item) => {
 all_intolerance = all_intolerance.join("");
 document.querySelector("#intolerance").innerHTML = all_intolerance;
 */
-profile_editbtn.addEventListener("click", () => {
-  userPage.classList.add("hide");
-  editpage.classList.add("show");
-  container.classList.add("host-edit");
-});
 
 /** 
 //edit page

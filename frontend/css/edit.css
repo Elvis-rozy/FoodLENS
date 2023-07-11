@@ -171,16 +171,7 @@ nav .btns {
   margin-top: 30px;
 }
 
-.user {
-  display: grid;
-  grid-template-columns: 25% 75%;
-  background-color: rgb(243, 243, 245);
-  margin-top: 40px;
-  position: absolute;
-}
-.user.hide {
-  opacity: 0;
-}
+
 
 input {
   outline: none;
@@ -195,40 +186,13 @@ input {
 #diet {
   text-transform: capitalize;
 }
-.edit-user {
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  margin-left: 18px;
-  margin-top: 0;
-  padding-top: 40px;
-  width: 205px;
-}
-
-.edit-info {
-  display: flex;
-  flex-direction: column;
-}
 .all {
   background-color: rgb(243, 243, 245);
   position: relative;
-  min-height: 600px;
-}
-.all.host-user {
-  min-height: 600px;
-}
-.all.host-edit {
   min-height: 1200px;
 }
-.user-intro {
-  width: 500px;
-  min-height: 130px;
-  background-color: white;
-  margin: 20px;
-  padding: 15px;
-  display: flex;
-  justify-content: space-around;
-}
+
+
 .beside-logo {
   transform: translate(-70%, 30%);
 }
@@ -362,16 +326,11 @@ input {
 
 .profile-edit-page {
   position: absolute;
-  opacity: 0;
+ 
   width: 100%;
   min-height: 200px;
-  display: none;
-  z-index: 5;
-}
-
-.profile-edit-page.show {
-  opacity: 1;
-  display: block;
+ 
+ 
 }
 .image-section {
   position: relative;
