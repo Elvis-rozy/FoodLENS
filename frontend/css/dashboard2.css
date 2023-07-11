@@ -17,15 +17,17 @@
   padding: 5px;
   text-transform: capitalize;
 }
+li .account {
+  min-width: 200px;
+  height: 30px;
+}
 
 .account {
   display: flex;
-  height: 30px;
-  width: 150px;
   background-color: rgba(188, 161, 199, 0.9098039216);
   color: white;
   border-radius: 5px;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   cursor: pointer;
 }
@@ -35,31 +37,11 @@
 .dashboard-heading {
   color: #000;
 }
-.logout.show {
-  display: block;
-}
-.logout {
-  position: relative;
-  height: 30px;
-  width: 150px;
-  background-color: rgb(161, 161, 201);
 
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-
-  display: none;
-}
 .logout-text {
   font-size: medium;
   font-weight: 12px;
   font-family: "Times New Roman", Times, serif;
-}
-li .logout {
-  position: absolute;
-  margin-top: 7px;
-  justify-content: center;
-  padding-top: 7px;
 }
 
 nav {
@@ -139,7 +121,30 @@ nav .btns {
 
   background-color: white;
 }
-.side-link {
+
+.side-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+}
+.logout-container {
+  display: flex;
+  margin-left: 20px;
+}
+
+.logout-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50px;
+  cursor: pointer;
+
+}
+
+.logoutp{margin-left: 20px;}
+.side-link
+ {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -417,7 +422,7 @@ input {
   justify-content: space-between;
   align-items: center;
   margin: 10px;
- 
+
   width: 400px;
 }
 .inpt {

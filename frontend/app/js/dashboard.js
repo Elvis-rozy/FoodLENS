@@ -7,8 +7,7 @@ Profile page Setup
 const dashBtn = document.querySelector("#editt");
 const editBtn = document.querySelector("#edit");
 
-const userDropDown = document.querySelector(".bxs-down-arrow");
-const logoutDom = document.querySelector(".logout");
+const logoutDom = document.querySelector(".logout-container");
 const account = document.querySelector(".account");
 const Active = document.querySelector(".Active");
 const Editbtn = document.querySelector(".edit-btn");
@@ -67,10 +66,6 @@ if (Editbtn) {
     Contctbtn.classList.remove("Active");
   });
 }
-userDropDown.addEventListener("click", () => {
-  console.log("hi");
-  logoutDom.classList.toggle("show");
-});
 
 logoutDom.addEventListener("click", () => {
   sessionStorage.removeItem("user");

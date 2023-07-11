@@ -28,14 +28,9 @@
         <ul>
           <li>
             <div class="account">
-              <span><i class="bx bxs-user-circle"></i></span>
+              <span><p>Welcome Back,</p></span>
               <h2 id="userName">Tristan</h2>
-              <span><i class="bx bxs-down-arrow"></i></span>
             </div>
-
-            <ul class="logout">
-              <li class="logout-text">Logout</li>
-            </ul>
           </li>
         </ul>
       </div>
@@ -50,12 +45,17 @@
     -->
 
 <main class="container">
+  <article class="side-bar">
 <div class="dash-list">
 <article class="dash-sidebar active side-link" ><i class='bx bx-detail'></i><span class="inf1 cap"><p>Profile</p></span></article>
 <article class="dash-sidebar active side-link" ><i class='bx bx-bowl-rice'></i><span class="inf1"><p>All Foods</p></span></article>
 <article class="dash-sidebar active side-link" ><i class='bx bx-home'></i><span class="inf1"><p>Home</p></span></article>
 <article class="dash-sidebar active side-link" ><i class='bx bx-cog'></i><span class="inf1"><p>Settings</p></span></article>
 </div>
+
+
+<div class="logout-container"> <i class='bx bx-exit' id="logout"></i><p class="logoutp">Logout</p> </div>
+</article>
 
 <div class="all">
   <section class="profile-edit-page">
@@ -104,17 +104,17 @@
 </article>
 <i class='bx bx-transfer-alt'></i>
 <div class="select-body">
- <p>Add</p>
-<select name="" id="" class="allergy-select">
+ <p class="add-allergies">Add</p>
+<select name="" id="select-allergy" class="allergy-select" onchange="selectedValue()">
  
-  <option value="">Add Allergen</option>
-   <option value="">Diary</option>
-   <option value="">Diary</option>
-   <option value="">Diary</option>
-   <option value="">Diary</option>
-   <option value="">Diary</option>
-   <option value="">Diary</option>
-   <option value="">Sea Fish</option>
+  <option value="1">Add Allergen</option>
+   <option value="2">Diary</option>
+   <option value="3">Diary</option>
+   <option value="4">Diary</option>
+   <option value="5">Diary</option>
+   <option value="6">Diary</option>
+   <option value="7">Diary</option>
+   <option value="8">Sea Fish</option>
 </select>
 </div>
 </div>
@@ -134,10 +134,10 @@
 </article>
 <i class='bx bx-transfer-alt'></i>
 <div class="select-body">
- <p>Add</p>
+ <p class="add-intolerance">Add</p>
 <select name="" id="" class="allergy-select">
  
-  <option value="">Add Allergen</option>
+  <option value="">Add Intolerance</option>
    <option value="">Diary</option>
    <option value="">Diary</option>
    <option value="">Diary</option>
