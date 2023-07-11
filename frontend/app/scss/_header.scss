@@ -13,11 +13,12 @@ header {
 
         .logo {
             @include Display-align ("flex", "center");
+            font-size: 13px;
             flex-direction: column;
             color: rgb(65 53 96);
 
             img {
-                @include width-height ("70px", "50px");
+                @include width-height ("50px", "40px");
             }
         }
 
@@ -88,6 +89,14 @@ Mobile and Tab setup
 
             @media (max-width: 550px) {
                 padding: 10px 20px;
+
+                .logo {
+                    font-size: 14px;
+
+                    img {
+                        @include width-height ("50px", "40px");
+                    }
+                }
             }
 
             .header_logo {

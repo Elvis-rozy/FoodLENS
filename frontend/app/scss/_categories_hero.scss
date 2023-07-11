@@ -7,10 +7,10 @@ header {
 
     .cat-header {
         border-bottom: 1px solid rgba(189, 188, 188, 0.32);
+        background: var(--white);
         padding-top: 13vh;
         position: fixed;
         width: 100%;
-        background: white;
         z-index: 3;
 
         h2 {
@@ -19,21 +19,21 @@ header {
         }
 
         .buttons {
+            grid-template-columns: repeat(6, 1fr);
+            place-items: center;
             height: 30px;
             display: grid;
-            place-items: center;
-            grid-template-columns: repeat(6, 1fr);
 
             .btn {
                 color: rgb(134 134 135);
-                cursor: pointer;
-                font-size: 16px;
                 font-weight: 500;
+                font-size: 16px;
+                cursor: pointer;
                 transition: .3s;
 
                 &:hover {
-                    color: var(--cta);
                     font-weight: 700;
+                    color: var(--cta);
                     font-size: 20px;
                 }
             }
@@ -41,19 +41,19 @@ header {
     }
 
     .section-center {
-        display: grid;
         grid-template-columns: repeat(4, 1fr);
         padding: 30vh 50px 40px;
         gap: 40px 25px;
+        display: grid;
 
         .menu-item {
-            display: flex;
             flex-direction: column;
-            position: relative;
-            height: 170px;
-            overflow: hidden;
             border-radius: 30px 0;
+            overflow: hidden;
+            position: relative;
             transition: .3s;
+            height: 170px;
+            display: flex;
 
             &:hover {
                 box-shadow: 3px 4px 6px #817e7e;
@@ -61,25 +61,24 @@ header {
             }
 
             .photo {
-                width: 100%;
-                height: 100%;
+                @include width-height("100%", "100%");
             }
 
             .item-info {
-                padding: 5px 10px 5px 5px;
-                bottom: 0;
                 background: rgb(0 0 84 / 38%);
+                padding: 5px 10px 5px 5px;
                 border-radius: 0 15px 0 0;
+                flex-direction: column;
                 position: absolute;
                 display: flex;
+                bottom: 0;
                 gap: 5px;
-                flex-direction: column;
 
                 h4, p {
-                    text-align: start;
-                    font-weight: 500;
-                    color: #fff;
                     text-shadow: 2px 0.5px black;
+                    font-weight: 500;
+                    text-align: start;
+                    color: #fff;
                 }
             }
         }
@@ -95,8 +94,8 @@ header {
 }
 
 .big {
-    color: var(--cta);
     font-weight: 700;
+    color: var(--cta);
     font-size: 20px;
 }
 /*

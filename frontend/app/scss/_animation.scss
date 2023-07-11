@@ -31,18 +31,15 @@ Hero Image Slideshow Animation
 @keyframes slideshow {
     0% { background-image: url("/Images/backgrounds/bgA.jpg");}
     5% { background-image: url("/Images/backgrounds/bgB.jpg");}
-    15% { background-image: url("/Images/backgrounds/bgB.jpg");}
-    20% { background-image: url("/Images/backgrounds/bgC.jpg");}
-    35% { background-image: url("/Images/backgrounds/bgC.jpg");}
-    40% { background-image: url("/Images/backgrounds/bgD.jpg");}
+    25% { background-image: url("/Images/backgrounds/bgB.jpg");}
+    30% { background-image: url("/Images/backgrounds/bgC.jpg");}
+    50% { background-image: url("/Images/backgrounds/bgC.jpg");}
     55% { background-image: url("/Images/backgrounds/bgD.jpg");}
-    60% { background-image: url("/Images/backgrounds/bgE.jpg");}
-    75% { background-image: url("/Images/backgrounds/bgE.jpg");}
-    80% { background-image: url("/Images/backgrounds/bgF.jpg");}
-    90% { background-image: url("/Images/backgrounds/bgF.jpg");}
-    95% { background-image: url("/Images/backgrounds/bgA.jpg");}
+    75% { background-image: url("/Images/backgrounds/bgD.jpg");}
+    80% { background-image: url("/Images/backgrounds/bgA.jpg");}
     100% { background-image: url("/Images/backgrounds/bgA.jpg");}
 }
+
 @keyframes slideshow1 {
     0% { background-image: url("/Images/slides/bgF.jpg");}
     5% { background-image: url("/Images/slides/16b3a432e9d807de7940cb65a6f0fedc.jpg");}
@@ -58,6 +55,7 @@ Hero Image Slideshow Animation
     95% { background-image: url("/Images/slides/bgF.jpg");}
     100% { background-image: url("/Images/slides/bgF.jpg");}
 }
+
 @keyframes slideshow2 {
     0% { background-image: url("/Images/slides/804dd89153c50707d4160bb6b9280b6b.jpg");}
     5% { background-image: url("/Images/slides/83c0fccb564423516db8cebfc20df8d0.jpg");}
@@ -73,9 +71,8 @@ Hero Image Slideshow Animation
     95% { background-image: url("/Images/slides/804dd89153c50707d4160bb6b9280b6b.jpg");}
     100% { background-image: url("/Images/slides/804dd89153c50707d4160bb6b9280b6b.jpg");}
 }
-
 /*=========================================
-Slide-in Animation Styles
+Landing page Slide-in Animation Styles
 =========================================*/
 .hidden {
     transition: all 1s;

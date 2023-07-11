@@ -72,6 +72,17 @@ body.dark-mode .result {
     color: rgba(188, 161, 199, 0.9098039216);
 }
 
+body.dark-mode .new-section .three-cards .card {
+    background: #000;
+}
+
+body.dark-mode .categories .cat-header {
+    background: #000;
+}
+
+body.dark-mode header {
+    background: #000000d4;
+}
 
 /*=========================================
 Button Styles
@@ -175,6 +186,7 @@ button {
 
     &:hover {
         transform: scale(.97);
+        box-shadow: none;
         color: var(--cta);
     }
 }
@@ -230,14 +242,14 @@ Menu Links Action
 Mobile menu Styles
 =========================================*/
 .mobile-menu {
-    @include width-height ("50%", "100%");
+    @include width-height ("70%", "100%");
     background: rgba(0, 0, 0, 0.39);
     transform: translateX(500px);
     border-radius: 5px 0 0 5px;
     text-align: center;
     font-size: 22px;
     position: fixed;
-    transition: 1s;
+    transition: .3s;
     z-index: 20;
     right: 0;
     top: 0;

@@ -10,11 +10,11 @@ About Setup
         font-style: italic;
         color: var(--cta);
         font-size: 55px;
-        height: 400px;
+        height: 300px;
 
         span {
-            display: inline-block;
             animation: dance 2s infinite;
+            display: inline-block;
 
             &:nth-child(1) {animation-delay: .1s;}
             &:nth-child(2) {animation-delay: .2s;}
@@ -28,11 +28,11 @@ About Setup
 
         &::before {
             content: '';
-            position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
+            position: absolute;
             filter: brightness(.7);
             background-image: url('/images/backgrounds/about-bg.jpg');
             @include background-size-position-repeat ("cover", "center", "no-repeat");
@@ -98,21 +98,21 @@ About Setup
         font-size: 24px;
     }
 
-    .about-cards {
+    .three-cards {
         padding-bottom: 30px;
         position: relative;
         text-align: start;
         display: flex;
         gap: 25px;
 
-        .about-card {
+        .card {
             border: 1px solid rgb(225, 225, 225);
             @include Display-align("flex", "center");
             background: rgb(245, 245, 245);
             flex-direction: column;
             border-radius: 3px;
-            overflow: hidden;
             position: relative;
+            overflow: hidden;
             transition: .3s;
             width: 100%;
             gap: 10px;
@@ -158,11 +158,13 @@ Mobile and Tab setup
         }
 
         .about {
+            padding: 20px;
             display: block;
 
             h2 {
-                font-size: 30px;
                 transform: rotate(0);
+                font-size: 30px;
+                height: 40px;
             }
 
             .first-box, .second-box {
@@ -182,12 +184,6 @@ Mobile and Tab setup
                     padding-right: 0;
                 }
             }
-            @media(max-width: 550px) {
-
-                .first-box img, .second-box img {
-                    display: none;
-                }
-            }
 
             .second-box {
                 margin-left: 0;
@@ -196,14 +192,22 @@ Mobile and Tab setup
                     padding-left: 0;
                 }
             }
+
+            @media(max-width: 550px) {
+
+                .first-box img, .second-box img {
+                    display: none;
+                }
+            }
         }
 
         .new-section {
+            padding: 0 10px;
 
-            .about-cards {
+            .three-cards {
                 display: block;
 
-                .about-card:not(:last-child) {
+                .card:not(:last-child) {
                     margin-bottom: 30px;
                 }
             }

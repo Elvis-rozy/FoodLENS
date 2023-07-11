@@ -28,8 +28,7 @@ Mobile and Tab setup
 */
 @media (max-width: 550px) {
 
-    .video-tutorial .video {
-        width: 100%;
-        height: 500px;
+    .video-tutorial {
+        @include width-height ("100%", "500px");
     }
 }

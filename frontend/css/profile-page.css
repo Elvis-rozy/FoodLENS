@@ -1,0 +1,7 @@
+header nav .dash-profile {
+  display: flex;
+  min-width: 150px;
+  display: flex;
+  border-radius: 6px;
+  background: blue;
+}

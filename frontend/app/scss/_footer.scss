@@ -54,10 +54,9 @@ footer  {
         }
 
         .footer li a {
+            @include Display-align ("flex", "center");
             color: var(--text);
             transition: .4s;
-            display: flex;
-            align-items: center;
 
             button {
                 min-width: 30px;
@@ -87,8 +86,7 @@ footer  {
         }
 
         a {
-            display: flex;
-            align-items: center;
+            @include Display-align ("flex", "center");
             color: var(--accent);
         }
     }
