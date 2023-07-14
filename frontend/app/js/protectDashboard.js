@@ -1,6 +1,6 @@
 const loggedIn = sessionStorage.getItem("user");
-console.log(loggedIn);
 
 if (!loggedIn) {
+  console.log("...you are off");
   window.location.href = "login.html";
 }

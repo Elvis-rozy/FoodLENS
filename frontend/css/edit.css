@@ -27,7 +27,7 @@ li .account {
   background-color: rgba(188, 161, 199, 0.9098039216);
   color: white;
   border-radius: 5px;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   cursor: pointer;
 }
@@ -133,18 +133,18 @@ nav .btns {
   margin-left: 20px;
 }
 
-.logout-container{
+.logout-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 50px;
   cursor: pointer;
-
 }
 
-.logoutp{margin-left: 20px;}
-.side-link
- {
+.logoutp {
+  margin-left: 20px;
+}
+.side-link {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -171,8 +171,6 @@ nav .btns {
   margin-top: 30px;
 }
 
-
-
 input {
   outline: none;
 }
@@ -191,7 +189,6 @@ input {
   position: relative;
   min-height: 1200px;
 }
-
 
 .beside-logo {
   transform: translate(-70%, 30%);
@@ -308,7 +305,6 @@ input {
 }
 
 .img-span {
-  background-color: rgb(185, 157, 157);
   color: white;
   width: 120px;
   height: 120px;
@@ -319,18 +315,19 @@ input {
   border: 1px solid white;
   position: absolute;
   z-index: 1;
+  background-color: #000;
 }
 .img-span-text {
   font-size: 40px;
+  color: white;
+  text-transform: uppercase;
 }
 
 .profile-edit-page {
   position: absolute;
- 
+
   width: 100%;
   min-height: 200px;
- 
- 
 }
 .image-section {
   position: relative;
@@ -353,7 +350,20 @@ input {
 }
 .bx-camera {
   color: black;
+  font-size: 20px;
 }
+.camBtn {
+  background-color: white;
+  width: 20px;
+  height: 10px;
+}
+
+.userImg {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
 .profile-edit-page-heading {
   padding-top: 20px;
 }
@@ -463,4 +473,8 @@ select {
   color: white;
   width: 400px;
   margin: 30px;
+}
+
+.opt {
+  text-align: left;
 }

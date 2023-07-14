@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+    ==================== stylesheet  ====================
+    -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>FoodLENS-Categories-page</title>
+</head>
+<body>
+    <!--
+    ==================== Header & Nav  ====================
+    -->
+    <header>
+        <nav>
+            <!--
+            ==================== Logo  ====================
+            -->
+            <a class="logo" href="home.html"><img src="Images/logo/Logo.png" alt="Foodlens logo">FoodLENS</a>
+            <!--
+            ==================== Desktop links  ====================
+            -->
+            <ul class="hide-for-mobile">
+                <li class="hide-for-mobile"><a class="link1" href="home.html">Home</a></li>
+                <li class="hide-for-mobile"><a class="link2" href="about.html">About</a></li>
+                <li class="hide-for-mobile Hide  link"><a class="link2" href="categories.html">Categories</a></li>
+                <li class="hide-for-mobile"><a class="link3" href="#contact">Contact</a></li>
+            </ul>
+            <div class="search-form">
+                <input type="search" id="search-box" name="searchBox" placeholder="Search ...">
+                <label for="search-box" class="search"><img src="Images/logo/search.png" alt="search icon"></label>
+            </div>
+
+            <a class="profile" href="dashboard.html"><img src="Images/logo/profile.png" alt="profile icon"></a>
+            <!--
+            ==================== Mobile menu Icon  ====================
+            -->
+            <div id="menu" href="" class="hide-for-desktop menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <!--
+            ==================== Mobile menu Links  ====================
+            -->
+            <div class="mobile-menu hide-for-desktop">
+                <ul class="lnk">
+                    <li class="hide-for-desktop lnk"><a href="home.html">Home</a></li><!--
+                --><li class="hide-for-desktop lnk"><a href="dashboard.html">Profile</a></li> <!--
+                --><li class="hide-for-desktop lnk"><a href="categories.html">Categories</a></li> <!--
+                --><li class="hide-for-desktop lnk"><a href="about.html">About</a></li><!--
+                --><li class="hide-for-desktop lnk"><a href="#contact">Contact</a></li><!--
+                --><li class="hide-for-desktop lnk"><a href="#">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!--
+    ==================== Categories Section  ====================
+    -->
+    <section class="categories groups">
+        <div class="cat-header">
+            <h2>Categories</h2>
+            <!--Filter Buttons-->
+            <div class="buttons"></div>
+        </div>
+        <!-- Category items-->
+        <div class="section-center" id="root"></div>
+    </section>
+    <!--
+    ==================== Search Result Section  ====================
+    -->
+    <section class="search-result-section Hide">
+        <div class="result">
+            <img id="img" src="" alt="food image">
+            <div class="food-details">
+                <h3 id="foodName"></h3>
+                <span>Cuisine:<p id="cuisine"></p></span>
+                <span>Category:<p id="category"></p></span>
+                Description
+                <p id="descript"></p>
+                <div class="foodInfo">
+                    <!--
+                    ==================== Quantity table  ====================
+                    -->
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Serving Quantity:</td>
+                                <td id="servQty" class="last"></td>
+                            </tr>
+                            <tr>
+                                <td>Serving Unit:</td>
+                                <td id="servUnit" class="last"></td>
+                            </tr>
+                            <tr>
+                                <td>Serving Weight Grams:</td>
+                                <td id="servWtgrm" class="last"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="nutrition-facts">
+                <h3>Nutrition Facts</h3>
+                <p class="cal">Calories:<strong id="calor"></strong></p>
+                <p>The % Daily Value (DV) tells you how much a nutrient in
+                    a serving of food contributes to a daily diet. 2000 calories a
+                    day is used for general nutrition advice.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Total</th>
+                            <th scope="col">% Daily Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Total Carbohydrates  </strong><span id="totcarb"></span></td>
+                            <td class="last"><strong id="val1"></strong>%</td>
+                        </tr>
+                        <tr>
+                            <td>Dietry Fiber <strong id="dietfib"></strong></td>
+                            <td class="last"><strong id="val2"></strong>%</td>
+                        </tr>
+                        <tr>
+                            <td>Sugars  <strong id="sugars"></strong></td>
+                            <td class="last"><strong id="val3"></strong>%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Protein  </strong><span id="totprot"></span></td>
+                            <td class="last"><strong id="val4"></strong>%</td>
+                        </tr>
+                        <tr>
+                            <td>Iron  <strong id="irn"></strong></td>
+                            <td class="last"><strong id="val5"></strong>%</td>
+                        </tr>
+                        <tr>
+                            <td>Potassium  <strong id="pot"></strong></td>
+                            <td class="last"><strong id="val6"></strong>%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Fats  </strong><span id="totfat"></span></td>
+                            <td class="last"><strong id="val7"></strong>%</td>
+                        </tr>
+                        <tr>
+                            <td>Saturated Fat <strong id="satfat"></strong></td>
+                            <td class="last"><strong id="val8"></strong>%</td>
+                        </tr>
+                        <tr>
+                            <td>Sodium  <strong><span id="sodium"></span></strong></td>
+                            <td class="last"><strong id="val9"></strong>%</td>
+                        </tr>
+                        <tr>
+                            <td>Cholesterol  <strong id="cholest"></strong></td>
+                            <td class="last"><strong id="val10"></strong>%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="ingredients">
+                <div class="ingredients-info">
+                    <h3>Ingredients</h3>
+                    <p id="ingredient-details"></p>
+                    Ingredient Info source: <a id="ingsrc" href="#">source_name</a>
+                </div>
+            </div>
+        </div>
+        <!--
+        ==================== Video Tutorial Section  ====================
+        -->
+        <div class="video-tutorial">
+            <h3>Video Tutorial</h3>
+            <div class="video">
+                <iframe id="video" width="100%" height="100%"
+                    src="https://www.youtube.com/embed/Czbz9jbU6nE"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <h4 id="foodN"></h4>
+            <p>You can watch the video on youtube <a href="https://www.youtube.com/embed/Czbz9jbU6nE">here</a></p>
+        </div>
+        <!--
+        ==================== More Options Section  ====================
+        -->
+        <div class="more-section">
+            <h3>View more delicious meals</h3>
+            <a href="categories.html" class="more snaps-inline">
+                <div class="more-card"></div>
+                <div class="middle">
+                    <div id="middle" class="more-card"></div>
+                    <div id="middle" class="more-card"></div>
+                </div>
+                <div class="more-card"></div>
+                <div class="middle">
+                    <div id="middle" class="more-card"></div>
+                    <div id="middle" class="more-card"></div>
+                </div>
+                <div class="more-card"></div>
+            </a>
+        </div>
+    </section>
+    <!--
+    ==================== Footer & Contact  ====================
+    -->
+    <footer id="contact">
+        <div class="first-sect">
+            <div class="logo-box">
+                <a class="logo" href="home.html"><img src="Images/logo/Logo.png" alt="Foodlens logo">FoodLENS</a>
+                <ul class="footer mode">
+                    <li id="tt">Love our work? Contact us</li>
+                    <li id="toggle-mode">Dark/Light mode</li>
+                    <li id="logout">Log out</li>
+                </ul>
+            </div>
+            <!--
+            ==================== Contributors Contacts  ====================
+            -->
+            <ul class="footer">
+                <li>Elvis Oguoma O.</li>
+                <li><a href="https://www.linkedin.com/in/elvis-oguoma-66a77318a"><button id="socials">
+                    <img src="Images/logo/linkedin.png" alt="linkedin">
+                </button>Linkedin</a></li>
+                <li><a href="https://www.twitter.com/r0elle"><button id="socials">
+                    <img src="Images/logo/twitter.png" alt="twitter">
+                </button>Twitter</a></li>
+                <li><a href="elvisrozy52@gmail.com"><button id="socials">
+                    <img src="Images/logo/gmail.png" alt="gmail">
+                </button>Gmail</a></li>
+            </ul>
+            <ul class="footer">
+                <li>Aralu Kenechukwu C.</li>
+                <li><a href="https://www.linkedin.com/in/kenechukwu-aralu-1b7238207"><button id="socials">
+                    <img src="Images/logo/linkedin.png" alt="linkedin">
+                </button>Linkedin</a></li>
+                <li><a href="https://twitter.com/aralukene"><button id="socials">
+                    <img src="Images/logo/twitter.png" alt="twitter">
+                </button>Twitter</a></li>
+                <li><a href="junioraralu@gmail.com"><button id="socials">
+                    <img src="Images/logo/gmail.png" alt="gmail">
+                </button>Gmail</a></li>
+            </ul>
+            <ul class="footer">
+                <li>Aweda Ifeoluwa</li>
+                <li><a href="https://ng.linkedin.com/in/aweda-ifeoluwa-b91b9976"><button id="socials">
+                    <img src="Images/logo/linkedin.png" alt="linkedin">
+                </button>Linkedin</a></li>
+                <li><a href="https://twitter.com/LovethSir"><button id="socials">
+                    <img src="Images/logo/twitter.png" alt="twitter">
+                </button>Twitter</a></li>
+                <li><a href="ifeI1939@gmail.com"><button id="socials">
+                    <img src="Images/logo/gmail.png" alt="gmail">
+                </button>Gmail</a></li>
+            </ul>
+        </div>
+        <div class="copy_right">
+            <a href="https://github.com/Elvis-rozy/FoodLENS"><img src="/Images/logo/pngwing.com.png">Github Repository FoodLENS 2023</a>
+            <a href="#">Back to top</a>
+        </div>
+    </footer>
+    <!--
+    ==================== JavaScript File  ====================
+    -->
+    <script src="app/js/header.js"></script>
+    <script src="app/js/globals.js"></script>
+     <script src="/app/js/categories.js"></script>
+    <script src="/app/js/searchBar.js"></script>
+</body>
+</html>

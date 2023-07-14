@@ -133,18 +133,18 @@ nav .btns {
   margin-left: 20px;
 }
 
-.logout-container{
+.logout-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 50px;
   cursor: pointer;
-
 }
 
-.logoutp{margin-left: 20px;}
-.side-link
- {
+.logoutp {
+  margin-left: 20px;
+}
+.side-link {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -343,6 +343,10 @@ input {
   margin-top: 50px;
 }
 
+.edit-text {
+  color: white;
+}
+
 .img-span {
   background-color: rgb(185, 157, 157);
   color: white;
@@ -356,8 +360,32 @@ input {
   position: absolute;
   z-index: 1;
 }
-.img-span-text {
-  font-size: 40px;
+
+.img-span-text1 {
+  display: flex;
+  font-size: 50px;
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  color: white;
+  text-transform: uppercase;
+
+  justify-content: center;
+  align-items: center;
+}
+.img-span-text2 {
+  display: flex;
+  font-size: 10px;
+  background-color: #000;
+  width: 25px;
+  height: 100%;
+  border-radius: 50%;
+  color: white;
+  text-transform: uppercase;
+
+  justify-content: center;
+  align-items: center;
 }
 
 .profile-edit-page {

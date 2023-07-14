@@ -1,6 +1,3 @@
-const defaultUploadBtn = document.querySelector(".default-camera-btn");
-const customBtn = document.querySelector(".bx-camera");
-
 /*=====================================
 Profile page Setup
 =====================================*/
@@ -69,18 +66,8 @@ if (Editbtn) {
 
 logoutDom.addEventListener("click", () => {
   sessionStorage.removeItem("user");
+  sessionStorage.removeItem("updatedUser");
   const loggedIn = false;
   localStorage.setItem("loggedIn", loggedIn);
   window.location.href = "login.html";
-});
-
-//upload picture  in edit profile page logic
-defaultBtnActive = () => {
-  defaultUploadBtn.click();
-  console.log("Hi");
-};
-customBtn.addEventListener("click", defaultBtnActive);
-
-defaultUploadBtn.addEventListener("change", (e) => {
-  const file = e.target.files[0];
 });

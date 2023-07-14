@@ -41,6 +41,7 @@ const login = async (req, res) => {
 
   res.status(StatusCodes.OK).json({
     user: {
+      userPicture: user.userPicture,
       email: user.email,
       username: user.username,
       diet: user.diet,
@@ -52,22 +53,25 @@ const login = async (req, res) => {
 };
 
 const updateUserInfo = async (req, res) => {
-  const { email, diet, allergies, intolerance, age, username } = req.body;
+  const { email, diet, allergies, intolerance, age, username, userPicture } =
+    req.body;
 
   let user = await User.findOne({ _id: req.user.userId });
   console.log(req.user);
-user.email=email
+  user.email = email;
   user.diet = diet;
   user.allergies = allergies;
   user.intolerance = intolerance;
   user.username = username;
+  user.userPicture = userPicture;
 
   console.log(user);
   await user.save();
   const token = await user.createJWT();
   res.status(StatusCodes.OK).json({
     user: {
-      email:user.email,
+      userPicture: user.userPicture,
+      email: user.email,
       username: user.username,
       diet: user.diet,
       intolerance: user.intolerance,
@@ -82,6 +86,7 @@ const getUser = async (req, res) => {
   const token = await user.createJWT();
   res.status(StatusCodes.OK).json({
     user: {
+      userPicture: user.userPicture,
       email: user.email,
       username: user.username,
       diet: user.diet,

@@ -59,20 +59,30 @@ form.addEventListener("submit", function (e) {
     })
       .then(function (response) {
         if (response.ok) {
-          return response.json().then((user) => {
-            console.log(user);
-            const loggedIn = true;
-            localStorage.setItem("loggedIn", loggedIn);
-            console.log("Login successful!");
-            if (user && loggedIn) {
+          return response
+            .json()
+            .then((user) => {
+              console.log(user);
+              let loggedIn = true;
               sessionStorage.setItem("user", JSON.stringify(user));
-              window.location.href = "dashboard2.html";
-            }
-          });
+              localStorage.setItem("loggedIn", loggedIn);
+              if (user) {
+                window.location.href = "dashboard2.html";
+              }
+
+              console.log("Login successful!");
+              if (sessionStorage.getItem("loggedIn")) {
+                welcomeFlag();
+              }
+            })
+            .then(() => {
+              console.log("login again");
+            });
 
           // Successful response handling
         } else {
           // Error response handling
+          // window.location.href = "login.html";
           console.log("Invalid credentials.");
         }
       })
@@ -85,3 +95,13 @@ form.addEventListener("submit", function (e) {
       });
   }
 });
+
+function welcomeFlag() {
+  const lastVisited = localStorage.getItem("lastVisited");
+  const present = new Date().getTime();
+
+  if (!lastVisited || present - lastVisited > 12 * 60 * 60 * 1000) {
+    localStorage.setItem("firstLogin", true);
+    localStorage.setItem("lastVisited", new Date().getTime());
+  }
+}

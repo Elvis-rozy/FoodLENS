@@ -1,32 +1,13 @@
 const token = localStorage.getItem("token");
 
+const userImage = document.querySelector(".flex-img");
+const userImage2 = document.querySelector(".flex-img2");
+//const avarta = `<h1 class="img-span-text">EA</h1>`;
+const welcomeDom = document.querySelector(".welcome");
+let firstLogin = localStorage.getItem("firstLogin");
 
 
-
-
-
-function displayProfile(){
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
+//fetching user
 
 fetch("http://localhost:3000/api/v1/auth/getuser", {
   method: "GET",
@@ -37,54 +18,86 @@ fetch("http://localhost:3000/api/v1/auth/getuser", {
 })
   .then((response) => {
     return response.json().then((data) => {
-      sessionStorage.setItem("user", JSON.stringify(data));
+      sessionStorage.setItem("user", JSON.stringify(data.user));
+      sessionStorage.setItem("updatedUser", JSON.stringify(data.user));
     });
   })
   .catch((error) => console.log(error));
 
-const data = JSON.parse(sessionStorage.getItem("user"));
-const { user } = data;
+const user = JSON.parse(sessionStorage.getItem("user"));
+const { email, username, allergies, intolerance, diet, userPicture } = user;
+
+
+console.log(username.charAt(0))
+
+if(user){
+
+  
+setTimeout(() => {
+  welcomeDom.innerHTML = `<i class="bx bxs-user-circle"></i>`;
+}, 5000);
+
+if (firstLogin) {
+  welcomeDom.innerHTML = "Welcome";
+} else {
+  welcomeDom.innerHTML = "Welcome Back";
+}
+
+
+
+
 
 //window.addEventListener("DOMContentLoaded", () => display_user_detail());
 
+if (userPicture) {
+  userImage.innerHTML = `<img src=${userPicture}  class="edit-img"><a href="edit-page.html"><p class="edit-text">Edit Profile</p></a>`;
+  userImage2.innerHTML = `<img src=${userPicture}  class="profile-img">`;
+} else {
+  userImage.innerHTML = `<h1 class="img-span-text2">${username.charAt(
+    0
+  )}</h1><a href="edit-page.html"><p class="edit-text">Edit Profile</p></a>`;
+  userImage2.innerHTML = `<h1 class="img-span-text1">${username.charAt(
+    0
+  )}</h1>`;
+}
+
 const username1 = document.querySelector(".username");
-if(username1){
-    username1.innerHTML=user.username
+if (username1) {
+  username1.innerHTML = username;
 }
 
 const username2 = document.querySelector("#username");
 if (username2) {
-  username2.innerHTML = user.username;
+  username2.innerHTML = username;
 }
 
 const username3 = document.getElementById("userName");
 if (username3) {
-  username3.innerHTML = user.username;
+  username3.innerHTML = username;
 }
 const email1 = document.getElementById("email");
 if (email1) {
-  email1.innerHTML = user.email;
+  email1.innerHTML = email;
 }
 
 const username4 = document.getElementById("userName1");
 if (username4) {
-  username4.innerHTML = user.username;
+  username4.innerHTML = username;
 }
 
 const email2 = document.getElementById("email2");
 if (email2) {
-  email2.innerHTML = user.email;
+  email2.innerHTML = email;
 }
 
 const email3 = document.getElementById("email1");
 if (email3) {
-  email3.innerHTML = user.email;
+  email3.innerHTML = email;
 }
 
-
-const diet = document.getElementById("diet");
-if (diet) {
-  diet.innerHTML = user.diet;
+const dietDom = document.getElementById("diet");
+if (dietDom) {
+  dietDom.innerHTML = diet;
 }
 
 //document.querySelector(".username").innerHTML = user.username;
@@ -96,17 +109,20 @@ if (diet) {
 //document.getElementById("email1").innerHTML = user.email;
 //document.getElementById("diet").innerHTML = user.diet;
 
-
-let all_allergies = user.allergies.map((item) => {
+let all_allergies = allergies.map((item) => {
   return ` <p class="allergy capitalised">${item}</p>`;
 });
 all_allergies = all_allergies.join("");
 document.querySelector(".allergy-container").innerHTML = all_allergies;
 
-let all_intolerance = user.intolerance.map((item) => {
+let all_intolerance = intolerance.map((item) => {
   return ` <p class="allergy capitalised">${item}</p>`;
 });
 all_intolerance = all_intolerance.join("");
 document.querySelector("#intolerance").innerHTML = all_intolerance;
+
+}
+
+
 
 
