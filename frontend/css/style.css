@@ -118,7 +118,7 @@ body.dark-mode header {
 /*=========================================
 Button Styles
 =========================================*/
-button, .dash-hero .right .profile-submit, header .profile, .form .login-btn {
+button, .profile-edit .profile-submit, header .profile, .form .login-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -134,7 +134,7 @@ button, .dash-hero .right .profile-submit, header .profile, .form .login-btn {
   position: relative;
   cursor: pointer;
 }
-button::before, .dash-hero .right .profile-submit::before, header .profile::before, .form .login-btn::before {
+button::before, .profile-edit .profile-submit::before, header .profile::before, .form .login-btn::before {
   content: "";
   top: 0;
   left: 0;
@@ -143,7 +143,7 @@ button::before, .dash-hero .right .profile-submit::before, header .profile::befo
   position: absolute;
   background: rgba(255, 255, 255, 0.1);
 }
-button::after, .dash-hero .right .profile-submit::after, header .profile::after, .form .login-btn::after {
+button::after, .profile-edit .profile-submit::after, header .profile::after, .form .login-btn::after {
   content: "";
   top: 0;
   left: -100%;
@@ -153,59 +153,59 @@ button::after, .dash-hero .right .profile-submit::after, header .profile::after,
   position: absolute;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
 }
-button:hover::after, .dash-hero .right .profile-submit:hover::after, header .profile:hover::after, .form .login-btn:hover::after {
+button:hover::after, .profile-edit .profile-submit:hover::after, header .profile:hover::after, .form .login-btn:hover::after {
   left: 100%;
 }
-button span, .dash-hero .right .profile-submit span, header .profile span, .form .login-btn span {
+button span, .profile-edit .profile-submit span, header .profile span, .form .login-btn span {
   position: absolute;
   transition: 0.5s;
   display: block;
 }
-button span:nth-child(1), .dash-hero .right .profile-submit span:nth-child(1), header .profile span:nth-child(1), .form .login-btn span:nth-child(1) {
+button span:nth-child(1), .profile-edit .profile-submit span:nth-child(1), header .profile span:nth-child(1), .form .login-btn span:nth-child(1) {
   top: 0;
   left: 0;
   width: 0;
   height: 1px;
   background: #fff;
 }
-button span:nth-child(2), .dash-hero .right .profile-submit span:nth-child(2), header .profile span:nth-child(2), .form .login-btn span:nth-child(2) {
+button span:nth-child(2), .profile-edit .profile-submit span:nth-child(2), header .profile span:nth-child(2), .form .login-btn span:nth-child(2) {
   top: 0;
   left: 0;
   height: 0;
   width: 1px;
   background: #fff;
 }
-button span:nth-child(3), .dash-hero .right .profile-submit span:nth-child(3), header .profile span:nth-child(3), .form .login-btn span:nth-child(3) {
+button span:nth-child(3), .profile-edit .profile-submit span:nth-child(3), header .profile span:nth-child(3), .form .login-btn span:nth-child(3) {
   bottom: 0;
   right: 0;
   width: 0;
   height: 1px;
   background: #fff;
 }
-button span:nth-child(4), .dash-hero .right .profile-submit span:nth-child(4), header .profile span:nth-child(4), .form .login-btn span:nth-child(4) {
+button span:nth-child(4), .profile-edit .profile-submit span:nth-child(4), header .profile span:nth-child(4), .form .login-btn span:nth-child(4) {
   bottom: 0;
   right: 0;
   height: 0;
   width: 1px;
   background: #fff;
 }
-button:hover span:nth-child(1), .dash-hero .right .profile-submit:hover span:nth-child(1), header .profile:hover span:nth-child(1), .form .login-btn:hover span:nth-child(1) {
+button:hover span:nth-child(1), .profile-edit .profile-submit:hover span:nth-child(1), header .profile:hover span:nth-child(1), .form .login-btn:hover span:nth-child(1) {
   transform: translateX(100%);
   width: 100%;
 }
-button:hover span:nth-child(2), .dash-hero .right .profile-submit:hover span:nth-child(2), header .profile:hover span:nth-child(2), .form .login-btn:hover span:nth-child(2) {
+button:hover span:nth-child(2), .profile-edit .profile-submit:hover span:nth-child(2), header .profile:hover span:nth-child(2), .form .login-btn:hover span:nth-child(2) {
   transform: translateY(100%);
   height: 100%;
 }
-button:hover span:nth-child(3), .dash-hero .right .profile-submit:hover span:nth-child(3), header .profile:hover span:nth-child(3), .form .login-btn:hover span:nth-child(3) {
+button:hover span:nth-child(3), .profile-edit .profile-submit:hover span:nth-child(3), header .profile:hover span:nth-child(3), .form .login-btn:hover span:nth-child(3) {
   transform: translateX(-100%);
   width: 100%;
 }
-button:hover span:nth-child(4), .dash-hero .right .profile-submit:hover span:nth-child(4), header .profile:hover span:nth-child(4), .form .login-btn:hover span:nth-child(4) {
+button:hover span:nth-child(4), .profile-edit .profile-submit:hover span:nth-child(4), header .profile:hover span:nth-child(4), .form .login-btn:hover span:nth-child(4) {
   transform: translateY(-100%);
   height: 100%;
 }
-button:hover, .dash-hero .right .profile-submit:hover, header .profile:hover, .form .login-btn:hover {
+button:hover, .profile-edit .profile-submit:hover, header .profile:hover, .form .login-btn:hover {
   transform: scale(0.97);
   box-shadow: none;
   color: var(--cta);
@@ -718,14 +718,14 @@ footer .first-sect .footer li a {
   color: var(--text);
   transition: 0.4s;
 }
-footer .first-sect .footer li a button, footer .first-sect .footer li a .dash-hero .right .profile-submit, .dash-hero .right footer .first-sect .footer li a .profile-submit, footer .first-sect .footer li a header .profile, header footer .first-sect .footer li a .profile, footer .first-sect .footer li a .form .login-btn, .form footer .first-sect .footer li a .login-btn {
+footer .first-sect .footer li a button, footer .first-sect .footer li a .profile-edit .profile-submit, .profile-edit footer .first-sect .footer li a .profile-submit, footer .first-sect .footer li a header .profile, header footer .first-sect .footer li a .profile, footer .first-sect .footer li a .form .login-btn, .form footer .first-sect .footer li a .login-btn {
   min-width: 30px;
   min-height: 30px;
   border-radius: 50%;
   margin-right: 20px;
   box-shadow: none;
 }
-footer .first-sect .footer li a button img, footer .first-sect .footer li a .dash-hero .right .profile-submit img, .dash-hero .right footer .first-sect .footer li a .profile-submit img, footer .first-sect .footer li a header .profile img, header footer .first-sect .footer li a .profile img, footer .first-sect .footer li a .form .login-btn img, .form footer .first-sect .footer li a .login-btn img {
+footer .first-sect .footer li a button img, footer .first-sect .footer li a .profile-edit .profile-submit img, .profile-edit footer .first-sect .footer li a .profile-submit img, footer .first-sect .footer li a header .profile img, header footer .first-sect .footer li a .profile img, footer .first-sect .footer li a .form .login-btn img, .form footer .first-sect .footer li a .login-btn img {
   width: 18px;
   height: 18px;
 }
@@ -1273,7 +1273,7 @@ Login Form setup
   text-decoration: underline;
   color: var(--cta);
 }
-.form button, .form .dash-hero .right .profile-submit, .dash-hero .right .form .profile-submit, .form header .profile, header .form .profile, .form .login-btn {
+.form button, .form .profile-edit .profile-submit, .profile-edit .form .profile-submit, .form header .profile, header .form .profile, .form .login-btn {
   min-width: 100%;
   min-height: 45px;
 }
@@ -1575,404 +1575,167 @@ Profile page Styles
 /*=========================================
 Dashboard Setup
 =========================================*/
-#head {
-  border-radius: 0 40px 40px 0;
-  width: 200px;
-}
-
-.prof {
-  height: 100vh;
-}
-
-.dash-hero {
-  background: linear-gradient(45deg, rgba(19, 2, 60, 0.65), rgb(106, 152, 177), rgba(18, 255, 167, 0.8));
-  grid-template-columns: 0.6fr 1.1fr 1.2fr;
-  color: var(--text);
-  padding: 30px;
-  color: var(--white);
-  display: grid;
-  gap: 30px;
-}
-.dash-hero .left, .dash-hero .right, .dash-hero .middle {
-  flex-direction: column;
-}
-.dash-hero .left {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.dash-hero .left .dash-pic {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-}
-.dash-hero .left h2 {
-  background: rgba(128, 128, 128, 0.07);
-  color: rgb(223, 146, 87);
-  margin-bottom: 30px;
-  border-radius: 10px;
-  font-weight: 300;
-  font-size: 34px;
-  padding: 10px;
-}
-.dash-hero .left .bars {
-  flex-direction: column;
-  display: flex;
-  width: 60%;
-  gap: 30px;
-}
-.dash-hero .left .bars button, .dash-hero .left .bars .right .profile-submit, .dash-hero .right .left .bars .profile-submit, .dash-hero .left .bars .form .login-btn, .form .dash-hero .left .bars .login-btn, .dash-hero .left .bars header .profile, header .dash-hero .left .bars .profile {
-  min-width: 100%;
-  transition: 0.3s;
-}
-.dash-hero .left .bars button.Active, .dash-hero .left .bars .right .Active.profile-submit, .dash-hero .right .left .bars .Active.profile-submit, .dash-hero .left .bars .form .Active.login-btn, .form .dash-hero .left .bars .Active.login-btn, .dash-hero .left .bars header .Active.profile, header .dash-hero .left .bars .Active.profile {
-  background: rgba(0, 0, 84, 0.43);
-  transform: scale(1.2);
-  color: var(--white);
-}
-.dash-hero .left .bars button.Active:hover, .dash-hero .left .bars .right .Active.profile-submit:hover, .dash-hero .right .left .bars .Active.profile-submit:hover, .dash-hero .left .bars .form .Active.login-btn:hover, .form .dash-hero .left .bars .Active.login-btn:hover, .dash-hero .left .bars header .Active.profile:hover, header .dash-hero .left .bars .Active.profile:hover {
-  box-shadow: 2px 3px 8px rgb(100, 99, 99);
-  background: rgba(0, 0, 84, 0.43);
-  transform: scale(1.2);
-  color: var(--white);
-}
-.dash-hero .middle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-.dash-hero .middle img {
-  box-shadow: -20px 20px 8px rgba(42, 42, 42, 0.68);
-  width: 100%;
-  height: 70vh;
-  border-radius: 50%;
-}
-.dash-hero .middle button, .dash-hero .middle .right .profile-submit, .dash-hero .right .middle .profile-submit, .dash-hero .middle .form .login-btn, .form .dash-hero .middle .login-btn, .dash-hero .middle header .profile, header .dash-hero .middle .profile {
-  position: absolute;
-  min-width: 70px;
-  bottom: 20%;
-}
-.dash-hero .right {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.dash-hero .right .profile-details {
-  display: flex;
-  align-items: start;
-  justify-content: center;
-  flex-direction: column;
-  margin-top: 60px;
-  position: relative;
-  transition: 1s;
-  width: 100%;
-}
-.dash-hero .right .profile-details h3 {
-  font-size: 24px;
-}
-.dash-hero .right .profile-details h5 {
-  margin: 10px 0 6px;
-  font-size: 18px;
-}
-.dash-hero .right .profile-details .mail {
-  color: rgb(255, 191, 143);
-  font-size: 13px;
-}
-.dash-hero .right .profile-details p {
-  text-align: start;
-}
-.dash-hero .right .profile-details table {
-  border-collapse: collapse;
-  margin-top: 10px;
-}
-.dash-hero .right .profile-details table th {
-  border: 1px solid #dbdbdb;
-  padding: 8px 20px;
-}
-.dash-hero .right .profile-details table td {
-  border-bottom: 1px solid #dbdbdb;
-  padding: 5px 15px;
-  text-align: start;
-}
-.dash-hero .right .profile-details table #percen {
-  text-align: center;
-}
-.dash-hero .right .profile-edit {
-  flex-direction: column;
-  border-radius: 0 20px;
-  position: relative;
-  padding: 20px;
-  transition: 1s;
-  display: flex;
-  gap: 20px;
-}
-.dash-hero .right .profile-edit .h3 {
-  padding-bottom: 20px;
-}
-.dash-hero .right .profile-edit form, .dash-hero .right .profile-edit .diet-comp, .dash-hero .right .profile-edit .tolerance, .dash-hero .right .profile-edit .meal-info {
-  flex-direction: column;
-  display: flex;
-}
-.dash-hero .right .profile-edit form, .dash-hero .right .profile-edit .tolerance {
-  gap: 30px;
-}
-.dash-hero .right .profile-edit .diet-comp {
-  gap: 10px;
-}
-.dash-hero .right .profile-edit .meal-info {
-  gap: 40px;
-}
-.dash-hero .right .profile-edit .input-box {
-  position: relative;
-  width: 350px;
-}
-.dash-hero .right .profile-edit .input-box img {
-  margin-right: 20px;
-  position: absolute;
-  cursor: pointer;
-  bottom: 25%;
-  width: 20px;
-  right: 0;
-}
-.dash-hero .right .profile-edit .input-box label {
-  transform: translateY(-50%);
-  color: rgb(255, 255, 255);
-  pointer-events: none;
-  position: absolute;
-  font-size: 12px;
-  transition: 0.3s;
-  left: 10px;
-  top: -8px;
-}
-.dash-hero .right .profile-edit .input-box input {
-  width: 100%;
-  height: 30px;
-  border: 1px solid rgb(255, 255, 255);
-  color: rgb(255, 255, 255);
-  background: transparent;
-  padding: 0 20px 0 20px;
-  border-radius: 5px;
-  text-align: start;
-  font-size: 15px;
-  outline: none;
-}
-.dash-hero .right .profile-edit .input-box input::placeholder {
-  color: rgb(202, 201, 201);
-  font-size: 12px;
-}
-.dash-hero .right .profile-edit .input-box #percents-label {
-  transform: translateY(-50%);
-  top: 50%;
-}
-.dash-hero .right .profile-edit .input-box .percents {
-  text-align: center;
-  width: 30px;
-  padding: 0;
-}
-.dash-hero .right .profile-submit {
-  width: 100%;
-}
-
-@media (max-width: 950px) {
-  .dash-hero {
-    grid-template-columns: 0.7fr 1.3fr;
-    height: 100vh;
-  }
-  .dash-hero .middle {
-    display: none;
-  }
-  #head {
-    border-radius: 0;
-    width: 100%;
-  }
-}
-@media (max-width: 950px) and (max-width: 550px) {
-  .dash-hero {
-    display: flex;
-    align-items: start;
-    flex-direction: column;
-    padding: 13vh 0 0;
-    height: auto;
-    gap: 0;
-  }
-  .dash-hero .left {
-    display: flex;
-    flex-direction: column;
-  }
-}
-@media (max-width: 950px) and (max-width: 550px) and (min-width: 550px) {
-  .dash-hero .left {
-    padding-left: 20px;
-  }
-}
-@media (max-width: 950px) and (max-width: 550px) {
-  .dash-hero .left h2 {
-    margin-bottom: 0;
-    font-size: 34px;
-  }
-}
-@media (max-width: 950px) and (max-width: 550px) {
-  .dash-hero .left .dash-pic {
-    width: 100px;
-    height: 100px;
-  }
-}
-@media (max-width: 950px) and (max-width: 550px) {
-  .dash-hero .left .bars {
-    display: none;
-  }
-}
-@media (max-width: 950px) and (max-width: 550px) {
-  .dash-hero .right {
-    justify-content: start;
-    height: 100vh;
-    width: 100%;
-  }
-  .dash-hero .right .profile-details {
-    padding: 20px;
-    margin-top: 0;
-  }
-  .dash-hero .right .profile-edit {
-    width: 100%;
-    height: 100vh;
-    align-items: center;
-    position: absolute;
-    border-radius: 0;
-  }
-  .dash-hero .right .profile-submit {
-    min-width: 300px;
-  }
-}
-@media (max-width: 950px) and (max-width: 550px) {
-  footer .copy_right {
-    padding: 30px 10px;
-  }
-}
-/*=========================================
-Dashboard Setup
-=========================================*/
 #header {
-  background: white;
+  background: #bdbbc2;
 }
 
 header nav .dash-profile {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 120px;
-  min-height: 27px;
-  gap: 5px;
-  border-radius: 6px;
-  background: blue;
+  background: rgba(28, 9, 74, 0.651);
+  border-radius: 30px;
+  padding: 7px 20px;
   color: var(--white);
+  gap: 5px;
 }
 header nav .dash-profile span {
-  font-size: 15px;
+  font-size: 13px;
 }
 header nav .dash-profile img {
   width: 15px;
 }
 
 .dashboard {
-  background: pink;
-  padding-top: 13vh;
+  background: #bdbbc2;
+  padding: 13vh 0 0 10px;
 }
 .dashboard .left-sect {
-  display: flex;
-  position: fixed;
   width: 45vw;
   height: 85vh;
+  position: fixed;
+  display: flex;
   top: 12.5vh;
 }
 .dashboard .left-sect .links {
-  width: 100%;
   padding-top: 10px;
+  position: relative;
+  width: 100%;
+}
+.dashboard .left-sect .links::before {
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  filter: brightness(0.6);
+  background: url("/Images/backgrounds/half1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .dashboard .left-sect .links li {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
   height: 40px;
 }
+.dashboard .left-sect .links li a {
+  color: white;
+}
 .dashboard .left-sect .links li img {
-  width: 15px;
   margin-right: 5px;
+  width: 15px;
 }
 .dashboard .left-sect .info {
+  border-radius: 5px 5px 0 0;
   margin: 30px 15px 0;
   padding: 30px 10px;
-  border-radius: 5px 5px 0 0;
+  position: relative;
   width: 100%;
 }
+.dashboard .left-sect .info::before {
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  filter: brightness(0.6);
+  background: url("/Images/backgrounds/half2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.dashboard .left-sect .info h2, .dashboard .left-sect .info p, .dashboard .left-sect .info a {
+  position: relative;
+}
 .dashboard .left-sect .info h2 {
+  color: #fff4f4;
+  font-weight: 500;
   font-size: 18px;
 }
 .dashboard .left-sect .info p {
   padding: 5px 0 20px;
-  font-size: 14px;
+  color: var(--white);
+  font-size: 13px;
 }
 .dashboard .left-sect .info a {
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  gap: 22px;
-  font-size: 13px;
-  color: var(--text);
-  background: #e7e7f3;
+  width: 20vw;
   height: 45px;
-  border-radius: 3px;
+  background: #bdbbc2;
+  justify-content: start;
   padding-left: 10px;
+  border-radius: 3px;
+  align-items: center;
+  color: var(--text);
+  font-size: 13px;
+  gap: 22px;
 }
 .dashboard .left-sect .info a img {
-  border-radius: 50%;
   width: 30px;
   height: 30px;
+  border-radius: 50%;
+}
+.dashboard .left-sect .info a:hover {
+  transform: scale(0.98);
 }
 .dashboard .left-sect #footer {
-  background: white;
-  position: fixed;
-  height: 3vh;
-  bottom: 0;
   width: 100%;
-}
-.dashboard .links, .dashboard .info, .dashboard .details {
-  background: var(--white);
+  height: 3vh;
+  background: #bdbbc2;
+  position: fixed;
+  z-index: 2;
+  bottom: 0;
 }
 .dashboard .details {
   display: flex;
-  flex-direction: column;
   align-items: end;
   justify-content: space-evenly;
-  background: transparent;
-  margin-top: 90px;
+  width: 87%;
   height: auto;
-  width: 85%;
+  background: transparent;
+  flex-direction: column;
+  margin-top: 110px;
 }
 .dashboard .details .personal-details {
-  display: flex;
-  flex-direction: column;
   padding-bottom: 40px;
-  gap: 35px;
+  flex-direction: column;
   width: 47%;
+  gap: 35px;
 }
 .dashboard .details .personal-details #header {
-  position: fixed;
-  background: pink;
-  top: 12%;
-  left: 44.7%;
-  width: 100%;
+  background: #bdbbc2;
   padding: 8vh 0 20px;
+  color: #fff4f4;
+  font-weight: 500;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  left: 46%;
+  top: 12%;
 }
 .dashboard .details .personal-details h2 {
-  font-size: 18px;
   text-align: start;
+  font-size: 18px;
 }
 .dashboard .details .personal-details .personal {
   display: flex;
   align-items: center;
   justify-content: start;
-  background: white;
+  background: rgb(139, 142, 143);
   padding: 12px 40px;
   border-radius: 5px;
   gap: 20px;
@@ -1983,13 +1746,15 @@ header nav .dash-profile img {
   border-radius: 50%;
 }
 .dashboard .details .personal-details .personal .contact h2 {
+  color: #e7e2e2;
   font-size: 16px;
 }
 .dashboard .details .personal-details .personal .contact p {
+  color: var(--accent);
   font-size: 13px;
 }
 .dashboard .details .personal-details table {
-  background: white;
+  background: rgb(139, 142, 143);
   border-radius: 5px;
   text-align: start;
 }
@@ -1997,29 +1762,152 @@ header nav .dash-profile img {
   border-bottom: 1px solid rgba(0, 0, 0, 0.18);
 }
 .dashboard .details .personal-details table td {
-  height: 45px;
-  text-align: start;
   padding-left: 20px;
+  color: #e7e2e2;
+  text-align: start;
+  height: 45px;
 }
 .dashboard .details .personal-details .blocks {
+  background: rgb(139, 142, 143);
+  border-radius: 5px;
+  flex-wrap: wrap;
+  padding: 10px;
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
   gap: 15px;
-  background: white;
-  border-radius: 5px;
-  padding: 10px;
 }
-.dashboard .details .personal-details .blocks span {
-  background: blue;
-  padding: 3px 5px;
-  border-radius: 3px;
+.dashboard .details .personal-details .blocks button, .dashboard .details .personal-details .blocks .profile-edit .profile-submit, .profile-edit .dashboard .details .personal-details .blocks .profile-submit, .dashboard .details .personal-details .blocks .form .login-btn, .form .dashboard .details .personal-details .blocks .login-btn, .dashboard .details .personal-details .blocks header .profile, header .dashboard .details .personal-details .blocks .profile {
+  background: rgb(103, 104, 114);
+  box-shadow: none;
   font-size: 12px;
-  color: white;
+  padding: 5px 0;
+  min-height: 0;
+}
+.dashboard .details .personal-details .blocks button:hover, .dashboard .details .personal-details .blocks .profile-edit .profile-submit:hover, .profile-edit .dashboard .details .personal-details .blocks .profile-submit:hover, .dashboard .details .personal-details .blocks .form .login-btn:hover, .form .dashboard .details .personal-details .blocks .login-btn:hover, .dashboard .details .personal-details .blocks header .profile:hover, header .dashboard .details .personal-details .blocks .profile:hover {
+  color: rgb(203, 203, 203);
 }
 .dashboard .details h4 {
-  font-size: 14px;
+  color: #fff4f4;
   text-align: start;
+  font-size: 14px;
+}
+
+.show {
+  display: flex;
+}
+
+/*=========================================
+Dashboard edit page Styles
+=========================================*/
+.off {
+  display: none;
+}
+
+.profile-edit {
+  padding-bottom: 40px;
+  flex-direction: column;
+  display: flex;
+  width: 47%;
+  gap: 35px;
+}
+.profile-edit #edit-header {
+  background: #bdbbc2;
+  padding: 8vh 0 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  left: 46%;
+  top: 12%;
+}
+.profile-edit h2 {
+  text-align: start;
+  font-size: 18px;
+}
+.profile-edit form {
+  padding-bottom: 20px;
+  flex-direction: column;
+  display: flex;
+  gap: 35px;
+}
+.profile-edit form .first-box .image-edit {
+  position: relative;
+}
+.profile-edit form .first-box .image-edit #photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.profile-edit form .first-box .image-edit input, .profile-edit form .first-box .image-edit .uploadBtn {
+  display: none;
+}
+.profile-edit form .first-box .image-edit .camera {
+  background: rgba(28, 9, 74, 0.651);
+  border-radius: 50%;
+  position: absolute;
+  padding: 2px;
+  bottom: 10%;
+  width: 21px;
+  right: 0%;
+}
+.profile-edit form .first-box, .profile-edit form .security {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  background: rgba(255, 255, 255, 0.9215686275);
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 20px;
+  gap: 30px;
+}
+.profile-edit form .security p {
+  font-size: 13px;
+  color: gray;
+}
+.profile-edit form h4 {
+  text-align: start;
+  font-size: 14px;
+}
+.profile-edit form .input-box {
+  position: relative;
+  width: 100%;
+}
+.profile-edit form .input-box img {
+  width: 20px;
+  height: auto;
+  margin-right: 20px;
+  position: absolute;
+  cursor: pointer;
+  bottom: 25%;
+  right: 0;
+}
+.profile-edit form .input-box label {
+  transform: translateY(-50%);
+  color: rgb(206, 131, 247);
+  pointer-events: none;
+  position: absolute;
+  font-size: 12px;
+  transition: 0.3s;
+  left: 10px;
+  top: -8px;
+}
+.profile-edit form .input-box input {
+  width: 100%;
+  height: 30px;
+  border: 1px solid rgb(206, 131, 247);
+  color: rgb(109, 107, 107);
+  background: transparent;
+  padding: 0 20px 0 20px;
+  border-radius: 5px;
+  text-align: start;
+  font-size: 15px;
+  outline: none;
+}
+.profile-edit form .input-box input::placeholder {
+  color: rgb(128, 125, 125);
+  font-size: 12px;
+}
+.profile-edit .profile-submit {
+  width: 100%;
 }
 
 /*=========================================

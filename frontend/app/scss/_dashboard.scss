@@ -1,303 +1,238 @@
 /*=========================================
 Dashboard Setup
 =========================================*/
-#head {
-    border-radius: 0 40px 40px 0;
-    width: 200px;
+#header {
+    background: #bdbbc2;
 }
 
-.prof {
-    height: 100vh;
-}
-
-.dash-hero {
-    background: linear-gradient(45deg, rgb(19 2 60 / 65%), rgb(106 152 177), rgb(18 255 167 / 80%));
-    grid-template-columns: .6fr 1.1fr 1.2fr;
-    color: var(--text);
-    padding: 30px;
+header nav .dash-profile {
+    @include Display-align-justify ("flex", "center", "center");
+    background: rgba(28, 9, 74, 0.651);
+    border-radius: 30px;
+    padding: 7px 20px;
     color: var(--white);
-    display: grid;
-    gap: 30px;
+    gap: 5px;
 
-    .left, .right, .middle {
-        flex-direction: column;
+    span {
+        font-size: 13px;
     }
 
-    .left {
-        @include Display-align-justify ("flex", "center", "center");
+    img {
+        width: 15px;
+    }
+}
 
-        .dash-pic {
-            @include width-height ("150px", "150px");
-            border-radius: 50%;
-        }
+.dashboard {
+    background: #bdbbc2;
+    padding: 13vh 0 0 10px;
 
-        h2 {
-            background: rgb(128 128 128 / 7%);
-            color: rgb(223 146 87);
-            margin-bottom: 30px;
-            border-radius: 10px;
-            font-weight: 300;
-            font-size: 34px;
-            padding: 10px;
-        }
+    .left-sect {
+        @include width-height("45vw", "85vh");
+        position: fixed;
+        display: flex;
+        top: 12.5vh;
 
-        .bars {
-            flex-direction: column;
-            display: flex;
-            width: 60%;
-            gap: 30px;
+        .links {
+            padding-top: 10px;
+            position: relative;
+            width: 100%;
 
-            button {
-                min-width: 100%;
-                transition: .3s;
+            &::before {
+                content: '';
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                position: absolute;
+                filter: brightness(.6);
+                background: url('/Images/backgrounds/half1.jpg');
+                @include background-size-position-repeat ("cover", "center", "no-repeat");
+            }
 
-                &.Active {
-                    background: rgba(0, 0, 84, 0.43);
-                    transform: scale(1.2);
-                    color: var(--white);
+            li {
+                @include Display-align-justify ("flex", "center", "center");
+                position: relative;
+                height: 40px;
 
-                    &:hover {
-                        box-shadow: 2px 3px 8px rgb(100 99 99);
-                        background: rgba(0, 0, 84, 0.43);
-                        transform: scale(1.2);
-                        color: var(--white);
-                    }
+                a {
+                    color: white;
+                }
+
+                img {
+                    margin-right: 5px;
+                    width: 15px;
                 }
             }
         }
-    }
 
-    .middle {
-        @include Display-align-justify ("flex", "center", "center");
-        position: relative;
-
-        img {
-            box-shadow: -20px 20px 8px rgb(42 42 42 / 68%);
-            @include width-height ("100%", "70vh");
-            border-radius: 50%;
-        }
-
-        button {
-            position: absolute;
-            min-width: 70px;
-            bottom: 20%;
-        }
-    }
-
-    .right {
-        @include Display-align-justify ("flex", "center", "center");
-
-        .profile-details {
-            @include Display-align-justify ("flex", "start", "center");
-            flex-direction: column;
-            margin-top: 60px;
+        .info {
+            border-radius: 5px 5px 0 0;
+            margin: 30px 15px 0;
+            padding: 30px 10px;
             position: relative;
-            transition: 1s;
             width: 100%;
 
-            h3 {
-                font-size: 24px;
+            &::before {
+                content: '';
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                position: absolute;
+                filter: brightness(.6);
+                background: url('/Images/backgrounds/half2.jpg');
+                @include background-size-position-repeat ("cover", "center", "no-repeat");
             }
 
-            h5 {
-                margin: 10px 0 6px;
+            h2, p, a {
+                position: relative;
+            }
+
+            h2 {
+                color: #fff4f4;
+                font-weight: 500;
                 font-size: 18px;
             }
 
-            .mail {
-                color: rgb(255 191 143);
+            p {
+                padding: 5px 0 20px;
+                color: var(--white);
                 font-size: 13px;
             }
 
-            p {
+            a {
+                @include width-height("20vw", "45px");
+                background: #bdbbc2;
+                justify-content: start;
+                padding-left: 10px;
+                border-radius: 3px;
+                align-items: center;
+                color: var(--text);
+                font-size: 13px;
+                gap: 22px;
+
+                img {
+                    @include width-height("30px", "30px");
+                    border-radius: 50%;
+                }
+
+                &:hover {
+                    transform: scale(.98);
+                }
+            }
+        }
+
+        #footer {
+            @include width-height("100%", "3vh");
+            background: #bdbbc2;
+            position: fixed;
+            z-index: 2;
+            bottom: 0;
+        }
+    }
+
+    .details {
+        @include Display-align-justify ("flex", "end", "space-evenly");
+        @include width-height("87%", "auto");
+        background: transparent;
+        flex-direction: column;
+        margin-top: 110px;
+
+        .personal-details {
+            padding-bottom: 40px;
+            flex-direction: column;
+            width: 47%;
+            gap: 35px;
+
+            #header {
+                background: #bdbbc2;
+                padding: 8vh 0 20px;
+                color: #fff4f4;
+                font-weight: 500;
+                position: fixed;
+                width: 100%;
+                z-index: 2;
+                left: 46%;
+                top: 12%;
+            }
+
+            h2 {
                 text-align: start;
+                font-size: 18px;
+            }
+
+            .personal {
+                @include Display-align-justify ("flex", "center", "start");
+                background: rgb(139, 142, 143);
+                padding: 12px 40px;
+                border-radius: 5px;
+                gap: 20px;
+
+                img {
+                    @include width-height("60px", "60px");
+                    border-radius: 50%;
+                }
+
+                .contact {
+                    h2 {
+                        color: #e7e2e2;
+                        font-size: 16px;
+                    }
+                    p {
+                        color: var(--accent);
+                        font-size: 13px;
+                    }
+                }
             }
 
             table {
-                border-collapse: collapse;
-                margin-top: 10px;
+                background: rgb(139, 142, 143);
+                border-radius: 5px;
+                text-align: start;
 
-                th {
-                    border: 1px solid #dbdbdb;
-                    padding: 8px 20px;
+                tr:not(:last-child) td{
+                    border-bottom: 1px solid rgb(0 0 0 / 18%);
                 }
 
                 td {
-                    border-bottom: 1px solid #dbdbdb;
-                    padding: 5px 15px;
+                    padding-left: 20px;
+                    color: #e7e2e2;
                     text-align: start;
-                }
-
-                #percen {
-                    text-align: center;
+                    height: 45px;
                 }
             }
-        }
 
-        .profile-edit {
-            flex-direction: column;
-            border-radius: 0 20px;
-            position: relative;
-            padding: 20px;
-            transition: 1s;
-            display: flex;
-            gap: 20px;
-
-            .h3 {
-                padding-bottom: 20px;
-            }
-
-            form, .diet-comp, .tolerance, .meal-info {
-                flex-direction: column;
+            .blocks {
+                background: rgb(139, 142, 143);
+                border-radius: 5px;
+                flex-wrap: wrap;
+                padding: 10px;
+                width: 100%;
                 display: flex;
-            }
+                gap: 15px;
 
-            form, .tolerance {
-                gap: 30px;
-            }
-
-            .diet-comp {
-                gap: 10px;
-            }
-
-            .meal-info {
-                gap: 40px;
-            }
-
-            .input-box {
-                position: relative;
-                width: 350px;
-
-                img {
-                    margin-right: 20px;
-                    position: absolute;
-                    cursor: pointer;
-                    bottom: 25%;
-                    width: 20px;
-                    right: 0;
-                }
-
-
-                label {
-                    transform: translateY(-50%);
-                    color: rgb(255, 255, 255);
-                    pointer-events: none;
-                    position: absolute;
+                button {
+                    background: rgb(103 104 114);
+                    box-shadow: none;
                     font-size: 12px;
-                    transition: .3s;
-                    left: 10px;
-                    top: -8px;
-                }
+                    padding: 5px 0;
+                    min-height: 0;
 
-                input {
-                    @include width-height ("100%", "30px");
-                    border: 1px solid rgb(255, 255, 255);
-                    color: rgb(255, 255, 255);
-                    background: transparent;
-                    padding: 0 20px 0 20px;
-                    border-radius: 5px;
-                    text-align: start;
-                    font-size: 15px;
-                    outline: none;
-
-                    &::placeholder {
-                        color: rgb(202, 201, 201);
-                        font-size: 12px;
+                    &:hover {
+                        color: rgb(203, 203, 203);
                     }
                 }
-
-                #percents-label {
-                    transform: translateY(-50%);
-                    top: 50%;
-                }
-
-                .percents {
-                    text-align: center;
-                    width: 30px;
-                    padding: 0;
-                }
             }
         }
 
-        .profile-submit {
-            @extend button ;
-            width: 100%;
+        h4 {
+            color: #fff4f4;
+            text-align: start;
+            font-size: 14px;
         }
     }
 }
 
-@media (max-width: 950px) {
-
-    .dash-hero {
-        grid-template-columns: .7fr 1.3fr;
-        height: 100vh;
-
-        .middle {
-            display: none;
-        }
-    }
-
-    #head {
-        border-radius: 0;
-        width: 100%;
-    }
-
-    @media (max-width: 550px) {
-
-        .dash-hero {
-            @include Display-align ("flex", "start");
-            flex-direction: column;
-            padding: 13vh 0 0;
-            height: auto;
-            gap: 0;
-
-            .left {
-                display: flex;
-                flex-direction: column;
-
-                @media (min-width: 550px) {
-                    padding-left: 20px;
-                }
-
-                h2 {
-                    margin-bottom: 0;
-                    font-size: 34px;
-                }
-
-                .dash-pic {
-                    @include width-height ("100px", "100px");
-                }
-
-                .bars {
-                    display: none;
-                }
-            }
-
-            .right {
-                justify-content: start;
-                height: 100vh;
-                width: 100%;
-
-                .profile-details {
-                    padding: 20px;
-                    margin-top: 0;
-                }
-
-                .profile-edit {
-                   @include width-height ("100%", "100vh");
-                   align-items: center;
-                   position: absolute;
-                    border-radius: 0;
-                }
-
-                .profile-submit {
-                    min-width: 300px;
-                }
-            }
-        }
-
-        footer .copy_right {
-            padding: 30px 10px;
-        }
-    }
+.show{
+    display: flex;
 }

@@ -73,7 +73,6 @@ form.addEventListener('submit', function (e) {
             sessionStorage.setItem('allergenvalue', allergens);
             return false;
         }
-
         passValue();
 
         // Make a POST request using fetch API
@@ -83,8 +82,8 @@ form.addEventListener('submit', function (e) {
         }).then(function(response) {
             if (response.ok) {
                 // Successful response handling
-                alert("New form data successfully submitted!");
-                console.log("New form data successfully submitted!");
+                alert("Dashboard Updated");
+                console.log("Dashboard Updated");
             } else {
                 // Error response handling
                 console.log("Error submitting form data.");
