@@ -7,17 +7,19 @@
     ==================== stylesheet  ====================
     -->
     <link rel="stylesheet" href="css/style.css">
-    <title>FoodLENS-Profile-page</title>
+    <title>FoodLENS-Dashboard</title>
 </head>
-<body id="body">
+<body>
     <!--
     ==================== Header & Nav  ====================
     -->
-    <header id="head">
+    <header id="header">
         <nav>
             <a class="logo" href="home.html"><img src="Images/logo/Logo.png" alt="Foodlens logo">FoodLENS</a>
+            <h3>Dashboard</h3>
+            <a class="dash-profile" href="dashboard.html"><img src="Images/logo/profile.png" alt="profile icon"><span id="user-Name"></span></a>
             <!--
-            ==================== Mobile menu Icon  ====================
+                ==================== Mobile menu Icon  ====================
             -->
             <div id="menu" href="" class="hide-for-desktop menu-icon">
                 <span></span>
@@ -29,128 +31,135 @@
             -->
             <div class="mobile-menu hide-for-desktop">
                 <ul class="lnk">
-                    <li class="hide-for-desktop lnk"><a href="home.html">Home</a></li> <!--
-                --><li class="hide-for-desktop lnk Edit"><a href="#">Profile</a></li><!--
-                --><li class="hide-for-desktop lnk edit"><a href="dashboard-edit.html">Edit Profile</a></li> <!--
-                --><li class="hide-for-desktop lnk"><a href="categories.html">Categories</a></li><!--
-                --><li class="hide-for-desktop lnk"><a href="#contact">Contact Us</a></li>
+                    <li class="hide-for-desktop lnk"><a href="#">Profile</a></li><!--
+                --><li class="hide-for-desktop lnk"><a href="categories.html">All Foods</a></li> <!--
+                --><li class="hide-for-desktop lnk"><a href="home.html">Home</a></li> <!--
+                --><li class="hide-for-desktop lnk"><a href="#">Settings</a></li><!--
+                --><li class="hide-for-desktop lnk"><a href="#">Logout</a></li>
                 </ul>
             </div>
         </nav>
     </header>
-    <section class="dash-hero prof">
-        <div class="left">
-            <img class="dash-pic hide-for-desktop" src="Images/profiles/profile-Hero.jpg" alt="profile image">
-            <h2>Hello<br><span id="userName"></span></h2>
-            <div class="bars">
-                <a href="#"><button class="Active">Dashboard</button></a>
-                <a href="dashboard-edit.html"><button class="edit-btn">Edit Profile</button></a>
-                <a href="home.html"><button class="home-btn">Home</button></a>
-                <a href="categories.html"><button class="cat-btn">Categories</button></a>
-                <a href="#contact"><button class="contct-btn">Contact Us</button></a>
+
+    <section class="dashboard">
+        <div class="left-sect">
+            <div class="links">
+                <ul class="hide-for-mobile">
+                   <li class="hide-for-mobile"><a href="#"><img src="/Images/logo/profile.png" alt="">Profile</a></li>
+                   <li class="hide-for-mobile"><a href="categories.html">All Foods</a></li>
+                   <li class="hide-for-mobile"><a href="home.html"><img src="/Images/logo/home.png" alt="">Home</a></li>
+               </ul>
             </div>
+            <div class="info">
+                <h2 id="user-name"></h2>
+                <p id="email-address"></p>
+                <a class="profileEdit-link show" href="#"><img id="pict" src="/Images/logo/profile.png" alt="">Edit Profile</a>
+                <a class="profile-link off" href="#"><img id="pic" src="/Images/logo/profile.png" alt="">Profile</a>
+            </div>
+            <span id="footer"></span>
         </div>
-        <div class="middle">
-            <img src="Images/profiles/profile-Hero.jpg" alt="profile image">
-            <button>Edit</button>
-        </div>
-        <div class="right">
-            <div class="profile-details">
-                <h3>Personal Info</h3>
-                <h5>Contact</h5>
-                <p class="mail" id="email"></p>
-                <h5>Bio</h5>
-                <p id="bio"></p>
+        <div class="details">
+            <div class="personal-details show">
+                <h2 id="header">Profile</h2>
+                <div class="personal">
+                    <img id="picture" src="/Images/logo/profile.png" alt="">
+                    <div class="contact">
+                        <h2 id="userName"></h2>
+                        <p id="emaiL"></p>
+                    </div>
+                </div>
+                <h4>Basic Information</h4>
                 <table>
-                <caption>Diet</caption>
-                <thead>
-                    <tr>
-                        <th>Composition</th>
-                        <th>Percentage</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Carbohydrates</td>
-                        <td id="percen"><span id="carb"></span>%</td>
-                    </tr>
-                    <tr>
-                        <td>Proteins</td>
-                        <td id="percen"><span id="prot"></span>%</td>
-                    </tr>
-                    <tr>
-                        <td>Fats</td>
-                        <td id="percen"><span id="fat"></span>%</td>
-                    </tr>
-                </tbody>
+                    <tbody>
+                        <tr>
+                            <td>Username</td>
+                            <td id="username"></td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td id="email-add"></td>
+                        </tr>
+                        <tr>
+                            <td>Diet</td>
+                            <td id="dieT"></td>
+                        </tr>
+                    </tbody>
                 </table>
-                <h5>Meal Preference</h5>
-                <p id="preference"></p>
-                <h5>Allergens</h5>
-                <p id="allergens"></p>
+                <h4>Allergens</h4>
+                <div class="blocks">
+                    <button>Egg</button>
+                    <button>Dairy</button>
+                    <button>Shellfish</button>
+                    <button>Peanut</button>
+                    <button>Strawberries</button>
+                </div>
+                <h4>Intolerance</h4>
+                <div class="blocks">
+                    <button>Egg</button>
+                    <button>Dairy</button>
+                    <button>Shellfish</button>
+                    <button>Peanut</button>
+                    <button>Strawberries</button>
+                </div>
+            </div>
+            <div class="profile-edit Hide">
+                <h2 id="edit-header">Edit Profile</h2>
+                <form id="form" action="dashboard.html">
+                    <div class="first-box">
+                        <div class="image-edit">
+                            <img id="photo" src="/Images/logo/profile.png" alt="">
+                            <input type="file" id="file">
+                            <label for="file" id="uploadBtn"><img class="camera" src="/Images/logo/camera.png" alt=""></label>
+                        </div>
+                        <div class="input-box spec1">
+                            <input class="input" type="name" id="name" name="name">
+                            <label for="name">* Username</label>
+                        </div>
+                        <div class="input-box spec1">
+                            <input class="input" type="email" id="email" name="email">
+                            <label for="email">* Email</label>
+                        </div>
+                        <div class="input-box spec1">
+                            <input class="input" type="text" id="diet" name="diet">
+                            <label for="diet">Diet</label>
+                        </div>
+                    </div>
+                    <h4>Security</h4>
+                    <div class="security">
+                        <p>Do you wish to change your password? If No, skip...</p>
+                        <div class="input-box spec1">
+                            <input class="input" type="password" id="password1" name="password">
+                            <img id="eyeicon1" src="Images/logo/eye-close.png" alt="">
+                            <label for="password">Old Password</label>
+                        </div>
+                        <div class="input-box spec1">
+                            <input class="input" type="password" id="password2" name="password">
+                            <img id="eyeicon2" src="Images/logo/eye-close.png" alt="">
+                            <label for="password">New Password</label>
+                        </div>
+                        <div class="input-box spec1">
+                            <input class="input" type="password" id="password3" name="password">
+                            <img id="eyeicon3" src="Images/logo/eye-close.png" alt="">
+                            <label for="password">New Password Again</label>
+                        </div>
+                    </div>
+                    <h4>Allergens</h4>
+                    <div class="allergens">
+
+                    </div>
+                    <h4>Intolerance</h4>
+                    <div class="Intolerance">
+
+                    </div>
+                    <!--
+                    ==================== Submit Button  ====================
+                    -->
+                    <button><input type="submit" class="profile-submit" value="Save"></button>
+                </form>
             </div>
         </div>
     </section>
-    <!--
-    ==================== Footer & Contact  ====================
-      -->
-      <footer id="contact">
-        <div class="first-sect">
-            <div class="logo-box">
-                <a class="logo" href="home.html"><img src="Images/logo/Logo.png" alt="Foodlens logo">FoodLENS</a>
-                <ul class="footer mode">
-                    <li id="tt">Love our work? Contact us</li>
-                    <li id="toggle-mode">Dark/Light mode</li>
-                    <li id="logout">Log out</li>
-                </ul>
-            </div>
-            <ul class="footer">
-                <li>Elvis Oguoma O.</li>
-                <li><a href="https://www.linkedin.com/in/elvis-oguoma-66a77318a"><button id="socials">
-                    <img src="Images/logo/linkedin.png" alt="linkedin">
-                </button>Linkedin</a></li>
-                <li><a href="https://www.twitter.com/r0elle"><button id="socials">
-                    <img src="Images/logo/twitter.png" alt="twitter">
-                </button>Twitter</a></li>
-                <li><a href="elvisrozy52@gmail.com"><button id="socials">
-                    <img src="Images/logo/gmail.png" alt="gmail">
-                </button>Gmail</a></li>
-            </ul>
-            <ul class="footer">
-                <li>Aralu Kenechukwu C.</li>
-                <li><a href="https://www.linkedin.com/in/kenechukwu-aralu-1b7238207"><button id="socials">
-                    <img src="Images/logo/linkedin.png" alt="linkedin">
-                </button>Linkedin</a></li>
-                <li><a href="https://twitter.com/aralukene"><button id="socials">
-                    <img src="Images/logo/twitter.png" alt="twitter">
-                </button>Twitter</a></li>
-                <li><a href="junioraralu@gmail.com"><button id="socials">
-                    <img src="Images/logo/gmail.png" alt="gmail">
-                </button>Gmail</a></li>
-            </ul>
-            <ul class="footer">
-                <li>Aweda Ifeoluwa</li>
-                <li><a href="https://ng.linkedin.com/in/aweda-ifeoluwa-b91b9976"><button id="socials">
-                    <img src="Images/logo/linkedin.png" alt="linkedin">
-                </button>Linkedin</a></li>
-                <li><a href="https://twitter.com/LovethSir"><button id="socials">
-                    <img src="Images/logo/twitter.png" alt="twitter">
-                </button>Twitter</a></li>
-                <li><a href="ifeI1939@gmail.com"><button id="socials">
-                    <img src="Images/logo/gmail.png" alt="gmail">
-                </button>Gmail</a></li>
-            </ul>
-        </div>
-        <div class="copy_right">
-            <a href="https://github.com/Elvis-rozy/FoodLENS"><img src="/Images/logo/pngwing.com.png">Github Repository FoodLENS 2023</a>
-            <a href="#">Back to top</a>
-        </div>
-    </footer>
-    <!--
-    ==================== JavaScript File  ====================
-      -->
-      <script src="app/js/dashboard.js"></script>
-      <script src="app/js/globals.js"></script>
-      <script src="app/js/dashboardUpdate.js"></script>
+    <script src="/app/js/dashboard.js"></script>
+    <script src="/app/js/dashboard-update.js"></script>
 </body>
 </html>

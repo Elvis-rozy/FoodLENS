@@ -1,4 +1,8 @@
-//Get HTML elements
+/*=====================================
+Categories and Selected item page Setup
+=====================================*/
+
+//Get HTML elements to be used and assign them to variables
 let buttonDisplay = document.querySelector(".buttons");
 const searchform = document.querySelector(".search-form");
 
@@ -117,7 +121,7 @@ function displayMenuItem(menuItems) {
   displayMenu = displayMenu.join("");
   sectionCenter.innerHTML = displayMenu;
 
-  //categories to selection page flow
+  //categories page to selection page setup
   const elements = document.querySelectorAll('.menu-item');
 
   //fetch the json file and convert to javascript object
@@ -126,7 +130,7 @@ function displayMenuItem(menuItems) {
   .then(response => response.json())
   .then(data => {
 
-    // Add click event listeners to each element
+    // Add click event listeners to each element and perform actions based on the element clicked
     elements.forEach((element, Index)=>{
       element.addEventListener('click', ()=>{
 

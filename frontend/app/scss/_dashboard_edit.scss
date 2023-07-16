@@ -1,0 +1,128 @@
+/*=========================================
+Dashboard edit page Styles
+=========================================*/
+.off {
+    display: none;
+}
+
+.profile-edit {
+    padding-bottom: 40px;
+    flex-direction: column;
+    display: flex;
+    width: 47%;
+    gap: 35px;
+
+    #edit-header {
+        background: #bdbbc2;
+        padding: 8vh 0 20px;
+        position: fixed;
+        width: 100%;
+        z-index: 2;
+        left: 46%;
+        top: 12%;
+    }
+
+    h2 {
+        text-align: start;
+        font-size: 18px;
+    }
+
+    form {
+        padding-bottom: 20px;
+        flex-direction: column;
+        display: flex;
+        gap: 35px;
+
+        .first-box {
+            .image-edit {
+                position: relative;
+
+                #photo {
+                    @include width-height("60px", "60px");
+                    border-radius: 50%;
+                }
+
+                input, .uploadBtn {
+                    display: none;
+                }
+
+                .camera {
+                    background: rgba(28, 9, 74, 0.651);
+                    border-radius: 50%;
+                    position: absolute;
+                    padding: 2px;
+                    bottom: 10%;
+                    width: 21px;
+                    right: 0%;
+                }
+            }
+        }
+
+        .first-box, .security {
+            @include Display-align-justify ("flex", "start", "start");
+            background: #ffffffeb;
+            flex-direction: column;
+            border-radius: 5px;
+            padding: 20px;
+            gap: 30px;
+
+        }
+
+        .security p {
+            font-size: 13px;
+            color: gray;
+        }
+
+        h4 {
+            text-align: start;
+            font-size: 14px;
+        }
+
+        .input-box {
+            position: relative;
+            width: 100%;
+
+            img {
+                @include width-height("20px", "auto");
+                margin-right: 20px;
+                position: absolute;
+                cursor: pointer;
+                bottom: 25%;
+                right: 0;
+            }
+
+            label {
+                transform: translateY(-50%);
+                color: rgb(206, 131, 247);
+                pointer-events: none;
+                position: absolute;
+                font-size: 12px;
+                transition: .3s;
+                left: 10px;
+                top: -8px;
+            }
+
+            input {
+                @include width-height ("100%", "30px");
+                border: 1px solid rgb(206, 131, 247);
+                color: rgb(109, 107, 107);
+                background: transparent;
+                padding: 0 20px 0 20px;
+                border-radius: 5px;
+                text-align: start;
+                font-size: 15px;
+                outline: none;
+
+                &::placeholder {
+                    color: rgb(128, 125, 125);
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    .profile-submit {
+        @extend button ;
+        width: 100%;
+    }
+}

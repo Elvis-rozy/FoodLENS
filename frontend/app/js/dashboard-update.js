@@ -1,0 +1,11 @@
+document.getElementById('username').innerHTML = sessionStorage.getItem('textvalue');
+document.getElementById('user-name').innerHTML = sessionStorage.getItem('textvalue');
+document.getElementById('userName').innerHTML = sessionStorage.getItem('textvalue');
+document.getElementById('user-Name').innerHTML = sessionStorage.getItem('textvalue');
+document.getElementById('email-add').innerHTML = sessionStorage.getItem('emailvalue');
+document.getElementById('email-address').innerHTML = sessionStorage.getItem('emailvalue');
+document.getElementById('emaiL').innerHTML = sessionStorage.getItem('emailvalue');
+document.getElementById('dieT').innerHTML = sessionStorage.getItem('dietvalue');
+document.getElementById('pic').setAttribute('src', sessionStorage.getItem('imgvalue'));
+document.getElementById('pict').setAttribute('src', sessionStorage.getItem('imgvalue'));
+document.getElementById('picture').setAttribute('src', sessionStorage.getItem('imgvalue'));
