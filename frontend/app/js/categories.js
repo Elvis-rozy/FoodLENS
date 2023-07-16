@@ -1,5 +1,7 @@
 let page = 1;
 const limit = 12;
+let sorted=""
+let searchValue=""
 
 //Get HTML elements
 const btnContainer = document.querySelector(".btn-container");
@@ -12,7 +14,7 @@ const sectionCenter = document.querySelector(".section-center");
 
 //listening on page load to create categories page elements
 window.addEventListener("DOMContentLoaded", () => {
-  fetchItems(page, limit, "", "");
+  fetchItems();
 });
 
 //function that displays All category section
@@ -54,7 +56,7 @@ ${pageIndex + 1}
       let btnPressed = parseInt(e.target.textContent);
       console.log(btnPressed);
       page = btnPressed;
-      fetchItems(page, limit, ""), (search = "");
+      fetchItems();
     });
   });
 
@@ -65,7 +67,7 @@ ${pageIndex + 1}
     if (page > pageCount) {
       page = 1;
     }
-    fetchItems(page, limit, "", (search = ""));
+    fetchItems();
   });
 
   prevBtn.addEventListener("click", () => {
@@ -73,13 +75,13 @@ ${pageIndex + 1}
     if (page < 0) {
       page = pageCount;
     }
-    fetchItems(page, limit);
+    fetchItems();
   });
 }
 
-function fetchItems(page, limit, sort, search) {
+function fetchItems() {
   fetch(
-    `http://localhost:3000/api/v1/all-foods-item/all?page=${page}&limit=${limit}&sort=${sort}&search=${search}`
+    `http://localhost:3000/api/v1/all-foods-item/all?page=${page}&limit=${limit}&sort=${sorted}&search=${searchValue}`
   )
     .then((response) => {
       return response.json();
@@ -93,12 +95,12 @@ function fetchItems(page, limit, sort, search) {
 }
 
 //handling sort
-let sorted;
+
 select.addEventListener("change", () => {
-  let sorted = select.options[select.selectedIndex].text;
+  sorted = select.options[select.selectedIndex].text;
   console.log(select.options[select.selectedIndex].value);
   console.log(sorted);
-  fetchItems(page, limit, sorted, (search = ""));
+  fetchItems();
 });
 
 sortIcon.addEventListener("click", () => {
@@ -106,13 +108,13 @@ sortIcon.addEventListener("click", () => {
   if (sortIcon.classList.contains("des")) {
     console.log("hi");
     sorted = `${-sorted}`;
-    fetchItems(page, limit, sorted, (search = ""));
+    fetchItems();
   }
 });
 
 //handling search functionality
 
 searchInput.addEventListener("input", () => {
-  let searchValue = searchInput.value;
-  fetchItems(page, limit, sorted, searchValue);
+  searchValue = searchInput.value;
+  fetchItems();
 });

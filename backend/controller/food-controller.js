@@ -7,6 +7,7 @@ const { BadrequestError, NotFound } = require("../errors");
 const getAllFoods = async (req, res) => {
   const {
     search,
+    filter,
     food_name,
     brand_name,
     ingredients,
@@ -19,7 +20,7 @@ const getAllFoods = async (req, res) => {
     sort,
   } = req.query;
   const queryObj = {};
-  //filtering
+  //filtering by any property
   if (brand_name) {
     queryObj.brand_name = brand_name;
   }
@@ -34,20 +35,27 @@ const getAllFoods = async (req, res) => {
     queryObj.cuisine = cuisine;
   }
 
+//filtering by gruop
+ if (filter) {
+   const filtered = filter.split(",");
+    queryObj.group = filtered;
+ }
+
+
   //searching
   if (search) {
     queryObj.food_name = { $regex: search, $options: "i" };
   }
-  if (search) {
-    queryObj.brand_name = { $regex: search, $options: "i" };
-  }
-  if (search) {
-    queryObj.group = { $regex: search, $options: "i" };
-  }
+ // if (search) {
+ //   queryObj.brand_name = { $regex: search, $options: "i" };
+ // }
+ // if (search) {
+ //   queryObj.group = { $regex: search, $options: "i" };
+ // }
 
-  if (search) {
-    queryObj.category = { $regex: search, $options: "i" };
-  }
+ // if (search) {
+ //   queryObj.category = { $regex: search, $options: "i" };
+ // }
 
   let result = Food.find(queryObj);
 
@@ -94,6 +102,7 @@ const getAllFoods = async (req, res) => {
 const getAllFoodsByUser = async (req, res) => {
   const {
     search,
+    filter,
     food_name,
     brand_name,
     ingredients,
@@ -106,7 +115,7 @@ const getAllFoodsByUser = async (req, res) => {
     sort,
   } = req.query;
   const queryObj = { createdBy: req.user.userId };
-  //filtering
+  //filtering by any properties
   if (brand_name) {
     queryObj.brand_name = brand_name;
   }
@@ -121,20 +130,27 @@ const getAllFoodsByUser = async (req, res) => {
     queryObj.cuisine = cuisine;
   }
 
+//filtering by group
+
+ if (filter) {
+   const filtered = filter.split(",");
+   queryObj.group = filtered;
+ }
+
   //searching
   if (search) {
     queryObj.food_name = { $regex: search, $options: "i" };
   }
-  if (search) {
-    queryObj.brand_name = { $regex: search, $options: "i" };
-  }
-  if (search) {
-    queryObj.group = { $regex: search, $options: "i" };
-  }
+  // if (search) {
+  //   queryObj.brand_name = { $regex: search, $options: "i" };
+  // }
+  // if (search) {
+  //   queryObj.group = { $regex: search, $options: "i" };
+  // }
 
-  if (search) {
-    queryObj.category = { $regex: search, $options: "i" };
-  }
+  //if (search) {
+  //  queryObj.cuisine = { $regex: search, $options: "i" };
+  // }
 
   let result = Food.find(queryObj);
 
