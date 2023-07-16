@@ -12,7 +12,6 @@ const profileImageDom = document.querySelector(".img-span");
 const welcomeDom = document.querySelector(".welcome");
 let firstLogin = localStorage.getItem("firstLogin");
 
-
 let allergies_added;
 let intolerance_added;
 
@@ -33,49 +32,21 @@ let dietData = [
 
 const allergy_selectDom = document.querySelectorAll(".allergy-select");
 
-fetch("http://localhost:3000/api/v1/auth/getuser", {
-  method: "GET",
-  headers: {
-    "Content-Type": "application/json",
-    Authorization: `Bearer ${token}`,
-  },
-})
-  .then((response) => {
-    return response.json().then((data) => {
-      sessionStorage.setItem("user", JSON.stringify(data.user));
-      sessionStorage.setItem("updatedUser", JSON.stringify(data.user));
-    });
-  })
-  .catch((error) => console.log(error));
-
 const user = JSON.parse(sessionStorage.getItem("updatedUser"));
 let { email, diet, username, intolerance, allergies, userPicture } = user;
 
-console.log(username)
+console.log(username);
 
 if (user) {
+  setTimeout(() => {
+    welcomeDom.innerHTML = `<i class="bx bxs-user-circle"></i>`;
+  }, 5000);
 
-
-
-setTimeout(() => {
-  welcomeDom.innerHTML = `<i class="bx bxs-user-circle"></i>`;
-}, 5000);
-
-if (firstLogin) {
-  welcomeDom.innerHTML = "Welcome";
-} else {
-  welcomeDom.innerHTML = "Welcome Back";
-}
-
-
-
-
-
-
-
-
-
-
+  if (firstLogin) {
+    welcomeDom.innerHTML = "Welcome";
+  } else {
+    welcomeDom.innerHTML = "Welcome Back";
+  }
 
   let usernameDom = document.getElementById("edit-userName");
   //let diet_value = document.getElementById("edit-diet");
@@ -309,7 +280,7 @@ if (firstLogin) {
         intolerance_added = DOM.options[DOM.selectedIndex].text;
 
         console.log(intolerance_added);
-        user.intolerance = [...user.intolerance, allergies_added];
+        user.intolerance = [...user.intolerance, intolerance_added];
 
         sessionStorage.setItem("updatedUser", JSON.stringify(user));
       }

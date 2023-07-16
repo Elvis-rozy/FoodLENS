@@ -1,9 +1,7 @@
-
 const Food = require("../model/Food");
 const { StatusCodes } = require("http-status-codes");
 const User = require("../model/User");
-const { BadrequestError ,NotFound} = require("../errors");
-
+const { BadrequestError, NotFound } = require("../errors");
 
 //all food items controller
 const getAllFoods = async (req, res) => {
@@ -54,19 +52,26 @@ const getAllFoods = async (req, res) => {
   let result = Food.find(queryObj);
 
   //sorting
-  if (sort === "a-z") {
-    result = result.sort("calories");
-  }
-  if (sort === "z-a") {
-    result = result.sort("-calories");
+  // if (sort === "a-z") {
+  //   result = result.sort("calories");
+  // }
+  // if (sort === "z-a") {
+  //   result = result.sort("-calories");
+  //  }
+
+  if (sort) {
+    const sortList = sort.split(",").join(" ");
+    result = result.sort(sortList);
+  } else {
+    result = result.sort("createdAt");
   }
 
   //pagination
 
   const page = Number(req.query.page) || 1;
-  const limit = Number(req.query.limit) || 5;
+  const limit = Number(req.query.limit) || 10;
   const skip = (page - 1) * limit;
-  const endIndex=page*limit
+  const endIndex = page * limit;
 
   result = result.skip(skip).limit(limit);
 
@@ -134,11 +139,17 @@ const getAllFoodsByUser = async (req, res) => {
   let result = Food.find(queryObj);
 
   //sorting
-  if (sort === "a-z") {
-    result = result.sort("calories");
-  }
-  if (sort === "z-a") {
-    result = result.sort("-calories");
+  // if (sort === "a-z") {
+  //   result = result.sort("calories");
+  // }
+  // if (sort === "z-a") {
+  //   result = result.sort("-calories");
+  //  }
+  if (sort) {
+    const sortList = sort.split(",").join(" ");
+    result = result.sort(sortList);
+  } else {
+    result = result.sort("createdAt");
   }
 
   //pagination
@@ -146,7 +157,7 @@ const getAllFoodsByUser = async (req, res) => {
   const page = Number(req.query.page) || 1;
   const limit = Number(req.query.limit) || 5;
   const skip = (page - 1) * limit;
-  const endIndex=page*limit
+  const endIndex = page * limit;
 
   result = result.skip(skip).limit(limit);
 
@@ -194,7 +205,7 @@ const deleteFood = async (req, res) => {
     _id: foodId,
     createdBy: userId,
   });
-  res.status(StatusCodes.ACCEPTED).json("item deleted successfully")
+  res.status(StatusCodes.ACCEPTED).json("item deleted successfully");
   if (!food) {
     throw new NotFound(`No food with id ${foodId}`);
   }

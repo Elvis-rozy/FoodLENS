@@ -3,16 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/dashboard2.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/edit.css" />
       <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
 
- <script src="app/js/protectDashboard.js"></script>
- 
-    
+
     <title>Dashboard</title>
   </head>
   <body>
@@ -29,8 +27,8 @@
 
         <ul>
           <li>
-             <div class="account">
-              <span><p class="welcome">Welcome Back,</p></span>
+            <div class="account">
+              <span><p>Welcome Back,</p></span>
               <h2 id="userName">Tristan</h2>
             </div>
           </li>
@@ -65,11 +63,10 @@
 
     <div class="picture">
 <main class="image-section">
-  <!--<h1 class="img-span-text">EA</h1>-->
-<span class="img-span"><h1 class="img-span-text">E</h1></span>
-  <form action="submit" class="upload">
+<span class="img-span"><h1 class="img-span-text">EA</h1></span>
+  <form action="" class="upload">
     <input class="default-camera-btn" type="file"   accept="image/*" hidden>
-   <button type="submit" class="camBtn"><i class='bx bx-camera'></i></button> 
+    <i class='bx bx-camera'></i>
   </form>
 </main>
 </div>
@@ -79,7 +76,7 @@
     <form action="">
       <div class="input-flex">
  <label for="name">Username</label>
-<input type="text" name="username" class="inpt-value inpt" id="edit-userName">
+<input type="text" name="username" class="inpt" id="edit-userName">
 
       </div>
           <div class="input-flex">
@@ -89,29 +86,7 @@
       </div>
           <div class="input-flex">
  <label for="name">Diet</label>
-<select name="diet" id="edit-diet" class="inpt" >
- 
-  <option value="none" class="opt" >none</option>
-   <option value="vegan "  class="opt">vegan</option>
-   <option value="eggetarian"  class="opt">eggetarian</option>
-   <option value="non vegetarian" class="opt"  selected>non vegetarian</option>
-   <option value="pescatarian"  class="opt">pescatarian</option>
-   <option value="omnivorous"  class="opt">omnivorous</option>
-   <option value="carnivorous"  class="opt">carnivorous</option>
-   <option value="pollotarian"  class="opt">pollotarian</option>
-    <option value="semi-vegetarian"  class="opt">semi-vegetarian</option>
-     <option value="fruitarian"  class="opt">fruitarian</option>
-      <option value="paleo"  class="opt">paleo</option>
-       <option value="ketogenic"  class="opt">ketogenic</option>
-       
-        
-</select>
-
-
-
-
-
-
+<input type="text" name="password" class="inpt" id="edit-diet">
 
       </div>
  <p class="edit-basic-p">Remove or Add  Allergens</p>
@@ -130,16 +105,16 @@
 <i class='bx bx-transfer-alt'></i>
 <div class="select-body">
  <p class="add-allergies">Add</p>
-<select name="" id="select-allergy" class="allergy-select" >
+<select name="" id="select-allergy" class="allergy-select" onchange="selectedValue()">
  
-  
-   <option disabled selected>add Allergy</option>
-   <option value="3">diary</option>
-   <option value="4">diary</option>
-   <option value="5">diary</option>
-   <option value="6">diary</option>
-   <option value="7">diary</option>
-   <option value="8">dairy</option>
+  <option value="1">Add Allergen</option>
+   <option value="2">Diary</option>
+   <option value="3">Diary</option>
+   <option value="4">Diary</option>
+   <option value="5">Diary</option>
+   <option value="6">Diary</option>
+   <option value="7">Diary</option>
+   <option value="8">Sea Fish</option>
 </select>
 </div>
 </div>
@@ -160,16 +135,16 @@
 <i class='bx bx-transfer-alt'></i>
 <div class="select-body">
  <p class="add-intolerance">Add</p>
-<select name="" id="" class="allergy-select" >
+<select name="" id="" class="allergy-select">
  
-
-   <option disabled selected>add intolerance</option>
-   <option value="">diary</option>
-   <option value="">diary</option>
-   <option value="">diary</option>
-   <option value="">diary</option>
-   <option value="">diary</option>
-   <option value="">dairy</option>
+  <option value="">Add Intolerance</option>
+   <option value="">Diary</option>
+   <option value="">Diary</option>
+   <option value="">Diary</option>
+   <option value="">Diary</option>
+   <option value="">Diary</option>
+   <option value="">Diary</option>
+   <option value="">Sea Fish</option>
 </select>
 </div>
 </div>
@@ -183,7 +158,78 @@
 
   </section>
 
+<section class="user">
+    <div class="edit-user">
+      <article class="edit-info">
+        <h2 id="userName" class="username">John</h2>
+        <p id="email">john@gmail.com</p>
+        </article>
+        <div class="flex-img"><img src="./Images/profiles/prof-1.jpg"  class="edit-img"><p class="edit-text">Edit Profile</p></div>
+    </div>
 
+
+    <div class="profile-container">
+       <h1 class="profile-heading">Profile</h1>
+       <div class="border"></div>
+   
+    <div class="profile">
+       
+        
+
+       <main class="user-intro">
+        <div class="flex-img2"><img src="./Images/profiles/prof-1.jpg"  class="profile-img"></div>
+        <article class="beside-logo">
+        <h2 id="userName1">John</h2>
+        <p id="email2">john@gmail.com</p>
+        
+    </article>
+       </main> 
+
+       <p class="info-heading">Basic Information</p>
+
+       <article class="basic-info">
+        <main class="info">
+          <p class="inf">Username</p> <p class="inf"  id="username" >John</p> 
+        </main>
+        <div class="border"></div>
+        <main class="info">
+          <p  class="inf">Email</p> <p class="inf" id="email1">john@gmail.com</p> 
+        </main>
+        <div class="border"></div>
+        <main class="info">
+          <p  class="inf">Diet</p> <p class="inf" id="diet">Veganww</p> 
+        </main>
+       </article>
+
+<p class="info-heading">Allergens</p>
+<article class="allergy-container">
+  <p class="allergy">Egg</p>
+   <p class="allergy">Diary</p>
+    <p class="allergy">Sea fish</p>
+     <p class="allergy">Breakfast</p>
+      <p class="allergy">Egg</p>
+       <p class="allergy">Sea fish</p>
+     <p class="allergy">Breakfast</p>
+      <p class="allergy">Egg</p>
+  
+</article>
+<p class="info-heading">Intolerance</p>
+<article class="allergy-container" id="intolerance">
+  <p class="allergy">Egg</p>
+   <p class="allergy">Diary</p>
+    <p class="allergy">Sea fish</p>
+     <p class="allergy">Breakfast</p>
+      <p class="allergy">Egg</p>
+       <p class="allergy">Sea fish</p>
+     <p class="allergy">Breakfast</p>
+      <p class="allergy">Egg</p>
+  
+</article>
+
+
+    </div>
+     </div>
+</section>
 </div>
 
 </main>
@@ -243,10 +289,10 @@
             <a href="#">Back to top</a>
         </div>
     </footer>
-
-  <script src="app/js/profile-edit.js"></script>
-    <script src="app/js/dashboard.js"></script>
-   
+ <script src="app/js/dashboard.js"></script>
+ 
+    <script src="app/js/dashboardUpdate.js"></script>
+    <script src="app/js/globals.js"></script>
   </body>
 </html>
 

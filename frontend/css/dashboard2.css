@@ -533,3 +533,8 @@ select {
   width: 400px;
   margin: 30px;
 }
+
+.loading {
+  font-weight: 900;
+  font-size: xx-large;
+}

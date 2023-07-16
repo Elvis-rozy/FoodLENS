@@ -1,9 +1,8 @@
 /*=====================================
 Profile page Setup
 =====================================*/
-const dashBtn = document.querySelector("#editt");
-const editBtn = document.querySelector("#edit");
-
+//const dashBtn = document.querySelector("#editt");
+//const editBtn = document.querySelector("#edit");
 const logoutDom = document.querySelector(".logout-container");
 const account = document.querySelector(".account");
 const Active = document.querySelector(".Active");
@@ -67,6 +66,7 @@ if (Editbtn) {
 logoutDom.addEventListener("click", () => {
   sessionStorage.removeItem("user");
   sessionStorage.removeItem("updatedUser");
+  localStorage.removeItem("token");
   const loggedIn = false;
   localStorage.setItem("loggedIn", loggedIn);
   window.location.href = "login.html";

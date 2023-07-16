@@ -61,15 +61,25 @@ form.addEventListener("submit", function (e) {
         if (response.ok) {
           return response
             .json()
-            .then((user) => {
-              console.log(user);
-              let loggedIn = true;
-              sessionStorage.setItem("user", JSON.stringify(user));
-              localStorage.setItem("loggedIn", loggedIn);
-              if (user) {
-                window.location.href = "dashboard2.html";
-              }
+            .then((data) => {
+              console.log(data.user);
 
+              let loggedIn = true;
+              sessionStorage.setItem("user", JSON.stringify(data.user));
+              console.log(data.user.token);
+               localStorage.setItem("token", `${data.user.token}`);
+              // sessionStorage.setItem("updatedUser", JSON.stringify(data.user));
+              localStorage.setItem("loggedIn", loggedIn);
+              
+              if (data.user) {
+                //  window.location.href = "dashboard2.html";
+                // }
+                var queryParams = new URLSearchParams({
+                  username: data.user.username,
+                });
+                window.location.href =
+                  "dashboard2.html?" + queryParams.toString();
+              }
               console.log("Login successful!");
               if (sessionStorage.getItem("loggedIn")) {
                 welcomeFlag();
