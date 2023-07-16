@@ -1,11 +1,11 @@
 let page = 1;
 const limit = 12;
-let sorted=""
-let searchValue=""
-
+let sorted = "";
+let searchValue = "";
+let filter = [];
 //Get HTML elements
 const btnContainer = document.querySelector(".btn-container");
-
+const checkBtns = document.querySelectorAll(".checkBtn");
 const select = document.querySelector("#select");
 const sortIcon = document.querySelector(".bx-sort");
 const searchInput = document.querySelector("#search-box");
@@ -81,7 +81,9 @@ ${pageIndex + 1}
 
 function fetchItems() {
   fetch(
-    `http://localhost:3000/api/v1/all-foods-item/all?page=${page}&limit=${limit}&sort=${sorted}&search=${searchValue}`
+    `http://localhost:3000/api/v1/all-foods-item/all?page=${page}&limit=${limit}&sort=${sorted}&search=${searchValue}&filter=${filter.join(
+      ","
+    )}`
   )
     .then((response) => {
       return response.json();
@@ -118,3 +120,24 @@ searchInput.addEventListener("input", () => {
   searchValue = searchInput.value;
   fetchItems();
 });
+
+function checkBoxFiltering() {
+  checkBtns.forEach((btn) => {
+    btn.addEventListener("change", (e) => {
+      if (btn.checked) {
+        filter = [...filter, btn.value];
+      } else {
+        filter = filter.filter((item) => {
+          if (btn.value !== item) {
+            return item;
+          }
+        });
+      }
+
+      // console.log(filter.join(","));
+      fetchItems();
+    });
+  });
+}
+
+checkBoxFiltering();
