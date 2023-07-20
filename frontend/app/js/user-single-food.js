@@ -10,7 +10,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 function displayCategoryItem(id) {
-  fetch(`http://localhost:3000/api/v1/foods/${id}`, {
+  fetch(`/api/v1/foods/${id}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -272,7 +272,7 @@ function displayCategoryItem(id) {
 
 function removeFood(id) {
   //localStorage.setItem("food", JSON.stringify(data));
-  fetch(`http://localhost:3000/api/v1/foods/${id}`, {
+  fetch(`/api/v1/foods/${id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",

@@ -10,7 +10,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 function displayCategoryItem(id) {
-  fetch(`http://localhost:3000/api/v1/all-foods-item/${id}`).then(
+  fetch(`/api/v1/all-foods-item/${id}`).then(
     (response) => {
       return response
         .json()
@@ -268,7 +268,7 @@ function displayCategoryItem(id) {
 
 function addToDashboard(data) {
   localStorage.setItem("food", JSON.stringify(data));
-  fetch("http://localhost:3000/api/v1/foods", {
+  fetch("/api/v1/foods", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

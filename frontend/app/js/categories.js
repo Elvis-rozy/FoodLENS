@@ -95,7 +95,7 @@ ${pageIndex + 1}
 
 function fetchItems() {
   fetch(
-    `http://localhost:3000/api/v1/all-foods-item/all?page=${page}&limit=${limit}&sort=${sorted}&search=${searchValue}&filter=${filter.join(
+    `/api/v1/all-foods-item/all?page=${page}&limit=${limit}&sort=${sorted}&search=${searchValue}&filter=${filter.join(
       ","
     )}`
   )
