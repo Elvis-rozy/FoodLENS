@@ -465,10 +465,10 @@ input {
   background-color: rgb(238, 231, 231);
   margin: 20px 0 20px -10px;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+
+  flex-direction: column;
   justify-content: space-around;
-  min-height: 150px;
+  min-height: 90px;
   color: white;
 }
 .allergy1 {
