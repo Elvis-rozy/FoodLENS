@@ -47,7 +47,6 @@ const UserSchema = new mongoose.Schema(
       type: [String],
       enum: {
         values: [
-          "none",
           "dairy",
           "gluten",
           "caffeine",
@@ -65,13 +64,12 @@ const UserSchema = new mongoose.Schema(
         ],
         message: "{VALUE} is not supported",
       },
-      default: "none",
+     
     },
     allergies: {
       type: [String],
       enum: {
         values: [
-          "none",
           "egg",
           "cow milk",
           "tree nut",
@@ -95,7 +93,7 @@ const UserSchema = new mongoose.Schema(
         ],
         message: "{VALUE} is not supported",
       },
-      default: "none",
+      
     },
     password: {
       type: String,

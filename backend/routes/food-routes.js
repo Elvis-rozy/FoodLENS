@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const {
   createFood,
-  getAllFoods,
+ // getAllFoods,
   getAllFoodsByUser,
   deleteFood,
   getSingleFood,
@@ -11,6 +11,6 @@ const {
 router.route("/").post(createFood).get(getAllFoodsByUser);
 router.route("/:id").get(getSingleFood).delete(deleteFood);
 
-router.get("/", getAllFoods);
+//router.get("/", getAllFoods);
 
 module.exports = router;

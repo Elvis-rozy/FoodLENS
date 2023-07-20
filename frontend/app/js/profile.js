@@ -2,13 +2,13 @@ window.addEventListener("DOMContentLoaded", () => {
   const token = localStorage.getItem("token");
 
   let loading = document.querySelector(".loading");
-  let dashboard = document.querySelector(".dashboard");
+  let dashboard = document.querySelector(".dashboard-food");
   const userImage = document.querySelector(".flex-img");
   const userImage2 = document.querySelector(".flex-img2");
   //const avarta = `<h1 class="img-span-text">EA</h1>`;
   const welcomeDom = document.querySelector(".welcome");
   let firstLogin = localStorage.getItem("firstLogin");
-  const editBtn = document.querySelector(".edit-text");
+
   //hide dashboard
 
   dashboard.style.display = "none";
@@ -51,6 +51,11 @@ window.addEventListener("DOMContentLoaded", () => {
       if (userPicture) {
         userImage.innerHTML = `<img src=${userPicture}  class="edit-img"><p class="edit-text">Edit Profile</p>`;
         userImage2.innerHTML = `<img src=${userPicture}  class="profile-img">`;
+        
+       let editBtn = document.querySelector(".edit-text");
+       editBtn.addEventListener("click", () => {
+          window.location.href = "edit-page.html";
+       });
       } else {
         userImage.innerHTML = `<h1 class="img-span-text2">${username.charAt(
           0
@@ -58,6 +63,11 @@ window.addEventListener("DOMContentLoaded", () => {
         userImage2.innerHTML = `<h1 class="img-span-text1">${username.charAt(
           0
         )}</h1>`;
+        
+       let editBtn = document.querySelector(".edit-text");
+       editBtn.addEventListener("click", () => {
+         window.location.href="edit-page.html"
+       });
       }
 
       const username1 = document.querySelector(".username");
@@ -135,3 +145,4 @@ window.addEventListener("DOMContentLoaded", () => {
 
   //end of dom loaded
 });
+

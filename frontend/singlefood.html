@@ -12,6 +12,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./new/style.css" />
+   
+    
     <title>FoodLENS-Categories-page</title>
   </head>
   <body>
@@ -23,7 +25,7 @@
         <!--
             ==================== Logo  ====================
             -->
-        <a class="logo" href="home.html"
+        <a class="logo" href="index.html"
           ><img src="Images/logo/Logo.png" alt="Foodlens logo" />FoodLENS</a
         >
         <!--
@@ -45,7 +47,7 @@
         </ul>
           -->
         <h2 class="category-heading">Categories</h2>
-        <a class="profile" href="dashboard.html"
+        <a class="profile" href="dashboard2.html"
           ><img src="Images/logo/profile.png" alt="profile icon"
         /></a>
         <!--
@@ -61,16 +63,16 @@
             -->
         <div class="mobile-menu hide-for-desktop">
           <ul class="lnk">
-            <li class="hide-for-desktop lnk"><a href="home.html">Home</a></li>
+            <li class="hide-for-desktop lnk"><a href="index.html">Home</a></li>
             <!--
                 -->
             <li class="hide-for-desktop lnk">
-              <a href="dashboard.html">Profile</a>
+              <a href="dashboard2.html">Profile</a>
             </li>
             <!--
                 -->
             <li class="hide-for-desktop lnk">
-              <a href="categories.html">Categories</a>
+              <a href="newcategory.html">Categories</a>
             </li>
             <!--
                 -->
@@ -87,76 +89,13 @@
     </header>
 
     <!--
-    ==================== Categories Section  ====================
-    -->
-    <section class="categories groups">
-      <div class="cat-header">
-        <!--Filter Buttons-->
-        <div class="buttons"></div>
-      </div>
-      <article class="filter-to-flex">
-        <div class="filter-section">
-          <div class="check-container">
-            <input type="checkbox" value="grocery" name="grocery" class="checkBtn" />
-            <label for="grocery" class="label">Grocery</label>
-          </div>
-          <div class="check-container">
-            <input type="checkbox" value="resturant" name="resturant" class="checkBtn" />
-            <label for="resturant"class="label" >Resturant</label>
-          </div>
-          <div class="check-container">
-            <input type="checkbox" value="common food" name="common food" class="checkBtn" />
-            <label for="common food"class="label">Commom</label>
-          </div>
-          <div class="check-container">
-            <input type="checkbox" value="snack" name="snack" class="checkBtn"/>
-            <label for="snack" class="label">Snack</label>
-          </div>
-        </div>
-        <div class="search-form">
-          <input
-            type="search"
-            id="search-box"
-            name="searchBox"
-            placeholder="Search food name ..."
-          />
-          <label for="search-box" class="search"
-            ><img src="Images/logo/search.png" alt="search icon"
-          /></label>
-        </div>
-
-        <div class="sorted">
-          <select name="sort" id="select" class="sort-container">
-            <option disabled selected>sort by</option>
-            <option value="cuisine">cuisine</option>
-            <option value="calories">calories</option>
-            <option value="name">name</option>
-            <option value="category">category</option></select
-          ><span class="sort-icon"
-            ><i class='bx bx-sort'></i></span>
-        </div>
-
-      </article>
-      <!-- Category items-->
-      <div class="section-center" id="root"></div>
-      <div class="paginate-center">
-        <div class="btn-container"></div>
-      </div>
-    </section>
-
-    <!--
     ==================== Search Result Section  ====================
     -->
 
+    <section class="search-result-section Hide"></section>
     <!--
-
-
-    This should be another page
-
-
-    <section class="search-result-section Hide">
       <div class="result">
-        <img id="img" src="" alt="food image" />
+        <img id="img" src="./Images/backgrounds/cat-fruits.jpg" alt="food image" />
         <div class="food-details">
           <h3 id="foodName"></h3>
           <span
@@ -308,8 +247,8 @@
           <div class="more-card"></div>
         </a>
       </div>
-    </section>
-    -->
+  -->
+
     <!--
     ==================== Footer & Contact  ====================
     -->
@@ -416,6 +355,6 @@
  <script src="/app/js/searchBar.js"></script>
 -->
 
-    <script src="./app/js/categories.js"></script>
+    <script src="app/js/singlefood.js"></script>
   </body>
 </html>

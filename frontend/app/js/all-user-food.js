@@ -1,3 +1,4 @@
+const token=localStorage.getItem("token")
 let page = 1;
 const limit = 12;
 let sorted = "";
@@ -42,7 +43,7 @@ function displayMenuItem(menuItems) {
       //displayCategoryItem(id);
       // itemSection.style.display = "block";
       // categoryGroup.style.display = "none";
-      window.location.href = `singlefood.html?id=${id}`;
+      window.location.href = `user-single-food.html?id=${id}`;
     });
   });
 }
@@ -95,9 +96,16 @@ ${pageIndex + 1}
 
 function fetchItems() {
   fetch(
-    `http://localhost:3000/api/v1/all-foods-item/all?page=${page}&limit=${limit}&sort=${sorted}&search=${searchValue}&filter=${filter.join(
+    `http://localhost:3000/api/v1/foods?page=${page}&limit=${limit}&sort=${sorted}&search=${searchValue}&filter=${filter.join(
       ","
-    )}`
+    )}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    }
   )
     .then((response) => {
       return response.json();
@@ -155,4 +163,5 @@ function checkBoxFiltering() {
 }
 
 checkBoxFiltering();
+
 

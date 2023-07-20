@@ -12,6 +12,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./new/style.css" />
+    <script src="app/js/protectDashboard.js"></script>
+
     <title>FoodLENS-Categories-page</title>
   </head>
   <body>
@@ -87,81 +89,13 @@
     </header>
 
     <!--
-    ==================== Categories Section  ====================
-    -->
-    <section class="categories groups" id="cat-group">
-      <div class="cat-header">
-        <!--Filter Buttons-->
-        <div class="buttons"></div>
-      </div>
-      <article class="filter-to-flex">
-        <div class="filter-section">
-          <div class="check-container">
-            <input type="checkbox" value="grocery" name="grocery" class="checkBtn" />
-            <label for="grocery" class="label">Grocery</label>
-          </div>
-          <div class="check-container">
-            <input type="checkbox" value="resturant" name="resturant" class="checkBtn" />
-            <label for="resturant"class="label" >Resturant</label>
-          </div>
-          <div class="check-container">
-            <input type="checkbox" value="common food" name="common food" class="checkBtn" />
-            <label for="common food"class="label">Commom</label>
-          </div>
-          <div class="check-container">
-            <input type="checkbox" value="snack" name="snack" class="checkBtn"/>
-            <label for="snack" class="label">Snack</label>
-          </div>
-        </div>
-        <div class="search-form">
-          <input
-            type="search"
-            id="search-box"
-            name="searchBox"
-            placeholder="Search food name ..."
-          />
-          <label for="search-box" class="search"
-            ><img src="Images/logo/search.png" alt="search icon"
-          /></label>
-        </div>
-
-        <div class="sorted">
-          <select name="sort" id="select" class="sort-container">
-            <option disabled selected>sort by</option>
-            <option value="cuisine">cuisine</option>
-            <option value="calories">calories</option>
-            <option value="name">name</option>
-            <option value="category">category</option></select
-          ><span class="sort-icon"
-            ><i class='bx bx-sort'></i></span>
-        </div>
-
-      </article>
-      <!-- Category items-->
-      
-      <div class="section-center" id="root"></div>
-      <div class="paginate-center">
-        <div class="btn-container"></div>
-      </div>
-
-    </section>
-
-
-   
-<section class="search-result-section Hide"></section>
-    <!--
     ==================== Search Result Section  ====================
     -->
 
+    <section class="search-result-section Hide"></section>
     <!--
-
-
-    This should be another page
-
-
-    <section class="search-result-section Hide">
       <div class="result">
-        <img id="img" src="" alt="food image" />
+        <img id="img" src="./Images/backgrounds/cat-fruits.jpg" alt="food image" />
         <div class="food-details">
           <h3 id="foodName"></h3>
           <span
@@ -313,15 +247,15 @@
           <div class="more-card"></div>
         </a>
       </div>
-    </section>
-    -->
+  -->
+
     <!--
     ==================== Footer & Contact  ====================
     -->
     <footer id="contact">
       <div class="first-sect">
         <div class="logo-box">
-          <a class="logo" href="index.html"
+          <a class="logo" href="home.html"
             ><img src="Images/logo/Logo.png" alt="Foodlens logo" />FoodLENS</a
           >
           <ul class="footer mode">
@@ -421,6 +355,6 @@
  <script src="/app/js/searchBar.js"></script>
 -->
 
-    <script src="./app/js/categories.js"></script>
+    <script src="app/js/user-single-food.js"></script>
   </body>
 </html>

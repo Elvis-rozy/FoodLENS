@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="new/monitor.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>monitor consumption</title>
+  </head>
+  <body>
+    <div class="addfood" style="display: block">
+      <div class="add-food-section">
+        <label for="serving-unit" id="add-food-serving-unit">Serving Unit</label>
+        <input type="number" class="inpt-num"  />
+      </div>
+      <div>
+        <label for="food-name">Food name</label>
+        <input type="search" class="add-food-search" placeholder="search food...">
+      </div>
+      <main id="searched1"></main>
+    </div>
+   
+ <div class="main-container-monitor">
+    <section class="monitor-container">
+      <main class="breakfast">
+        <h3 class="monitor-heading">Daily Nutrition</h3>
+        <section class="monitor-sum">
+          <div class="brk-cent">
+            <p>Calories</p>
+            <p>52cal</p>
+            <p>5%</p>
+          </div>
+          <div class="brk-cent">
+            <p>
+              protein
+            </p>
+            <p>52cal</p>
+            <p>5%</p>
+          </div>
+          <div class="brk-cent">
+            <p>Fat</p>
+            <p>52cal</p>
+            <p>5%</p>
+          </div>
+          <div class="brk-cent">
+            <p>Caborhydrate</p>
+            <p>52cal</p>
+            <p>5%</p>
+          </div>
+        </section>
+        <div class="brk-article">
+          <article class="each-article">
+            <span class="p-x">X</span>
+
+            <div class="added">
+              <h3 class="added-heading">Food name</h3>
+              <span>1 unit</span>  X  <span>Food name</span>
+            </div>
+          </article>
+          <article class="each-article"></article>
+          </div>
+          <div class="icon-flex">
+            <i class="bx bx-plus"></i>
+            <p>Add Food</p>   
+        </div>
+      </main>
+      
+
+      <section class="nutri-sum"></section>
+    </section>
+
+    <section class="daily-sum">
+      <h4>
+  Daily Nutrition Summary
+</h4>
+<article>
+  <div class="sum-label"><p>Calories</p>   <p><span>221cal/1234cal</span>(25)%</p></div>
+  <div class="sum-percent"><div class="inner-percent" id="inner-calories"></div> </div>
+</article>
+<article>
+  <div class="sum-label"><p>Protein</p>   <p><span>221cal/1234cal</span>(25)%</p></div>
+  <div class="sum-percent"><div class="inner-percent" id="inner-protein"></div> </div>
+</article>
+<article>
+  <div class="sum-label"><p>Fat</p>   <p><span>221cal/1234cal</span>(25)%</p></div>
+  <div class="sum-percent"><div class="inner-percent" id="inner-fat"></div> </div>
+</article>
+<article>
+  <div class="sum-label"><p>Carbonhydrate</p>   <p><span>221cal/1234cal</span>(25)%</p></div>
+  <div class="sum-percent"><div class="inner-percent" id="inner-carbon"></div> </div>
+</article>
+<article>
+  <div class="sum-label">Fiber</p>   <p><span>221cal/1234cal</span>(25)%</p></div>
+  <div class="sum-percent"><div class="inner-percent" id="inner-fiber"></div> </div>
+</article>
+<article>
+  <div class="sum-label"><p>Sodium</p>   <p><span>221cal/1234cal</span>(25)%</p></div>
+  <div class="sum-percent"><div class="inner-percent" id="inner-sodium"></div> </div>
+</article>
+<article>
+  <div class="sum-label"><p>Sugar</p>   <p><span>221cal/1234cal</span>(25)%</p></div>
+  <div class="sum-percent"><div class="inner-percent" id="inner-sugar"></div> </div>
+</article>
+<article>
+  <div class="sum-label"><p>Vitamin C</p>   <p><span>221cal/1234cal</span>(25)%</p></div>
+  <div class="sum-percent"><div class="inner-percent"  id="inner-vitamin"></div> </div>
+</article>
+<article>
+  <div class="sum-label"><p>Potassium</p>   <p><span>221cal/1234cal</span>(25)%</p></div>
+  <div class="sum-percent"><div class="inner-percent"  id="inner-potassium"></div> </div>
+</article>
+<article>
+  <div class="sum-label"><p>Phosphorus</p>   <p><span>221cal/1234cal</span>(25)%</p></div>
+  <div class="sum-percent"><div class="inner-percent"  id="inner-phosphorus"></div> </div>
+</article>
+<article>
+  <div class="sum-label"><p>Iron</p>   <p><span>221cal/1234cal</span>(25)%</p></div>
+  <div class="sum-percent"><div class="inner-percent"  id="inner-iron"></div> </div>
+</article>
+
+
+    </section>
+   </div>
+     <script src="app/js/monitor.js"></script>
+  </body>
+</html>
