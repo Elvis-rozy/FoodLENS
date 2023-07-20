@@ -16,7 +16,7 @@ Food Analysis Made Easy
 Create an account: Visit the website and sign up for an account as required. p
 Navigate to the food analysis section: Once logged in, locate the section or feature that allows you to analyze food. This could be a search bar, a dedicated food analysis tool, or a menu option.
 
-Enter the food item or recipe: Enter the name or description of the food item or recipe you want to analyze. Some websites may also allow you to upload a photo for analysis.
+Enter the food item or recipe: Enter the name or description of the food item or recipe you want to analyze.
 
 Choose the serving size: Specify the serving size for accurate analysis. This step is important as nutritional values may vary based on the quantity consumed.
 
